@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "TrZtsRgQZzV0VDDv1hvWL"
@@ -30,3 +29,9 @@ id = "nCgtzkQjOTXIvBr6Zmfn5"
 uri = "file://artifacts/santech-website/public/images/service-install.png"
 type = "image"
 title = "Professional kitchen installation"
+
+[[outputs]]
+id = "VpTb3VCUmgxcSzp5WMLvo"
+uri = "file://artifacts/santech-website/HANDOVER.md"
+type = "text"
+title = "Santech Website — Technical Handover Document"
