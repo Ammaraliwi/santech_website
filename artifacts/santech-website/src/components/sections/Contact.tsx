@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useI18n } from "@/lib/i18n";
+import { settings } from "@/lib/settings";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -107,22 +108,17 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground mb-1">{t("contact.label.phone")}</p>
-                  <a
-                    href="tel:+963116644888"
-                    className="block text-muted-foreground text-sm hover:text-accent transition-colors"
-                    data-testid="link-phone-main"
-                    dir="ltr"
-                  >
-                    +963 11 6644 888
-                  </a>
-                  <a
-                    href="tel:+963988820109"
-                    className="block text-muted-foreground text-sm hover:text-accent transition-colors"
-                    data-testid="link-phone-mobile"
-                    dir="ltr"
-                  >
-                    +963 9888 20109
-                  </a>
+                  {settings.contact.phones.map((phone, i) => (
+                    <a
+                      key={i}
+                      href={`tel:${phone.link}`}
+                      className="block text-muted-foreground text-sm hover:text-accent transition-colors"
+                      data-testid={`link-phone-${i}`}
+                      dir="ltr"
+                    >
+                      {phone.display}
+                    </a>
+                  ))}
                 </div>
               </div>
 
@@ -132,22 +128,17 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground mb-1">{t("contact.label.email")}</p>
-                  <a
-                    href="mailto:info@santech-srl.com"
-                    className="block text-muted-foreground text-sm hover:text-accent transition-colors"
-                    data-testid="link-email-info"
-                    dir="ltr"
-                  >
-                    info@santech-srl.com
-                  </a>
-                  <a
-                    href="mailto:sales@santech-srl.com"
-                    className="block text-muted-foreground text-sm hover:text-accent transition-colors"
-                    data-testid="link-email-sales"
-                    dir="ltr"
-                  >
-                    sales@santech-srl.com
-                  </a>
+                  {settings.contact.emails.map((email, i) => (
+                    <a
+                      key={i}
+                      href={`mailto:${email.address}`}
+                      className="block text-muted-foreground text-sm hover:text-accent transition-colors"
+                      data-testid={`link-email-${i}`}
+                      dir="ltr"
+                    >
+                      {email.address}
+                    </a>
+                  ))}
                 </div>
               </div>
             </motion.div>
@@ -168,12 +159,12 @@ export default function Contact() {
                 {t("contact.gm.name")}
               </p>
               <a
-                href="mailto:dr.a.wasil@santech-srl.com"
+                href={`mailto:${settings.contact.gm_email}`}
                 className="text-accent text-sm hover:text-white transition-colors"
                 data-testid="link-gm-email"
                 dir="ltr"
               >
-                dr.a.wasil@santech-srl.com
+                {settings.contact.gm_email}
               </a>
             </motion.div>
 
@@ -194,7 +185,7 @@ export default function Contact() {
                   </span>
                 </div>
                 <a
-                  href="https://maps.app.goo.gl/9f9zRa1xhveyFPBj7"
+                  href={settings.contact.maps_share_url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs font-medium text-accent hover:underline underline-offset-4"
@@ -204,7 +195,7 @@ export default function Contact() {
                 </a>
               </div>
               <iframe
-                src="https://maps.google.com/maps?q=Santech+Trading+Co+Damascus&ll=33.4907514,36.2379939&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                src={settings.contact.maps_embed_url}
                 className="w-full h-64 border-0 grayscale-[30%] hover:grayscale-0 transition-all duration-500"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

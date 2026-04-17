@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MapPin, Clock, ArrowRight, Sparkles } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
-import storefrontImage from "@assets/ChatGPT_Image_Apr_17,_2026,_05_23_30_PM_1776435833445.png";
+import { settings } from "@/lib/settings";
 
 export default function Showroom() {
   const ref = useRef(null);
@@ -19,7 +19,7 @@ export default function Showroom() {
       {/* Background image with parallax-style positioning */}
       <div className="absolute inset-0 z-0">
         <img
-          src={storefrontImage}
+          src={settings.images.showroom_storefront}
           alt={t("showroom.imageAlt")}
           className="w-full h-full object-cover object-center scale-105"
           loading="lazy"
@@ -83,7 +83,7 @@ export default function Showroom() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://maps.app.goo.gl/9f9zRa1xhveyFPBj7"
+                href={settings.contact.maps_share_url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center gap-2 bg-accent text-white px-7 py-3.5 rounded-sm font-semibold text-sm tracking-wide hover:bg-accent/90 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5"

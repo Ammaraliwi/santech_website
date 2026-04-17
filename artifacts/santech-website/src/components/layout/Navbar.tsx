@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/i18n";
+import { settings } from "@/lib/settings";
 import LangToggle from "@/components/LangToggle";
 
 const navItems = [
@@ -57,8 +58,8 @@ export default function Navbar() {
           data-testid="link-logo"
         >
           <img
-            src={`${import.meta.env.BASE_URL}brand/santech-logo.png`}
-            alt="Santech Trading Co."
+            src={settings.brand.logo}
+            alt={settings.brand.logo_alt}
             className={`h-14 w-14 rounded-sm object-cover transition-all ${isScrolled ? "" : "ring-1 ring-white/20"}`}
           />
           <div className="hidden sm:flex flex-col leading-tight">

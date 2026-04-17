@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, Calculator, X, Plus } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
+import { settings } from "@/lib/settings";
 
-const WHATSAPP_NUMBER = "963988820109"; // International format without +
 const WHATSAPP_MESSAGE_EN = "Hello Santech, I'm interested in your professional kitchen equipment.";
 const WHATSAPP_MESSAGE_AR = "مرحباً سانتك، أنا مهتم بمعدات المطابخ الاحترافية لديكم.";
 
@@ -27,7 +27,7 @@ export default function FloatingActions() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/${settings.contact.whatsapp_number}?text=${encodeURIComponent(
     lang === "ar" ? WHATSAPP_MESSAGE_AR : WHATSAPP_MESSAGE_EN
   )}`;
 

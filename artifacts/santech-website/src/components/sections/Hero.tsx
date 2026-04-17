@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/i18n";
+import { settings } from "@/lib/settings";
 
 export default function Hero() {
   const { t, dir } = useI18n();
@@ -23,7 +24,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <div className={`absolute inset-0 z-10 ${dir === "rtl" ? "bg-gradient-to-l from-primary/90 via-primary/70 to-primary/30" : "bg-gradient-to-r from-primary/90 via-primary/70 to-primary/30"}`} />
         <img
-          src="/images/hero-bg.png"
+          src={settings.images.hero_background}
           alt="Premium Industrial Kitchen Showroom"
           className="w-full h-full object-cover object-center"
         />

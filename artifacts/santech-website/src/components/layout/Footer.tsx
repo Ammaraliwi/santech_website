@@ -1,6 +1,7 @@
 import React from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
+import { settings } from "@/lib/settings";
 
 export default function Footer() {
   const { t } = useI18n();
@@ -20,8 +21,8 @@ export default function Footer() {
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <img
-                src={`${import.meta.env.BASE_URL}brand/santech-logo.png`}
-                alt="Santech Trading Co."
+                src={settings.brand.logo}
+                alt={settings.brand.logo_alt}
                 className="h-14 w-14 rounded-sm object-cover ring-1 ring-white/20"
               />
               <div className="flex flex-col leading-tight">
@@ -44,15 +45,17 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-accent shrink-0" />
                 <div className="flex flex-col" dir="ltr">
-                  <a href="tel:+963116644888" className="hover:text-white transition-colors">+963 11 6644 888</a>
-                  <a href="tel:+963988820109" className="hover:text-white transition-colors">+963 9888 20109</a>
+                  {settings.contact.phones.map((phone, i) => (
+                    <a key={i} href={`tel:${phone.link}`} className="hover:text-white transition-colors">{phone.display}</a>
+                  ))}
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent shrink-0" />
                 <div className="flex flex-col" dir="ltr">
-                  <a href="mailto:info@santech-srl.com" className="hover:text-white transition-colors">info@santech-srl.com</a>
-                  <a href="mailto:sales@santech-srl.com" className="hover:text-white transition-colors">sales@santech-srl.com</a>
+                  {settings.contact.emails.map((email, i) => (
+                    <a key={i} href={`mailto:${email.address}`} className="hover:text-white transition-colors">{email.address}</a>
+                  ))}
                 </div>
               </div>
             </div>
@@ -69,7 +72,7 @@ export default function Footer() {
             <div className="pt-4 border-t border-primary-foreground/10 mt-6">
               <p className="text-xs text-primary-foreground/60 mb-1">{t("footer.gm")}</p>
               <p className="text-sm">{t("contact.gm.name")}</p>
-              <a href="mailto:dr.a.wasil@santech-srl.com" className="text-xs text-accent hover:text-white transition-colors" dir="ltr">dr.a.wasil@santech-srl.com</a>
+              <a href={`mailto:${settings.contact.gm_email}`} className="text-xs text-accent hover:text-white transition-colors" dir="ltr">{settings.contact.gm_email}</a>
             </div>
           </div>
 

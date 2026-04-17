@@ -1,0 +1,26 @@
+{
+  "brand": {
+    "logo": "/brand/santech-logo.png",
+    "logo_alt": "Santech Trading Co. Logo"
+  },
+  "contact": {
+    "phones": [
+      { "label": "Main Office", "display": "+963 11 6644 888", "link": "+963116644888" },
+      { "label": "Mobile", "display": "+963 9888 20109", "link": "+963988820109" }
+    ],
+    "emails": [
+      { "label": "General Inquiries", "address": "info@santech-srl.com" },
+      { "label": "Sales", "address": "sales@santech-srl.com" }
+    ],
+    "gm_email": "dr.a.wasil@santech-srl.com",
+    "whatsapp_number": "963988820109",
+    "maps_share_url": "https://maps.app.goo.gl/9f9zRa1xhveyFPBj7",
+    "maps_embed_url": "https://maps.google.com/maps?q=Santech+Trading+Co+Damascus&ll=33.4907514,36.2379939&t=&z=16&ie=UTF8&iwloc=&output=embed"
+  },
+  "images": {
+    "hero_background": "/images/hero-bg.png",
+    "about_background": "/images/about-bg.png",
+    "showroom_storefront": "/images/showroom-storefront.png",
+    "og_image": "/opengraph.jpg"
+  }
+}

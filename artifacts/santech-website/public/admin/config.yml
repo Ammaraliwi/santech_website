@@ -7,9 +7,117 @@ media_folder: "artifacts/santech-website/public/images/uploads"
 public_folder: "/images/uploads"
 site_url: "https://santech-website.pages.dev"
 display_url: "https://santech-website.pages.dev"
-logo_url: "https://santech-website.pages.dev/brand/santech-logo.svg"
+logo_url: "https://santech-website.pages.dev/brand/santech-logo.png"
 locale: "en"
 collections:
+  - name: "site_settings"
+    label: "⚙️  Site Settings"
+    label_singular: "Site Settings"
+    description: "Brand logo, contact info (phones, emails, WhatsApp, map), and key site images."
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: "artifacts/santech-website/src/content/settings.json"
+        label: "Site Settings"
+        name: "settings"
+        format: "json"
+        fields:
+          - label: "🎨  Brand Identity"
+            name: "brand"
+            widget: "object"
+            collapsed: false
+            fields:
+              - label: "Logo (square image, recommended 256×256 PNG/SVG)"
+                name: "logo"
+                widget: "image"
+                required: true
+                media_library:
+                  config:
+                    multiple: false
+              - label: "Logo Alt Text (for accessibility)"
+                name: "logo_alt"
+                widget: "string"
+                required: true
+          - label: "📞  Contact Information"
+            name: "contact"
+            widget: "object"
+            collapsed: false
+            fields:
+              - label: "Phone Numbers"
+                name: "phones"
+                widget: "list"
+                summary: "{{fields.display}}"
+                fields:
+                  - label: "Label (e.g. Main Office, Mobile)"
+                    name: "label"
+                    widget: "string"
+                  - label: "Display Number (e.g. +963 11 6644 888)"
+                    name: "display"
+                    widget: "string"
+                  - label: "Click-to-call Number (digits only, e.g. +963116644888)"
+                    name: "link"
+                    widget: "string"
+                    hint: "International format with + and no spaces"
+              - label: "Email Addresses"
+                name: "emails"
+                widget: "list"
+                summary: "{{fields.address}}"
+                fields:
+                  - label: "Label (e.g. General Inquiries, Sales)"
+                    name: "label"
+                    widget: "string"
+                  - label: "Email Address"
+                    name: "address"
+                    widget: "string"
+              - label: "General Manager Email"
+                name: "gm_email"
+                widget: "string"
+              - label: "WhatsApp Number (digits only, no + or spaces)"
+                name: "whatsapp_number"
+                widget: "string"
+                hint: "Example: 963988820109"
+              - label: "Google Maps Share URL"
+                name: "maps_share_url"
+                widget: "string"
+                hint: "Get from Google Maps → Share → Copy link"
+              - label: "Google Maps Embed URL (iframe src)"
+                name: "maps_embed_url"
+                widget: "text"
+                hint: "Get from Google Maps → Share → Embed a map → Copy the URL inside src=\"…\""
+          - label: "🖼️  Site Images"
+            name: "images"
+            widget: "object"
+            collapsed: false
+            fields:
+              - label: "Hero Background (large landscape, recommended 1920×1080)"
+                name: "hero_background"
+                widget: "image"
+                required: true
+                media_library:
+                  config:
+                    multiple: false
+              - label: "About Section Background"
+                name: "about_background"
+                widget: "image"
+                required: false
+                media_library:
+                  config:
+                    multiple: false
+              - label: "Showroom Storefront Photo"
+                name: "showroom_storefront"
+                widget: "image"
+                required: true
+                media_library:
+                  config:
+                    multiple: false
+              - label: "Social Share Image (Open Graph, 1200×630)"
+                name: "og_image"
+                widget: "image"
+                required: false
+                media_library:
+                  config:
+                    multiple: false
   - name: "english_content"
     label: "🇬🇧  English Site Content"
     label_singular: "English Section"
