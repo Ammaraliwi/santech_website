@@ -74,6 +74,12 @@ const en: Dict = {
   "syria.heritage.label": "Heritage",
   "syria.heritage.title": "8,000 Years of Hospitality",
   "syria.heritage.desc": "Damascus has welcomed travelers and traders since the dawn of civilization. We carry that legacy forward in every modern kitchen we deliver.",
+  "syria.landmarks.umayyad": "Umayyad Mosque",
+  "syria.landmarks.citadel": "Damascus Citadel",
+  "syria.landmarks.palmyra": "Palmyra",
+  "syria.landmarks.krak": "Krak des Chevaliers",
+  "syria.landmarks.aleppo": "Aleppo Citadel",
+  "syria.landmarks.label": "Inspired by",
 
   // About
   "about.eyebrow": "Who We Are",
@@ -234,6 +240,12 @@ const ar: Dict = {
   "syria.heritage.label": "الإرث",
   "syria.heritage.title": "ثمانية آلاف عام من الضيافة",
   "syria.heritage.desc": "دمشق ترحّب بالمسافرين والتجار منذ فجر الحضارة. نحمل هذا الإرث في كل مطبخ حديث نقدّمه.",
+  "syria.landmarks.umayyad": "الجامع الأموي",
+  "syria.landmarks.citadel": "قلعة دمشق",
+  "syria.landmarks.palmyra": "تدمر",
+  "syria.landmarks.krak": "قلعة الحصن",
+  "syria.landmarks.aleppo": "قلعة حلب",
+  "syria.landmarks.label": "بإلهام من",
 
   // About
   "about.eyebrow": "من نحن",
