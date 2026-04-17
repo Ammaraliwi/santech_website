@@ -35,3 +35,9 @@ id = "VpTb3VCUmgxcSzp5WMLvo"
 uri = "file://artifacts/santech-website/HANDOVER.md"
 type = "text"
 title = "Santech Website — Technical Handover Document"
+
+[[outputs]]
+id = "roHgaVLu8IjnMvls5r1yW"
+uri = "file://exports/Santech_Website_Handover.pdf"
+type = "pdf"
+title = "Santech Website — Technical Handover (PDF)"

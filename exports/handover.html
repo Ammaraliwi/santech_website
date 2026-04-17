@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Santech Website Handover</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Santech Website Handover</h1>
+</header>
+<h1 id="santech-trading-co.-website-technical-handover-document">🏢
+Santech Trading Co. — Website Technical Handover Document</h1>
+<h3
+id="وثيقة-تسليم-البنية-التحتية-التقنية-لموقع-شركة-سانتك-للتجارة">وثيقة
+تسليم البنية التحتية التقنية لموقع شركة سانتك للتجارة</h3>
+<p><strong>Version:</strong> 1.0<br />
+<strong>Date:</strong> April 2026<br />
+<strong>Live Site:</strong> https://santech-website.pages.dev<br />
+<strong>Repository:</strong>
+https://github.com/Ammaraliwi/santech_website</p>
+<hr />
+<h2 id="high-level-architecture-البنية-المعمارية-العامة">📐 1.
+High-Level Architecture | البنية المعمارية العامة</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────┐
+│                         END VISITORS                            │
+│                       (الزوار النهائيون)                          │
+└──────────────────────────────┬──────────────────────────────────┘
+                               │ HTTPS
+                               ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    CLOUDFLARE PAGES (CDN)                       │
+│            santech-website.pages.dev  ←  Live Hosting           │
+│         • Global CDN  • Free SSL  • DDoS Protection             │
+└──────────────────────────────┬──────────────────────────────────┘
+                               │ Auto-deploy on push
+                               ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                       GITHUB REPOSITORY                         │
+│              Ammaraliwi/santech_website (main branch)           │
+│        • Source code  • Content (JSON)  • Image uploads         │
+└────────────────┬───────────────────────────┬────────────────────┘
+                 │                           │
+                 │ Read content              │ Commit changes
+                 ▼                           │
+┌──────────────────────────────┐  ┌──────────────────────────────┐
+│   NETLIFY IDENTITY + GIT     │  │   ADMIN PANEL (Decap CMS)    │
+│         GATEWAY              │◄─┤    /admin/ on website        │
+│   (Authentication Service)   │  │   (Content Editor UI)        │
+│  sensational-halva-03159a    │  │                              │
+└──────────────────────────────┘  └──────────────────────────────┘
+                 ▲
+                 │ Login (email + password)
+                 │
+         ┌───────┴────────┐
+         │  CONTENT TEAM  │
+         │  (محرر المحتوى) │
+         └────────────────┘</code></pre>
+<hr />
+<h2 id="technology-stack-المكدس-التقني">🧱 2. Technology Stack | المكدس
+التقني</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Technology</th>
+<th>Purpose</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Frontend Framework</strong></td>
+<td>React 18 + TypeScript</td>
+<td>UI library + type safety</td>
+<td>Free (open source)</td>
+</tr>
+<tr>
+<td><strong>Build Tool</strong></td>
+<td>Vite 5</td>
+<td>Fast dev server + optimized production build</td>
+<td>Free</td>
+</tr>
+<tr>
+<td><strong>Styling</strong></td>
+<td>Tailwind CSS + shadcn/ui</td>
+<td>Utility-first CSS + component library</td>
+<td>Free</td>
+</tr>
+<tr>
+<td><strong>Animation</strong></td>
+<td>Framer Motion</td>
+<td>Smooth scroll/entrance animations</td>
+<td>Free</td>
+</tr>
+<tr>
+<td><strong>Internationalization</strong></td>
+<td>Custom i18n (en.json / ar.json)</td>
+<td>Bilingual EN/AR with RTL support</td>
+<td>Free</td>
+</tr>
+<tr>
+<td><strong>Icons</strong></td>
+<td>Lucide React</td>
+<td>Modern icon set</td>
+<td>Free</td>
+</tr>
+<tr>
+<td><strong>Hosting / CDN</strong></td>
+<td>Cloudflare Pages</td>
+<td>Static site hosting + global CDN</td>
+<td><strong>Free</strong> (unlimited bandwidth)</td>
+</tr>
+<tr>
+<td><strong>Source Control</strong></td>
+<td>GitHub</td>
+<td>Version control + auto-deploy trigger</td>
+<td>Free (public repo)</td>
+</tr>
+<tr>
+<td><strong>CMS</strong></td>
+<td>Decap CMS (open source)</td>
+<td>Browser-based content editor at <code>/admin/</code></td>
+<td>Free (self-hosted)</td>
+</tr>
+<tr>
+<td><strong>Authentication</strong></td>
+<td>Netlify Identity + Git Gateway</td>
+<td>Login for content editors</td>
+<td><strong>Free</strong> tier (up to 5 users)</td>
+</tr>
+<tr>
+<td><strong>Domain (current)</strong></td>
+<td><code>*.pages.dev</code> (Cloudflare)</td>
+<td>Free subdomain</td>
+<td>Free</td>
+</tr>
+<tr>
+<td><strong>Domain (optional)</strong></td>
+<td>Custom (e.g. <code>santech-srl.com</code>)</td>
+<td>To be added by Cloudflare DNS</td>
+<td>Annual domain cost only</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>✅ <strong>Total monthly cost: $0</strong> (with free domain). With
+custom domain: ≈ $10–15/year.</p>
+</blockquote>
+<hr />
+<h2 id="repository-structure-هيكل-المستودع">🗂️ 3. Repository Structure |
+هيكل المستودع</h2>
+<pre><code>santech_website/
+├── artifacts/santech-website/
+│   ├── public/
+│   │   ├── admin/
+│   │   │   ├── index.html          ← CMS entry page (loads Decap)
+│   │   │   └── config.yml          ← CMS field definitions (auto-generated)
+│   │   ├── brand/
+│   │   │   └── santech-logo.png    ← Default logo
+│   │   └── images/
+│   │       ├── hero-bg.png         ← Hero background
+│   │       ├── about-bg.png        ← About section background
+│   │       ├── showroom-storefront.png
+│   │       └── uploads/            ← CMS-uploaded images go here
+│   │
+│   ├── src/
+│   │   ├── components/             ← React UI components
+│   │   │   ├── layout/             (Navbar, Footer)
+│   │   │   ├── sections/           (Hero, About, Services, Contact, …)
+│   │   │   └── ui/                 (Buttons, Inputs — shadcn/ui)
+│   │   ├── content/
+│   │   │   ├── en.json             ← All English text (281 keys)
+│   │   │   ├── ar.json             ← All Arabic text (281 keys)
+│   │   │   └── settings.json       ← Logo, contacts, images, map
+│   │   └── lib/
+│   │       ├── i18n.tsx            ← Translation system
+│   │       └── settings.ts         ← Settings type/loader
+│   │
+│   ├── index.html                  ← App entry + Netlify Identity widget
+│   ├── package.json
+│   ├── vite.config.ts
+│   └── tailwind.config.ts
+│
+└── README.md</code></pre>
+<hr />
+<h2 id="content-update-flow-آلية-تحديث-المحتوى">🔄 4. Content Update
+Flow | آلية تحديث المحتوى</h2>
+<pre><code>┌──────────────────┐    ┌─────────────────┐    ┌──────────────────┐
+│  Editor logs in  │───►│  Edits content  │───►│   Clicks &quot;Save&quot;  │
+│  at /admin/      │    │  in CMS forms   │    │                  │
+└──────────────────┘    └─────────────────┘    └────────┬─────────┘
+                                                        │
+                                                        ▼
+                                          ┌──────────────────────────┐
+                                          │  Decap CMS commits       │
+                                          │  changes to GitHub       │
+                                          │  via Netlify Git Gateway │
+                                          └────────┬─────────────────┘
+                                                   │
+                                                   ▼
+                                          ┌──────────────────────────┐
+                                          │  Cloudflare Pages        │
+                                          │  detects new commit      │
+                                          │  and rebuilds site       │
+                                          │  (~2-3 minutes)          │
+                                          └────────┬─────────────────┘
+                                                   │
+                                                   ▼
+                                          ┌──────────────────────────┐
+                                          │  Live site updated 🎉     │
+                                          └──────────────────────────┘</code></pre>
+<p><strong>No technical knowledge required.</strong> Editors only see
+form fields and image-upload buttons.</p>
+<hr />
+<h2 id="access-credentials-checklist-قائمة-الصلاحيات-للتسليم">🔐 5.
+Access Credentials Checklist | قائمة الصلاحيات للتسليم</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Service</th>
+<th>URL</th>
+<th>Account Owner</th>
+<th>Access Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GitHub</strong></td>
+<td>github.com/Ammaraliwi/santech_website</td>
+<td>Ammaraliwi</td>
+<td>Repository owner</td>
+</tr>
+<tr>
+<td><strong>Cloudflare Pages</strong></td>
+<td>dash.cloudflare.com</td>
+<td>Client account</td>
+<td>Build &amp; deploy</td>
+</tr>
+<tr>
+<td><strong>Netlify Identity</strong></td>
+<td>app.netlify.com/projects/sensational-halva-03159a</td>
+<td>Client account</td>
+<td>Identity admin</td>
+</tr>
+<tr>
+<td><strong>CMS Login</strong></td>
+<td>https://santech-website.pages.dev/admin/</td>
+<td>amar-209@hotmail.com</td>
+<td>Content editor</td>
+</tr>
+</tbody>
+</table>
+<h3 id="handover-checklist">📋 Handover Checklist</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" />Transfer GitHub repository ownership
+(or add client as admin)</label></li>
+<li><label><input type="checkbox" />Transfer Cloudflare Pages project to
+client account</label></li>
+<li><label><input type="checkbox" />Transfer Netlify project to client
+account<br />
+</label></li>
+<li><label><input type="checkbox" />Provide CMS login credentials to
+content team</label></li>
+<li><label><input type="checkbox" />Document any custom domain DNS
+settings</label></li>
+<li><label><input type="checkbox" />Schedule a 30-min CMS training
+session for editors</label></li>
+</ul>
+<hr />
+<h2 id="what-editors-can-edit-no-code-needed">✏️ 6. What Editors Can
+Edit (No Code Needed)</h2>
+<p>The CMS at <code>/admin/</code> exposes <strong>3
+collections</strong>:</p>
+<h3 id="site-settings">⚙️ Site Settings</h3>
+<ul>
+<li>🎨 <strong>Brand:</strong> Logo image (upload from device), alt
+text</li>
+<li>📞 <strong>Contact:</strong> Phone numbers (add/remove), emails
+(add/remove), GM email, WhatsApp number, Google Maps link, embedded map
+URL</li>
+<li>🖼️ <strong>Images:</strong> Hero background, About background,
+Showroom photo, Social-share image (Open Graph)</li>
+</ul>
+<h3 id="english-site-content">🇬🇧 English Site Content</h3>
+<p>281 editable text strings, organized into 22 collapsible sections
+(Hero, About, Services, Industries, Process, Projects, Testimonials,
+Leadership, Certifications, Catalog, Showroom, Contact, Footer,
+etc.)</p>
+<h3 id="المحتوى-العربي">🇸🇾 المحتوى العربي</h3>
+<p>Mirror of English collection — every English string has its Arabic
+counterpart.</p>
+<hr />
+<h2 id="developer-workflow-سير-عمل-المطور">🛠️ 7. Developer Workflow |
+سير عمل المطور</h2>
+<h3 id="local-development">Local Development</h3>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/Ammaraliwi/santech_website.git</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> santech_website</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pnpm</span> install</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pnpm</span> <span class="at">--filter</span> @workspace/santech-website run dev</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Site runs at http://localhost:5173</span></span></code></pre></div>
+<h3 id="production-deploy-automatic">Production Deploy (automatic)</h3>
+<p>Every push to <code>main</code> triggers Cloudflare Pages to: 1. Run
+<code>pnpm install</code> 2. Run
+<code>pnpm --filter @workspace/santech-website run build</code> 3.
+Deploy <code>dist/</code> folder to global CDN</p>
+<h3 id="adding-a-new-editable-field">Adding a New Editable Field</h3>
+<ol type="1">
+<li>Add the field to <code>src/content/settings.json</code> (or
+<code>en.json</code> / <code>ar.json</code>)</li>
+<li>Re-generate <code>public/admin/config.yml</code> (script in
+repo)</li>
+<li>Reference the field in the relevant React component</li>
+<li>Commit &amp; push — CMS updates automatically</li>
+</ol>
+<hr />
+<h2 id="performance-seo">🌍 8. Performance &amp; SEO</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hosting</strong></td>
+<td>Cloudflare global CDN (300+ edge locations)</td>
+</tr>
+<tr>
+<td><strong>SSL/HTTPS</strong></td>
+<td>Auto-provisioned by Cloudflare</td>
+</tr>
+<tr>
+<td><strong>Compression</strong></td>
+<td>Brotli + Gzip (automatic)</td>
+</tr>
+<tr>
+<td><strong>Caching</strong></td>
+<td>Static assets cached at edge</td>
+</tr>
+<tr>
+<td><strong>Bundle Size</strong></td>
+<td>Code-split per route, lazy-loaded sections</td>
+</tr>
+<tr>
+<td><strong>Lighthouse Target</strong></td>
+<td>90+ Performance, 100 Accessibility</td>
+</tr>
+<tr>
+<td><strong>Languages</strong></td>
+<td>EN/AR with <code>lang</code> + <code>dir</code> HTML attributes</td>
+</tr>
+<tr>
+<td><strong>Meta Tags</strong></td>
+<td>Title, description, OG image (editable in
+<code>index.html</code>)</td>
+</tr>
+<tr>
+<td><strong>Mobile</strong></td>
+<td>Fully responsive (Tailwind breakpoints)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="support-maintenance-الدعم-والصيانة">🆘 9. Support &amp;
+Maintenance | الدعم والصيانة</h2>
+<h3 id="common-tasks">Common Tasks</h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Owner</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Update site text/images</td>
+<td>Content Team (via CMS)</td>
+<td>As needed</td>
+</tr>
+<tr>
+<td>Add new content sections</td>
+<td>Developer</td>
+<td>On request</td>
+</tr>
+<tr>
+<td>Update brand identity</td>
+<td>Content Team (via CMS Settings)</td>
+<td>Rare</td>
+</tr>
+<tr>
+<td>Security updates (npm packages)</td>
+<td>Developer</td>
+<td>Quarterly</td>
+</tr>
+<tr>
+<td>Backup verification</td>
+<td>Developer</td>
+<td>Monthly (auto via Git)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="backup-strategy">Backup Strategy</h3>
+<ul>
+<li>✅ <strong>Code &amp; Content:</strong> Every change is a Git commit
+— full history preserved forever in GitHub</li>
+<li>✅ <strong>Images:</strong> Stored in Git LFS-friendly
+<code>public/images/uploads/</code> folder</li>
+<li>✅ <strong>Database:</strong> None required (static site)</li>
+<li>✅ <strong>Restore Time:</strong> Any previous version can be
+restored in &lt;5 minutes via <code>git revert</code></li>
+</ul>
+<hr />
+<h2 id="key-contacts">📞 10. Key Contacts</h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Name</th>
+<th>Email</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project Owner</td>
+<td>Dr. A. Wasil</td>
+<td>dr.a.wasil@santech-srl.com</td>
+</tr>
+<tr>
+<td>Main Office</td>
+<td>—</td>
+<td>info@santech-srl.com</td>
+</tr>
+<tr>
+<td>Sales</td>
+<td>—</td>
+<td>sales@santech-srl.com</td>
+</tr>
+<tr>
+<td>Technical Lead</td>
+<td>(To be assigned)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="license-ownership">📜 11. License &amp; Ownership</h2>
+<ul>
+<li><strong>Source Code:</strong> Property of Santech Trading Co.</li>
+<li><strong>Third-Party Libraries:</strong> All MIT/Apache licensed
+(free for commercial use)</li>
+<li><strong>Images:</strong> Property of Santech Trading Co. (uploaded
+via CMS)</li>
+<li><strong>CMS Software:</strong> Decap CMS (MIT licensed)</li>
+</ul>
+<hr />
+<p><strong>End of Handover Document</strong><br />
+<em>Prepared for Santech Trading Co. — Damascus, Syria</em></p>
+</body>
+</html>

@@ -1,0 +1,17 @@
+@page { size: A4; margin: 18mm 15mm; }
+body { font-family: 'Noto Sans', 'Segoe UI', Arial, sans-serif; font-size: 10.5pt; line-height: 1.5; color: #1a1a1a; max-width: 100%; }
+h1 { color: #1F5A85; border-bottom: 3px solid #E89B41; padding-bottom: 8px; font-size: 22pt; margin-top: 0; }
+h2 { color: #1F5A85; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-top: 24pt; font-size: 15pt; page-break-after: avoid; }
+h3 { color: #2C7BB0; font-size: 12pt; }
+table { border-collapse: collapse; width: 100%; margin: 8pt 0; font-size: 9.5pt; }
+th { background: #1F5A85; color: white; text-align: left; padding: 6px 8px; }
+td { border: 1px solid #ddd; padding: 5px 8px; vertical-align: top; }
+tr:nth-child(even) { background: #f7f9fb; }
+code { background: #f3f4f6; padding: 1px 4px; border-radius: 3px; font-size: 9pt; color: #c7254e; }
+pre { background: #1e293b; color: #e2e8f0; padding: 10px; border-radius: 4px; font-size: 8pt; line-height: 1.4; overflow-x: auto; page-break-inside: avoid; }
+pre code { background: transparent; color: inherit; padding: 0; }
+ul, ol { padding-inline-start: 22px; }
+li { margin: 2pt 0; }
+hr { border: none; border-top: 1px solid #ccc; margin: 14pt 0; }
+blockquote { border-inline-start: 4px solid #E89B41; background: #fff8ef; padding: 6px 12px; margin: 8pt 0; font-style: italic; }
+:lang(ar), [lang="ar"] { direction: rtl; font-family: 'Noto Naskh Arabic', 'Amiri', serif; }
