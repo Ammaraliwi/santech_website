@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "TrZtsRgQZzV0VDDv1hvWL"
+uri = "file://artifacts/santech-website/public/images/hero-bg.png"
+type = "image"
+title = "Premium industrial kitchen showroom"
+
+[[generated]]
+id = "q_KM2V7SAA0Ey_3_cmTwy"
+uri = "file://artifacts/santech-website/public/images/about-bg.png"
+type = "image"
+title = "Kitchen blueprint design meeting"
+
+[[generated]]
+id = "PaB9wojPVv5DnGVjzzQYi"
+uri = "file://artifacts/santech-website/public/images/service-design.png"
+type = "image"
+title = "AutoCAD kitchen layout design"
+
+[[generated]]
+id = "-Axfy7lC5UYiKSpDmdrBF"
+uri = "file://artifacts/santech-website/public/images/service-supply.png"
+type = "image"
+title = "Premium kitchen equipment supply"
+
+[[generated]]
+id = "nCgtzkQjOTXIvBr6Zmfn5"
+uri = "file://artifacts/santech-website/public/images/service-install.png"
+type = "image"
+title = "Professional kitchen installation"
