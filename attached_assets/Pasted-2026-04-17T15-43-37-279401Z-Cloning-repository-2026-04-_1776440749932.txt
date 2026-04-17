@@ -1,0 +1,81 @@
+2026-04-17T15:43:37.279401Z	Cloning repository...
+2026-04-17T15:43:38.767066Z	From https://github.com/Ammaraliwi/santech_website
+2026-04-17T15:43:38.767484Z	 * branch            50f079b4438a169a75ab5df499dccaf5315a9a7f -> FETCH_HEAD
+2026-04-17T15:43:38.767616Z	
+2026-04-17T15:43:38.857705Z	HEAD is now at 50f079b Add a new showroom section with a storefront image
+2026-04-17T15:43:38.858173Z	
+2026-04-17T15:43:38.907191Z	
+2026-04-17T15:43:38.907707Z	Using v2 root directory strategy
+2026-04-17T15:43:38.919395Z	Success: Finished cloning repository files
+2026-04-17T15:43:40.845567Z	Checking for configuration in a Wrangler configuration file (BETA)
+2026-04-17T15:43:40.84601Z	
+2026-04-17T15:43:41.933397Z	No Wrangler configuration file found. Continuing.
+2026-04-17T15:43:42.119317Z	Detected the following tools from environment: nodejs@20.20.0, pnpm@10.11.1
+2026-04-17T15:43:42.119716Z	Installing nodejs 20.20.0
+2026-04-17T15:43:43.243179Z	Trying to update node-build... ok
+2026-04-17T15:43:43.29392Z	To follow progress, use 'tail -f /tmp/node-build.20260417154343.802.log' or pass --verbose
+2026-04-17T15:43:43.341778Z	Downloading node-v20.20.0-linux-x64.tar.gz...
+2026-04-17T15:43:43.515559Z	-> https://nodejs.org/dist/v20.20.0/node-v20.20.0-linux-x64.tar.gz
+2026-04-17T15:43:45.597549Z	
+2026-04-17T15:43:45.597795Z	WARNING: node-v20.20.0-linux-x64 is in LTS Maintenance mode and nearing its end of life.
+2026-04-17T15:43:45.598367Z	It only receives *critical* security updates, *critical* bug fixes and documentation updates.
+2026-04-17T15:43:45.598429Z	
+2026-04-17T15:43:45.598468Z	Installing node-v20.20.0-linux-x64...
+2026-04-17T15:43:46.093893Z	Installed node-v20.20.0-linux-x64 to /opt/buildhome/.asdf/installs/nodejs/20.20.0
+2026-04-17T15:43:46.094147Z	
+2026-04-17T15:43:47.315145Z	
+2026-04-17T15:43:47.315367Z	changed 1 package in 563ms
+2026-04-17T15:43:47.322968Z	Reshimming asdf nodejs...
+2026-04-17T15:43:49.396903Z	Preparing pnpm@10.11.1 for immediate activation...
+2026-04-17T15:43:50.292954Z	Installing project dependencies: pnpm install
+2026-04-17T15:43:50.838311Z	Scope: all 9 workspace projects
+2026-04-17T15:43:50.899189Z	Lockfile is up to date, resolution step is skipped
+2026-04-17T15:43:50.9492Z	Progress: resolved 1, reused 0, downloaded 0, added 0
+2026-04-17T15:43:51.061657Z	Packages: +486
+2026-04-17T15:43:51.062758Z	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2026-04-17T15:43:51.951621Z	Progress: resolved 486, reused 0, downloaded 79, added 4
+2026-04-17T15:43:52.952311Z	Progress: resolved 486, reused 0, downloaded 121, added 20
+2026-04-17T15:43:53.952673Z	Progress: resolved 486, reused 0, downloaded 239, added 75
+2026-04-17T15:43:54.953126Z	Progress: resolved 486, reused 0, downloaded 312, added 111
+2026-04-17T15:43:55.954448Z	Progress: resolved 486, reused 0, downloaded 429, added 296
+2026-04-17T15:43:56.587154Z	Progress: resolved 486, reused 0, downloaded 486, added 486, done
+2026-04-17T15:43:56.794652Z	.../esbuild@0.27.3/node_modules/esbuild postinstall$ node install.js
+2026-04-17T15:43:56.882465Z	.../esbuild@0.27.3/node_modules/esbuild postinstall: Done
+2026-04-17T15:43:57.168031Z	
+2026-04-17T15:43:57.168284Z	devDependencies:
+2026-04-17T15:43:57.1684Z	+ prettier 3.8.1
+2026-04-17T15:43:57.16846Z	+ typescript 5.9.3
+2026-04-17T15:43:57.1685Z	
+2026-04-17T15:43:57.226548Z	. preinstall$ sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+2026-04-17T15:43:57.241432Z	. preinstall: Done
+2026-04-17T15:43:57.49709Z	Done in 7s using pnpm v10.11.1
+2026-04-17T15:43:57.546289Z	Executing user command: pnpm install && pnpm --filter @workspace/santech-website build
+2026-04-17T15:43:58.025597Z	Scope: all 9 workspace projects
+2026-04-17T15:43:58.100058Z	Lockfile is up to date, resolution step is skipped
+2026-04-17T15:43:58.171842Z	Already up to date
+2026-04-17T15:43:59.104838Z	
+2026-04-17T15:43:59.140865Z	. preinstall$ sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+2026-04-17T15:43:59.151411Z	. preinstall: Done
+2026-04-17T15:43:59.268499Z	Done in 1.5s using pnpm v10.11.1
+2026-04-17T15:44:00.061654Z	
+2026-04-17T15:44:00.061935Z	> @workspace/santech-website@0.0.0 build /opt/buildhome/repo/artifacts/santech-website
+2026-04-17T15:44:00.062005Z	> vite build --config vite.config.ts
+2026-04-17T15:44:00.06205Z	
+2026-04-17T15:44:00.428831Z	[31mfailed to load config from /opt/buildhome/repo/artifacts/santech-website/vite.config.ts[39m
+2026-04-17T15:44:00.430473Z	[31merror during build:
+2026-04-17T15:44:00.430575Z	Error: PORT environment variable is required but was not provided.
+2026-04-17T15:44:00.43065Z	    at file:///opt/buildhome/repo/artifacts/santech-website/node_modules/.vite-temp/vite.config.ts.timestamp-1776440640272-ea30276804c7a.mjs:10:9
+2026-04-17T15:44:00.430714Z	    at ModuleJob.run (node:internal/modules/esm/module_job:325:25)
+2026-04-17T15:44:00.430773Z	    at async ModuleLoader.import (node:internal/modules/esm/loader:606:24)
+2026-04-17T15:44:00.430841Z	    at async loadConfigFromBundledFile (file:///opt/buildhome/repo/node_modules/.pnpm/vite@7.3.1_@types+node@25.3.5_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/config.js:35909:12)
+2026-04-17T15:44:00.430897Z	    at async bundleAndLoadConfigFile (file:///opt/buildhome/repo/node_modules/.pnpm/vite@7.3.1_@types+node@25.3.5_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/config.js:35797:17)
+2026-04-17T15:44:00.430932Z	    at async loadConfigFromFile (file:///opt/buildhome/repo/node_modules/.pnpm/vite@7.3.1_@types+node@25.3.5_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/config.js:35764:42)
+2026-04-17T15:44:00.430967Z	    at async resolveConfig (file:///opt/buildhome/repo/node_modules/.pnpm/vite@7.3.1_@types+node@25.3.5_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/config.js:35413:22)
+2026-04-17T15:44:00.431314Z	    at async createBuilder (file:///opt/buildhome/repo/node_modules/.pnpm/vite@7.3.1_@types+node@25.3.5_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/config.js:33875:19)
+2026-04-17T15:44:00.43136Z	    at async CAC.<anonymous> (file:///opt/buildhome/repo/node_modules/.pnpm/vite@7.3.1_@types+node@25.3.5_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_yaml@2.8.2/node_modules/vite/dist/node/cli.js:629:10)[39m
+2026-04-17T15:44:00.459712Z	/opt/buildhome/repo/artifacts/santech-website:
+2026-04-17T15:44:00.45996Z	 ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @workspace/santech-website@0.0.0 build: `vite build --config vite.config.ts`
+2026-04-17T15:44:00.460052Z	Exit status 1
+2026-04-17T15:44:00.500339Z	Failed: Error while executing user command. Exited with error code: 1
+2026-04-17T15:44:00.506265Z	Failed: build command exited with code: 1
+2026-04-17T15:44:01.205247Z	Failed: error occurred while running build command
