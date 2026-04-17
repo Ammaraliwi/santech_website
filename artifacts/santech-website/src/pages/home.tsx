@@ -12,6 +12,7 @@ import Leadership from "@/components/sections/Leadership";
 import Partners from "@/components/sections/Partners";
 import Certifications from "@/components/sections/Certifications";
 import CatalogCTA from "@/components/sections/CatalogCTA";
+import Showroom from "@/components/sections/Showroom";
 import Contact from "@/components/sections/Contact";
 
 export default function Home() {
@@ -31,6 +32,7 @@ export default function Home() {
       <Partners />
       <Certifications />
       <CatalogCTA />
+      <Showroom />
       <Contact />
     </div>
   );

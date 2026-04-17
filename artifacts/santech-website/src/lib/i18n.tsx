@@ -300,6 +300,24 @@ const en: Dict = {
   "catalog.button": "Download Catalog (PDF)",
   "catalog.note": "Free download · Updated quarterly · 18+ brands",
 
+  // Showroom
+  "showroom.eyebrow": "Visit Our Showroom",
+  "showroom.title.1": "Step Into Our",
+  "showroom.title.2": "Damascus Showroom",
+  "showroom.description":
+    "Experience our curated selection of premium HoReCa equipment first-hand. Our team of specialists is ready to walk you through live demonstrations, kitchen layouts, and tailored solutions for your project.",
+  "showroom.location": "Mazzeh, Damascus",
+  "showroom.hours": "Sat–Thu · 9:00 AM – 6:00 PM",
+  "showroom.cta.directions": "Get Directions",
+  "showroom.cta.contact": "Schedule a Visit",
+  "showroom.live": "Open Now",
+  "showroom.card.title": "Modern Showroom & Headquarters",
+  "showroom.card.desc":
+    "Our flagship space features working displays from 18+ international brands across all professional kitchen categories.",
+  "showroom.card.area": "Showroom",
+  "showroom.card.brands": "Brands",
+  "showroom.imageAlt": "Santech Trading Co. storefront in Damascus at night, illuminated signage",
+
   // Floating CTA
   "fab.whatsapp": "Chat on WhatsApp",
   "fab.quote": "Get a Quote",
@@ -606,6 +624,24 @@ const ar: Dict = {
   "catalog.desc": "تصفّح مجموعتنا الكاملة من معدات HoReCa الفاخرة، ومحافظ العلامات التجارية، ودراسات الحالات — كلها في ملف PDF شامل.",
   "catalog.button": "حمّل الكتالوج (PDF)",
   "catalog.note": "تحميل مجاني · يُحدّث ربع سنوياً · أكثر من 18 علامة",
+
+  // Showroom
+  "showroom.eyebrow": "زورونا في المعرض",
+  "showroom.title.1": "ادخلوا إلى",
+  "showroom.title.2": "معرضنا في دمشق",
+  "showroom.description":
+    "تعرّفوا على مجموعتنا المختارة من معدات HoReCa الفاخرة عن قرب. فريقنا من المختصين جاهز لاصطحابكم في جولة تفاعلية مع عروض حية وتصاميم مطابخ وحلول مخصصة لمشروعكم.",
+  "showroom.location": "المزة، دمشق",
+  "showroom.hours": "السبت–الخميس · 9:00 ص – 6:00 م",
+  "showroom.cta.directions": "احصل على الاتجاهات",
+  "showroom.cta.contact": "احجز زيارة",
+  "showroom.live": "مفتوح الآن",
+  "showroom.card.title": "معرض ومقر رئيسي عصري",
+  "showroom.card.desc":
+    "يضمّ مقرّنا الرئيسي عروضاً حيّة لأكثر من 18 علامة عالمية تغطي جميع فئات مطابخ الاحتراف.",
+  "showroom.card.area": "مساحة المعرض",
+  "showroom.card.brands": "علامة تجارية",
+  "showroom.imageAlt": "واجهة شركة سانتك للتجارة في دمشق ليلاً مع لافتة مضاءة",
 
   // Floating CTA
   "fab.whatsapp": "تواصل عبر واتساب",
