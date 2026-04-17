@@ -4,6 +4,7 @@ import TrustBar from "@/components/sections/TrustBar";
 import About from "@/components/sections/About";
 import WhyUs from "@/components/sections/WhyUs";
 import Services from "@/components/sections/Services";
+import RootedInSyria from "@/components/sections/RootedInSyria";
 import Partners from "@/components/sections/Partners";
 import Contact from "@/components/sections/Contact";
 
@@ -15,6 +16,7 @@ export default function Home() {
       <About />
       <WhyUs />
       <Services />
+      <RootedInSyria />
       <Partners />
       <Contact />
     </div>
