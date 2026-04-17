@@ -194,7 +194,7 @@ export default function Contact() {
                   </span>
                 </div>
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Mazzeh+Autostrada+Damascus+Syria"
+                  href="https://maps.app.goo.gl/9f9zRa1xhveyFPBj7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs font-medium text-accent hover:underline underline-offset-4"
@@ -204,7 +204,7 @@ export default function Contact() {
                 </a>
               </div>
               <iframe
-                src="https://maps.google.com/maps?q=Mazzeh%20Autostrada%20Damascus%20Syria&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=Santech+Trading+Co+Damascus&ll=33.4907514,36.2379939&t=&z=16&ie=UTF8&iwloc=&output=embed"
                 className="w-full h-64 border-0 grayscale-[30%] hover:grayscale-0 transition-all duration-500"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
