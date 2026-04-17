@@ -19,15 +19,14 @@ export default function Footer() {
 
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <div
-                className="w-10 h-10 rounded-sm flex items-center justify-center font-serif font-bold text-xl"
-                style={{ background: "hsl(38 92% 50%)", color: "hsl(220 30% 15%)" }}
-              >
-                S
-              </div>
+              <img
+                src={`${import.meta.env.BASE_URL}brand/santech-logo.png`}
+                alt="Santech Trading Co."
+                className="h-14 w-14 rounded-sm object-cover ring-1 ring-white/20"
+              />
               <div className="flex flex-col leading-tight">
                 <span className="font-serif font-bold text-base tracking-wider text-white">{t("brand.name")}</span>
-                <span className="text-xs tracking-widest font-medium text-primary-foreground/60">{t("brand.tagline")}</span>
+                <span className="text-[10px] tracking-widest font-medium text-primary-foreground/60">{t("brand.tagline")}</span>
               </div>
             </div>
             <p className="text-primary-foreground/70 max-w-xs text-sm leading-relaxed">

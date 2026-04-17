@@ -47,21 +47,18 @@ export default function Navbar() {
           className="flex items-center gap-3 relative z-10"
           data-testid="link-logo"
         >
-          <div className="flex items-center gap-2">
-            <div
-              className="w-10 h-10 rounded-sm flex items-center justify-center font-serif font-bold text-xl text-white"
-              style={{ background: "hsl(38 92% 50%)" }}
-            >
-              S
-            </div>
-            <div className="flex flex-col leading-tight">
-              <span className={`font-serif font-bold text-base tracking-wider ${isScrolled ? "text-foreground" : "text-white drop-shadow-md"}`}>
-                {t("brand.name")}
-              </span>
-              <span className={`text-xs tracking-widest font-medium ${isScrolled ? "text-muted-foreground" : "text-white/70 drop-shadow-sm"}`}>
-                {t("brand.tagline")}
-              </span>
-            </div>
+          <img
+            src={`${import.meta.env.BASE_URL}brand/santech-logo.png`}
+            alt="Santech Trading Co."
+            className={`h-14 w-14 rounded-sm object-cover transition-all ${isScrolled ? "" : "ring-1 ring-white/20"}`}
+          />
+          <div className="hidden sm:flex flex-col leading-tight">
+            <span className={`font-serif font-bold text-base tracking-wider ${isScrolled ? "text-foreground" : "text-white drop-shadow-md"}`}>
+              {t("brand.name")}
+            </span>
+            <span className={`text-[10px] tracking-widest font-medium ${isScrolled ? "text-muted-foreground" : "text-white/70 drop-shadow-sm"}`}>
+              {t("brand.tagline")}
+            </span>
           </div>
         </a>
 
