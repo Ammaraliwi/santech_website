@@ -2,13 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Award, Users, Globe, Lightbulb } from "lucide-react";
-
-const stats = [
-  { value: "30+", label: "Years of Experience", icon: Award },
-  { value: "500+", label: "Projects Completed", icon: Users },
-  { value: "18+", label: "Premium Brand Partners", icon: Globe },
-  { value: "100%", label: "Customer Satisfaction Focus", icon: Lightbulb },
-];
+import { useI18n } from "@/lib/i18n";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -22,6 +16,14 @@ const fadeUp = {
 export default function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { t, dir } = useI18n();
+
+  const stats = [
+    { value: t("about.stat1.value"), label: t("about.stat1.label"), icon: Award },
+    { value: t("about.stat2.value"), label: t("about.stat2.label"), icon: Users },
+    { value: t("about.stat3.value"), label: t("about.stat3.label"), icon: Globe },
+    { value: t("about.stat4.value"), label: t("about.stat4.label"), icon: Lightbulb },
+  ];
 
   return (
     <section id="about" ref={ref} className="py-28 bg-background">
@@ -36,12 +38,12 @@ export default function About() {
               animate={isInView ? "visible" : "hidden"}
             >
               <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-4 border-b border-accent pb-1">
-                Who We Are
+                {t("about.eyebrow")}
               </span>
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground leading-tight">
-                Three Decades of{" "}
-                <span className="text-primary italic">Food Service</span>{" "}
-                Excellence
+                {t("about.title.1")}{" "}
+                <span className="text-primary italic">{t("about.title.2")}</span>{" "}
+                {t("about.title.3")}
               </h2>
             </motion.div>
 
@@ -52,10 +54,7 @@ export default function About() {
               animate={isInView ? "visible" : "hidden"}
               className="text-muted-foreground text-lg leading-relaxed"
             >
-              Santech Trading Co. was established in 2017 as the Syrian arm of
-              the Syrian House Group, bringing decades of food service expertise
-              from Sudan — where SHG has been a market leader since 1991 serving
-              pastry shops, restaurants, and gelato studios across Africa.
+              {t("about.p1")}
             </motion.p>
 
             <motion.p
@@ -65,13 +64,7 @@ export default function About() {
               animate={isInView ? "visible" : "hidden"}
               className="text-muted-foreground leading-relaxed"
             >
-              Based in Damascus, our mission is to be the trusted partner for
-              every food service professional in Syria and the wider Middle East.
-              We bring only premium, internationally certified equipment —
-              paired with end-to-end consultancy, AutoCAD kitchen design,
-              installation, and training. From a boutique patisserie to a
-              five-star hotel catering kitchen, we deliver world-class solutions
-              at every scale.
+              {t("about.p2")}
             </motion.p>
 
             <motion.div
@@ -83,7 +76,7 @@ export default function About() {
             >
               <div className="h-px flex-1 bg-border" />
               <span className="text-sm text-muted-foreground font-medium tracking-wider uppercase">
-                Part of Syrian House Group
+                {t("about.divider")}
               </span>
               <div className="h-px flex-1 bg-border" />
             </motion.div>
@@ -95,7 +88,7 @@ export default function About() {
               const Icon = stat.icon;
               return (
                 <motion.div
-                  key={stat.label}
+                  key={i}
                   custom={i}
                   variants={fadeUp}
                   initial="hidden"
@@ -103,7 +96,7 @@ export default function About() {
                   className="relative p-8 bg-card border border-border rounded-sm group hover:border-accent/50 hover:shadow-lg transition-all duration-300"
                   data-testid={`card-stat-${i}`}
                 >
-                  <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                  <div className={`absolute top-4 ${dir === "rtl" ? "left-4" : "right-4"} w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors`}>
                     <Icon className="w-4 h-4 text-accent" />
                   </div>
                   <div className="text-4xl font-serif font-bold text-primary mb-2">
@@ -136,17 +129,13 @@ export default function About() {
           </div>
           <div className="relative z-10 max-w-3xl">
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-3 inline-block">
-              In-House Design Studio
+              {t("about.callout.eyebrow")}
             </span>
             <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4">
-              Professional AutoCAD Kitchen Design
+              {t("about.callout.title")}
             </h3>
             <p className="text-primary-foreground/75 leading-relaxed">
-              Our in-house design team uses professional AutoCAD systems to
-              prepare precise kitchen layouts tailored to every client's
-              requirements — from spatial planning to equipment positioning and
-              workflow optimization. Every detail matters when designing the
-              heart of a food operation.
+              {t("about.callout.text")}
             </p>
           </div>
         </motion.div>

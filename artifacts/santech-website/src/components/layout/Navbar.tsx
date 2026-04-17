@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useI18n } from "@/lib/i18n";
+import LangToggle from "@/components/LangToggle";
+
 const navItems = [
-  { label: "Home", href: "#hero" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Partners", href: "#partners" },
-  { label: "Contact", href: "#contact" },
+  { key: "nav.home", href: "#hero" },
+  { key: "nav.about", href: "#about" },
+  { key: "nav.services", href: "#services" },
+  { key: "nav.partners", href: "#partners" },
+  { key: "nav.contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useI18n();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,8 +41,8 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
-        <a 
-          href="#hero" 
+        <a
+          href="#hero"
           onClick={(e) => scrollToSection(e, "#hero")}
           className="flex items-center gap-3 relative z-10"
           data-testid="link-logo"
@@ -52,10 +56,10 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col leading-tight">
               <span className={`font-serif font-bold text-base tracking-wider ${isScrolled ? "text-foreground" : "text-white drop-shadow-md"}`}>
-                SANTECH
+                {t("brand.name")}
               </span>
               <span className={`text-xs tracking-widest font-medium ${isScrolled ? "text-muted-foreground" : "text-white/70 drop-shadow-sm"}`}>
-                TRADING CO.
+                {t("brand.tagline")}
               </span>
             </div>
           </div>
@@ -65,42 +69,46 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
             <a
-              key={item.label}
+              key={item.key}
               href={item.href}
               onClick={(e) => scrollToSection(e, item.href)}
               className={`text-sm font-medium tracking-wide transition-colors hover:text-accent ${
                 isScrolled ? "text-foreground" : "text-white drop-shadow-md hover:text-accent"
               }`}
-              data-testid={`link-nav-${item.label.toLowerCase()}`}
+              data-testid={`link-nav-${item.key}`}
             >
-              {item.label}
+              {t(item.key)}
             </a>
           ))}
-          <Button 
+          <LangToggle inverted={!isScrolled} />
+          <Button
             onClick={(e) => {
               // @ts-ignore
               scrollToSection(e, "#contact");
             }}
-            variant={isScrolled ? "default" : "outline"} 
+            variant={isScrolled ? "default" : "outline"}
             className={!isScrolled ? "bg-white/10 text-white border-white/30 hover:bg-white hover:text-primary backdrop-blur-sm" : ""}
             data-testid="button-nav-contact"
           >
-            Get a Quote
+            {t("nav.cta")}
           </Button>
         </nav>
 
         {/* Mobile Menu Toggle */}
-        <button
-          className="md:hidden relative z-10 p-2"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          data-testid="button-mobile-menu"
-        >
-          {mobileMenuOpen ? (
-            <X className={isScrolled ? "text-foreground" : "text-white"} />
-          ) : (
-            <Menu className={isScrolled ? "text-foreground" : "text-white"} />
-          )}
-        </button>
+        <div className="md:hidden flex items-center gap-2 relative z-10">
+          <LangToggle inverted={!isScrolled && !mobileMenuOpen} testId="button-lang-toggle-mobile" />
+          <button
+            className="p-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            data-testid="button-mobile-menu"
+          >
+            {mobileMenuOpen ? (
+              <X className={isScrolled ? "text-foreground" : "text-white"} />
+            ) : (
+              <Menu className={isScrolled ? "text-foreground" : "text-white"} />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav */}
@@ -112,24 +120,24 @@ export default function Navbar() {
         <div className="flex flex-col gap-6 items-center text-center">
           {navItems.map((item) => (
             <a
-              key={item.label}
+              key={item.key}
               href={item.href}
               onClick={(e) => scrollToSection(e, item.href)}
               className="text-2xl font-serif text-foreground hover:text-accent transition-colors"
-              data-testid={`link-mobile-nav-${item.label.toLowerCase()}`}
+              data-testid={`link-mobile-nav-${item.key}`}
             >
-              {item.label}
+              {t(item.key)}
             </a>
           ))}
-          <Button 
-            className="mt-6 w-full max-w-xs" 
+          <Button
+            className="mt-6 w-full max-w-xs"
             size="lg"
             onClick={(e) => {
               // @ts-ignore
               scrollToSection(e, "#contact");
             }}
           >
-            Get a Quote
+            {t("nav.cta")}
           </Button>
         </div>
       </div>

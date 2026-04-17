@@ -9,45 +9,7 @@ import {
   GraduationCap,
   HeartHandshake,
 } from "lucide-react";
-
-const services = [
-  {
-    icon: Compass,
-    title: "Consultancy & Planning",
-    description:
-      "Expert guidance from concept to completion. We analyze your space, workflow, budget, and operational needs to design the optimal food service solution.",
-  },
-  {
-    icon: PenTool,
-    title: "AutoCAD Kitchen Design",
-    description:
-      "Professional computerized kitchen layouts drawn to precise specifications. Every dimension, equipment placement, and flow pattern is optimized before procurement begins.",
-  },
-  {
-    icon: Package,
-    title: "Equipment Supply",
-    description:
-      "Direct access to 18+ premium international brands — Electrolux, Carpigiani, LaCimbali, UNOX, and more. We source only certified, industry-grade equipment.",
-  },
-  {
-    icon: Wrench,
-    title: "Installation & Commissioning",
-    description:
-      "Full professional installation by trained technicians. Every machine is commissioned, tested, and calibrated to manufacturer specifications before handover.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Training & Certification",
-    description:
-      "Hands-on operational training for your team in partnership with our international suppliers. Your staff learns directly from the experts who built the equipment.",
-  },
-  {
-    icon: HeartHandshake,
-    title: "After-Sales Support",
-    description:
-      "Long-term partnership beyond the sale. Maintenance programs, spare parts availability, and technical support to keep your kitchen at peak performance.",
-  },
-];
+import { useI18n } from "@/lib/i18n";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -61,6 +23,16 @@ const fadeUp = {
 export default function Services() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const { t } = useI18n();
+
+  const services = [
+    { icon: Compass, title: t("services.1.title"), description: t("services.1.desc") },
+    { icon: PenTool, title: t("services.2.title"), description: t("services.2.desc") },
+    { icon: Package, title: t("services.3.title"), description: t("services.3.desc") },
+    { icon: Wrench, title: t("services.4.title"), description: t("services.4.desc") },
+    { icon: GraduationCap, title: t("services.5.title"), description: t("services.5.desc") },
+    { icon: HeartHandshake, title: t("services.6.title"), description: t("services.6.desc") },
+  ];
 
   return (
     <section
@@ -87,12 +59,12 @@ export default function Services() {
             animate={isInView ? "visible" : "hidden"}
           >
             <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-4 border-b border-accent pb-1">
-              What We Do
+              {t("services.eyebrow")}
             </span>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground leading-tight">
-              End-to-End{" "}
-              <span className="text-primary italic">Food Service</span>{" "}
-              Solutions
+              {t("services.title.1")}{" "}
+              <span className="text-primary italic">{t("services.title.2")}</span>{" "}
+              {t("services.title.3")}
             </h2>
           </motion.div>
           <motion.p
@@ -102,9 +74,7 @@ export default function Services() {
             animate={isInView ? "visible" : "hidden"}
             className="mt-6 text-muted-foreground text-lg leading-relaxed"
           >
-            From the first consultation sketch to long-term support, Santech
-            delivers a complete ecosystem of professional services — so you
-            never have to manage multiple vendors.
+            {t("services.intro")}
           </motion.p>
         </div>
 
@@ -114,7 +84,7 @@ export default function Services() {
             const Icon = service.icon;
             return (
               <motion.div
-                key={service.title}
+                key={i}
                 custom={i}
                 variants={fadeUp}
                 initial="hidden"

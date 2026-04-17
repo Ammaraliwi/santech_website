@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { useI18n } from "@/lib/i18n";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -29,6 +30,7 @@ export default function Contact() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const { t, dir } = useI18n();
   const [form, setForm] = useState<FormData>({
     name: "",
     email: "",
@@ -69,16 +71,14 @@ export default function Contact() {
               animate={isInView ? "visible" : "hidden"}
             >
               <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-4 border-b border-accent pb-1">
-                Get In Touch
+                {t("contact.eyebrow")}
               </span>
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground leading-tight">
-                Let's Build Your{" "}
-                <span className="text-primary italic">Perfect Kitchen</span>
+                {t("contact.title.1")}{" "}
+                <span className="text-primary italic">{t("contact.title.2")}</span>
               </h2>
               <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
-                Whether you're opening a new restaurant, expanding your hotel
-                catering, or upgrading your pastry studio — our team is ready
-                to consult, design, and supply.
+                {t("contact.intro")}
               </p>
             </motion.div>
 
@@ -94,11 +94,9 @@ export default function Contact() {
                   <MapPin className="w-4 h-4 text-accent" />
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground mb-1">Address</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    Mazzeh Autostrada, 2/6 Complex
-                    <br />
-                    Damascus, Syria
+                  <p className="font-semibold text-foreground mb-1">{t("contact.label.address")}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line">
+                    {t("contact.address")}
                   </p>
                 </div>
               </div>
@@ -108,11 +106,12 @@ export default function Contact() {
                   <Phone className="w-4 h-4 text-accent" />
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground mb-1">Phone</p>
+                  <p className="font-semibold text-foreground mb-1">{t("contact.label.phone")}</p>
                   <a
                     href="tel:+963116644888"
                     className="block text-muted-foreground text-sm hover:text-accent transition-colors"
                     data-testid="link-phone-main"
+                    dir="ltr"
                   >
                     +963 11 6644 888
                   </a>
@@ -120,6 +119,7 @@ export default function Contact() {
                     href="tel:+963988820109"
                     className="block text-muted-foreground text-sm hover:text-accent transition-colors"
                     data-testid="link-phone-mobile"
+                    dir="ltr"
                   >
                     +963 9888 20109
                   </a>
@@ -131,11 +131,12 @@ export default function Contact() {
                   <Mail className="w-4 h-4 text-accent" />
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground mb-1">Email</p>
+                  <p className="font-semibold text-foreground mb-1">{t("contact.label.email")}</p>
                   <a
                     href="mailto:info@santech-srl.com"
                     className="block text-muted-foreground text-sm hover:text-accent transition-colors"
                     data-testid="link-email-info"
+                    dir="ltr"
                   >
                     info@santech-srl.com
                   </a>
@@ -143,6 +144,7 @@ export default function Contact() {
                     href="mailto:sales@santech-srl.com"
                     className="block text-muted-foreground text-sm hover:text-accent transition-colors"
                     data-testid="link-email-sales"
+                    dir="ltr"
                   >
                     sales@santech-srl.com
                   </a>
@@ -160,15 +162,16 @@ export default function Contact() {
               data-testid="card-gm"
             >
               <p className="text-xs text-primary-foreground/60 uppercase tracking-widest mb-2">
-                General Manager
+                {t("contact.gm.label")}
               </p>
               <p className="font-serif font-semibold text-lg">
-                Dr. Ahmed Wasil Mongid
+                {t("contact.gm.name")}
               </p>
               <a
                 href="mailto:dr.a.wasil@santech-srl.com"
                 className="text-accent text-sm hover:text-white transition-colors"
                 data-testid="link-gm-email"
+                dir="ltr"
               >
                 dr.a.wasil@santech-srl.com
               </a>
@@ -186,11 +189,10 @@ export default function Contact() {
               <div className="h-full flex flex-col items-center justify-center text-center p-12 bg-card border border-border rounded-sm" data-testid="success-message">
                 <CheckCircle className="w-16 h-16 text-accent mb-6" />
                 <h3 className="text-2xl font-serif font-bold text-foreground mb-3">
-                  Message Received
+                  {t("form.success.title")}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Thank you for reaching out. A member of our team will respond
-                  within one business day.
+                  {t("form.success.text")}
                 </p>
               </div>
             ) : (
@@ -202,7 +204,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="name" className="text-xs font-semibold tracking-wider uppercase text-muted-foreground">
-                      Full Name *
+                      {t("form.name")}
                     </Label>
                     <Input
                       id="name"
@@ -210,21 +212,21 @@ export default function Contact() {
                       required
                       value={form.name}
                       onChange={handleChange}
-                      placeholder="John Smith"
+                      placeholder={t("form.name.ph")}
                       className="rounded-sm"
                       data-testid="input-name"
                     />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="company" className="text-xs font-semibold tracking-wider uppercase text-muted-foreground">
-                      Company
+                      {t("form.company")}
                     </Label>
                     <Input
                       id="company"
                       name="company"
                       value={form.company}
                       onChange={handleChange}
-                      placeholder="Restaurant / Hotel Name"
+                      placeholder={t("form.company.ph")}
                       className="rounded-sm"
                       data-testid="input-company"
                     />
@@ -234,7 +236,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="email" className="text-xs font-semibold tracking-wider uppercase text-muted-foreground">
-                      Email *
+                      {t("form.email")}
                     </Label>
                     <Input
                       id="email"
@@ -243,14 +245,15 @@ export default function Contact() {
                       required
                       value={form.email}
                       onChange={handleChange}
-                      placeholder="you@company.com"
+                      placeholder={t("form.email.ph")}
                       className="rounded-sm"
                       data-testid="input-email"
+                      dir="ltr"
                     />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone" className="text-xs font-semibold tracking-wider uppercase text-muted-foreground">
-                      Phone
+                      {t("form.phone")}
                     </Label>
                     <Input
                       id="phone"
@@ -258,16 +261,17 @@ export default function Contact() {
                       type="tel"
                       value={form.phone}
                       onChange={handleChange}
-                      placeholder="+963 ..."
+                      placeholder={t("form.phone.ph")}
                       className="rounded-sm"
                       data-testid="input-phone"
+                      dir="ltr"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="message" className="text-xs font-semibold tracking-wider uppercase text-muted-foreground">
-                    Message *
+                    {t("form.message")}
                   </Label>
                   <Textarea
                     id="message"
@@ -275,7 +279,7 @@ export default function Contact() {
                     required
                     value={form.message}
                     onChange={handleChange}
-                    placeholder="Tell us about your project — type of establishment, scale, specific equipment needs, timeline..."
+                    placeholder={t("form.message.ph")}
                     rows={5}
                     className="rounded-sm resize-none"
                     data-testid="input-message"
@@ -290,17 +294,17 @@ export default function Contact() {
                   data-testid="button-submit"
                 >
                   {loading ? (
-                    "Sending..."
+                    t("form.submit.loading")
                   ) : (
                     <>
-                      Send Message
-                      <Send className="ml-2 w-4 h-4" />
+                      {t("form.submit")}
+                      <Send className={`w-4 h-4 ${dir === "rtl" ? "mr-2 rotate-180" : "ml-2"}`} />
                     </>
                   )}
                 </Button>
 
                 <p className="text-xs text-muted-foreground text-center">
-                  We typically respond within 24 hours on business days.
+                  {t("form.disclaimer")}
                 </p>
               </form>
             )}

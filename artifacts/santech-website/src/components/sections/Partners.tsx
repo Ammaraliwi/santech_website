@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import brandBannerPath from "@assets/image_1776430628821.png";
+import { useI18n } from "@/lib/i18n";
 
 const brands = [
   { name: "Electrolux Professional", category: "Commercial Kitchen & Laundry" },
@@ -24,15 +24,6 @@ const brands = [
   { name: "STARMIX", category: "Industrial Planetary Mixers" },
 ];
 
-const categories = [
-  "Gelato & Ice Cream",
-  "Professional Baking",
-  "Coffee Systems",
-  "Refrigeration",
-  "Food Processing",
-  "Kitchen Workflow",
-];
-
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
@@ -45,6 +36,16 @@ const fadeUp = {
 export default function Partners() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const { t, lang } = useI18n();
+
+  const categories = [
+    t("partners.cat.1"),
+    t("partners.cat.2"),
+    t("partners.cat.3"),
+    t("partners.cat.4"),
+    t("partners.cat.5"),
+    t("partners.cat.6"),
+  ];
 
   return (
     <section id="partners" ref={ref} className="py-28 bg-background">
@@ -58,11 +59,11 @@ export default function Partners() {
             animate={isInView ? "visible" : "hidden"}
           >
             <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-4 border-b border-accent pb-1">
-              Our Partners
+              {t("partners.eyebrow")}
             </span>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground leading-tight">
-              World-Class Brands,{" "}
-              <span className="text-primary italic">One Trusted Partner</span>
+              {t("partners.title.1")}{" "}
+              <span className="text-primary italic">{t("partners.title.2")}</span>
             </h2>
           </motion.div>
           <motion.p
@@ -72,28 +73,9 @@ export default function Partners() {
             animate={isInView ? "visible" : "hidden"}
             className="mt-6 text-muted-foreground text-lg leading-relaxed"
           >
-            We are the authorized distributor for 18+ premium international
-            equipment manufacturers — each selected for their uncompromising
-            quality, innovation, and service standards.
+            {t("partners.intro")}
           </motion.p>
         </div>
-
-        {/* Brand banner image */}
-        <motion.div
-          custom={2}
-          variants={fadeUp}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="mb-16 border border-border rounded-sm overflow-hidden shadow-sm"
-          data-testid="img-brand-banner"
-        >
-          <img
-            src={brandBannerPath}
-            alt="Santech Brand Partners"
-            className="w-full object-cover object-bottom"
-            style={{ objectPosition: "0 100%", maxHeight: "120px" }}
-          />
-        </motion.div>
 
         {/* Category pills */}
         <motion.div
@@ -114,8 +96,8 @@ export default function Partners() {
           ))}
         </motion.div>
 
-        {/* Brands grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-px bg-border">
+        {/* Brands grid — brand names stay in original (international) form */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-px bg-border" dir="ltr">
           {brands.map((brand, i) => (
             <motion.div
               key={brand.name}
@@ -150,7 +132,7 @@ export default function Partners() {
           className="mt-16 text-center"
         >
           <p className="text-muted-foreground text-base">
-            Not sure which brand fits your needs?{" "}
+            {t("partners.cta.text")}{" "}
             <a
               href="#contact"
               onClick={(e) => {
@@ -161,8 +143,9 @@ export default function Partners() {
               }}
               className="text-accent font-semibold hover:underline underline-offset-4 transition-colors"
               data-testid="link-partners-cta"
+              lang={lang}
             >
-              Talk to our specialists.
+              {t("partners.cta.link")}
             </a>
           </p>
         </motion.div>
