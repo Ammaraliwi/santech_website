@@ -89,16 +89,23 @@ export default function Services() {
                 variants={fadeUp}
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
-                className="bg-background p-8 group hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default"
+                className="relative bg-background p-8 group hover:bg-primary hover:text-primary-foreground transition-all duration-500 cursor-default overflow-hidden"
                 data-testid={`card-service-${i}`}
               >
-                <div className="w-12 h-12 rounded-sm bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-                  <Icon className="w-5 h-5 text-accent" />
+                {/* Top accent stripe — grows on hover */}
+                <span className="absolute top-0 start-0 h-[3px] w-12 bg-accent transition-all duration-500 group-hover:w-full" />
+                {/* Faint number watermark */}
+                <span className="absolute -bottom-4 end-4 text-[110px] font-serif font-bold leading-none text-foreground/[0.04] group-hover:text-white/10 transition-colors duration-500 select-none pointer-events-none">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+
+                <div className="relative w-14 h-14 rounded-md bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-500">
+                  <Icon className="w-6 h-6 text-accent group-hover:text-white transition-colors" strokeWidth={1.75} />
                 </div>
-                <h3 className="text-xl font-serif font-semibold mb-3 text-foreground group-hover:text-primary-foreground transition-colors">
+                <h3 className="relative text-xl font-serif font-semibold mb-3 text-foreground group-hover:text-primary-foreground transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed group-hover:text-primary-foreground/70 transition-colors">
+                <p className="relative text-muted-foreground text-sm leading-relaxed group-hover:text-primary-foreground/75 transition-colors">
                   {service.description}
                 </p>
               </motion.div>

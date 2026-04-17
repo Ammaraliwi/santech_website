@@ -25,6 +25,28 @@ const en: Dict = {
   "hero.cta.secondary": "Discover Santech",
   "hero.scroll": "Scroll",
 
+  // Trust Bar
+  "trust.heritage": "Established",
+  "trust.brands": "Premium Brands",
+  "trust.projects": "Kitchens Delivered",
+  "trust.italian": "European Quality",
+
+  // Why Us
+  "why.eyebrow": "Why Santech",
+  "why.title.1": "The Santech",
+  "why.title.2": "Difference",
+  "why.intro": "Five reasons leading hotels, restaurants, and patisseries across Syria and the Middle East trust us with the heart of their business.",
+  "why.1.title": "Italian Excellence, Local Expertise",
+  "why.1.desc": "Direct partnerships with Italy's most prestigious manufacturers, paired with deep regional knowledge of Syrian and Middle Eastern food service operations.",
+  "why.2.title": "Single-Source Accountability",
+  "why.2.desc": "From design to commissioning, one trusted team owns the project. No finger-pointing between vendors — just clear accountability and seamless delivery.",
+  "why.3.title": "Three Decades of Heritage",
+  "why.3.desc": "Backed by Syrian House Group's 30+ years pioneering food service excellence across Africa and the Middle East. Our track record speaks for itself.",
+  "why.4.title": "AutoCAD Precision Design",
+  "why.4.desc": "Every project starts with engineered drawings — no guesswork. Our in-house CAD studio optimizes every centimeter for workflow, hygiene, and performance.",
+  "why.5.title": "Long-Term Partnership",
+  "why.5.desc": "We don't disappear after delivery. Spare parts, scheduled maintenance, staff training, and 24/7 support keep your operation running flawlessly for years.",
+
   // About
   "about.eyebrow": "Who We Are",
   "about.title.1": "Three Decades of",
@@ -134,6 +156,28 @@ const ar: Dict = {
   "hero.cta.primary": "اطلب استشارة",
   "hero.cta.secondary": "اكتشف سانتك",
   "hero.scroll": "اسحب للأسفل",
+
+  // Trust Bar
+  "trust.heritage": "تأسست عام",
+  "trust.brands": "علامة تجارية عالمية",
+  "trust.projects": "مطبخ تم تجهيزه",
+  "trust.italian": "جودة أوروبية",
+
+  // Why Us
+  "why.eyebrow": "لماذا سانتك",
+  "why.title.1": "الفرق",
+  "why.title.2": "مع سانتك",
+  "why.intro": "خمسة أسباب تجعل أبرز الفنادق والمطاعم ومحلات الحلويات في سوريا والشرق الأوسط يثقون بنا في قلب أعمالهم.",
+  "why.1.title": "تميز إيطالي وخبرة محلية",
+  "why.1.desc": "شراكات مباشرة مع أعرق المصنعين الإيطاليين، مقترنة بمعرفة عميقة بأسواق الخدمات الغذائية في سوريا والشرق الأوسط.",
+  "why.2.title": "مسؤولية موحدة من نقطة واحدة",
+  "why.2.desc": "من التصميم إلى التشغيل، فريق واحد موثوق يدير المشروع بأكمله. لا تشتيت بين موردين متعددين، بل مسؤولية واضحة وتنفيذ سلس.",
+  "why.3.title": "إرث ثلاثة عقود",
+  "why.3.desc": "مدعومون بأكثر من 30 عاماً من ريادة مجموعة البيت السوري في خدمات الأغذية عبر أفريقيا والشرق الأوسط. سجلنا يتحدث عن نفسه.",
+  "why.4.title": "تصميم AutoCAD احترافي",
+  "why.4.desc": "كل مشروع يبدأ برسومات هندسية دقيقة — لا مكان للتخمين. استوديو التصميم لدينا يحسّن كل سنتيمتر لتحقيق أفضل أداء وكفاءة.",
+  "why.5.title": "شراكة طويلة الأمد",
+  "why.5.desc": "لا نختفي بعد التسليم. قطع الغيار، الصيانة الدورية، تدريب الكوادر، ودعم على مدار الساعة لضمان استمرار عملك بكفاءة لسنوات.",
 
   // About
   "about.eyebrow": "من نحن",
