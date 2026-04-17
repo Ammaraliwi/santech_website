@@ -1,0 +1,94 @@
+2026-04-17T15:50:14.274128Z	Cloning repository...
+2026-04-17T15:50:16.591682Z	From https://github.com/Ammaraliwi/santech_website
+2026-04-17T15:50:16.592076Z	 * branch            67f3e929900aec2110dbbd951afc7219a6e48101 -> FETCH_HEAD
+2026-04-17T15:50:16.59215Z	
+2026-04-17T15:50:16.722932Z	HEAD is now at 67f3e92 Update website build configuration to fix deployment issues
+2026-04-17T15:50:16.723353Z	
+2026-04-17T15:50:16.766506Z	
+2026-04-17T15:50:16.76708Z	Using v2 root directory strategy
+2026-04-17T15:50:16.78098Z	Success: Finished cloning repository files
+2026-04-17T15:50:18.694172Z	Checking for configuration in a Wrangler configuration file (BETA)
+2026-04-17T15:50:18.694539Z	
+2026-04-17T15:50:19.785445Z	No Wrangler configuration file found. Continuing.
+2026-04-17T15:50:19.984203Z	Detected the following tools from environment: nodejs@20.20.0, pnpm@10.11.1
+2026-04-17T15:50:19.98466Z	Installing nodejs 20.20.0
+2026-04-17T15:50:21.091844Z	Trying to update node-build... ok
+2026-04-17T15:50:21.151444Z	To follow progress, use 'tail -f /tmp/node-build.20260417155021.803.log' or pass --verbose
+2026-04-17T15:50:21.201445Z	Downloading node-v20.20.0-linux-x64.tar.gz...
+2026-04-17T15:50:21.488516Z	-> https://nodejs.org/dist/v20.20.0/node-v20.20.0-linux-x64.tar.gz
+2026-04-17T15:50:23.695727Z	
+2026-04-17T15:50:23.696009Z	WARNING: node-v20.20.0-linux-x64 is in LTS Maintenance mode and nearing its end of life.
+2026-04-17T15:50:23.696066Z	It only receives *critical* security updates, *critical* bug fixes and documentation updates.
+2026-04-17T15:50:23.696114Z	
+2026-04-17T15:50:23.696171Z	Installing node-v20.20.0-linux-x64...
+2026-04-17T15:50:24.214335Z	Installed node-v20.20.0-linux-x64 to /opt/buildhome/.asdf/installs/nodejs/20.20.0
+2026-04-17T15:50:24.214643Z	
+2026-04-17T15:50:25.533462Z	
+2026-04-17T15:50:25.533924Z	changed 1 package in 579ms
+2026-04-17T15:50:25.541246Z	Reshimming asdf nodejs...
+2026-04-17T15:50:27.489345Z	Preparing pnpm@10.11.1 for immediate activation...
+2026-04-17T15:50:28.391327Z	Installing project dependencies: pnpm install
+2026-04-17T15:50:28.964746Z	Scope: all 9 workspace projects
+2026-04-17T15:50:29.049267Z	Lockfile is up to date, resolution step is skipped
+2026-04-17T15:50:29.106648Z	Progress: resolved 1, reused 0, downloaded 0, added 0
+2026-04-17T15:50:29.213653Z	Packages: +486
+2026-04-17T15:50:29.215585Z	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2026-04-17T15:50:30.107798Z	Progress: resolved 486, reused 0, downloaded 59, added 1
+2026-04-17T15:50:31.108579Z	Progress: resolved 486, reused 0, downloaded 121, added 23
+2026-04-17T15:50:32.113183Z	Progress: resolved 486, reused 0, downloaded 211, added 68
+2026-04-17T15:50:33.109433Z	Progress: resolved 486, reused 0, downloaded 303, added 110
+2026-04-17T15:50:34.117577Z	Progress: resolved 486, reused 0, downloaded 392, added 298
+2026-04-17T15:50:35.117813Z	Progress: resolved 486, reused 0, downloaded 484, added 484
+2026-04-17T15:50:35.568717Z	Progress: resolved 486, reused 0, downloaded 486, added 486, done
+2026-04-17T15:50:35.801069Z	.../esbuild@0.27.3/node_modules/esbuild postinstall$ node install.js
+2026-04-17T15:50:35.894039Z	.../esbuild@0.27.3/node_modules/esbuild postinstall: Done
+2026-04-17T15:50:36.16261Z	
+2026-04-17T15:50:36.162964Z	devDependencies:
+2026-04-17T15:50:36.163054Z	+ prettier 3.8.1
+2026-04-17T15:50:36.163185Z	+ typescript 5.9.3
+2026-04-17T15:50:36.163355Z	
+2026-04-17T15:50:36.21089Z	. preinstall$ sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+2026-04-17T15:50:36.230707Z	. preinstall: Done
+2026-04-17T15:50:36.448901Z	Done in 7.8s using pnpm v10.11.1
+2026-04-17T15:50:36.508254Z	Executing user command: pnpm install && pnpm --filter @workspace/santech-website build
+2026-04-17T15:50:37.064583Z	Scope: all 9 workspace projects
+2026-04-17T15:50:37.140944Z	Lockfile is up to date, resolution step is skipped
+2026-04-17T15:50:37.203322Z	Already up to date
+2026-04-17T15:50:38.18799Z	
+2026-04-17T15:50:38.236908Z	. preinstall$ sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+2026-04-17T15:50:38.249127Z	. preinstall: Done
+2026-04-17T15:50:38.381803Z	Done in 1.6s using pnpm v10.11.1
+2026-04-17T15:50:38.994653Z	
+2026-04-17T15:50:38.995068Z	> @workspace/santech-website@0.0.0 build /opt/buildhome/repo/artifacts/santech-website
+2026-04-17T15:50:38.995246Z	> vite build --config vite.config.ts
+2026-04-17T15:50:38.995362Z	
+2026-04-17T15:50:39.405294Z	[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+2026-04-17T15:50:39.479626Z	transforming...
+2026-04-17T15:50:39.962016Z	[33msrc/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.[39m
+2026-04-17T15:50:42.008699Z	[33msrc/components/ui/label.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.[39m
+2026-04-17T15:50:43.455817Z	[32m✓[39m 2195 modules transformed.
+2026-04-17T15:50:43.946713Z	rendering chunks...
+2026-04-17T15:50:43.958949Z	computing gzip size...
+2026-04-17T15:50:43.97819Z	[2mdist/public/[22m[32mindex.html                                                                 [39m[1m[2m    0.80 kB[22m[1m[22m[2m │ gzip:   0.43 kB[22m
+2026-04-17T15:50:43.978412Z	[2mdist/public/[22m[2massets/[22m[32mChatGPT_Image_Apr_17__2026__05_23_30_PM_1776435833445-ArpotQUs.png  [39m[1m[2m2,217.73 kB[22m[1m[22m
+2026-04-17T15:50:43.978474Z	[2mdist/public/[22m[2massets/[22m[35mindex-BSDhhF7f.css                                                  [39m[1m[2m  135.81 kB[22m[1m[22m[2m │ gzip:  20.40 kB[22m
+2026-04-17T15:50:43.978527Z	[2mdist/public/[22m[2massets/[22m[36mindex-CFV-oW6Y.js                                                   [39m[1m[33m  572.30 kB[39m[22m[2m │ gzip: 175.27 kB[22m
+2026-04-17T15:50:43.978597Z	[32m✓ built in 4.53s[39m
+2026-04-17T15:50:43.979048Z	[33m
+2026-04-17T15:50:43.979198Z	(!) Some chunks are larger than 500 kB after minification. Consider:
+2026-04-17T15:50:43.979322Z	- Using dynamic import() to code-split the application
+2026-04-17T15:50:43.979385Z	- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+2026-04-17T15:50:43.979423Z	- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+2026-04-17T15:50:44.069828Z	Finished
+2026-04-17T15:50:44.75497Z	Checking for configuration in a Wrangler configuration file (BETA)
+2026-04-17T15:50:44.755477Z	
+2026-04-17T15:50:45.84639Z	No Wrangler configuration file found. Continuing.
+2026-04-17T15:50:45.847321Z	Note: No functions dir at /functions found. Skipping.
+2026-04-17T15:50:45.847423Z	Validating asset output directory
+2026-04-17T15:50:48.91819Z	Deploying your site to Cloudflare's global network...
+2026-04-17T15:50:51.745365Z	Uploading... (12/12)
+2026-04-17T15:50:51.746407Z	✨ Success! Uploaded 0 files (12 already uploaded) (0.40 sec)
+2026-04-17T15:50:51.746657Z	
+2026-04-17T15:50:52.3166Z	✨ Upload complete!
+2026-04-17T15:50:56.319997Z	Success: Assets published!
+2026-04-17T15:50:59.177119Z	Success: Your site was deployed!
