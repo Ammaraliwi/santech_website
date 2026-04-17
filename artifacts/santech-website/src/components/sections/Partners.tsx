@@ -1,27 +1,35 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { ExternalLink } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
-const brands = [
-  { name: "Electrolux Professional", category: "Commercial Kitchen & Laundry" },
-  { name: "Carpigiani", category: "Gelato & Ice Cream Machines" },
-  { name: "ISA", category: "Refrigerated Display Cases" },
-  { name: "Mondial Forni", category: "Professional Ovens" },
-  { name: "SilikoMart Professional", category: "Pastry Molds & Tools" },
-  { name: "Martellato", category: "Pastry & Chocolate Equipment" },
-  { name: "LaCimbali", category: "Espresso Coffee Machines" },
-  { name: "UNOX", category: "Combi Ovens" },
-  { name: "Flamic", category: "Bakery & Pastry Machines" },
-  { name: "StarMix", category: "Planetary Mixers" },
-  { name: "Robot Coupe", category: "Food Processing Equipment" },
-  { name: "ORION", category: "Catering Equipment" },
-  { name: "EUROPA", category: "Bread, Pastry & Pizza Ovens" },
-  { name: "Coldline", category: "Refrigeration Solutions" },
-  { name: "Waring Commercial", category: "Commercial Blenders & Mixers" },
-  { name: "Ice-Tek", category: "Ice Makers" },
-  { name: "Minerva Omega Group", category: "Food Processing & Preservation" },
-  { name: "STARMIX", category: "Industrial Planetary Mixers" },
+interface Brand {
+  name: string;
+  category: string;
+  domain: string;
+  website: string;
+}
+
+const brands: Brand[] = [
+  { name: "Electrolux Professional", category: "Commercial Kitchen & Laundry", domain: "electroluxprofessional.com", website: "https://www.electroluxprofessional.com" },
+  { name: "Carpigiani", category: "Gelato & Ice Cream Machines", domain: "carpigiani.com", website: "https://www.carpigiani.com" },
+  { name: "ISA", category: "Refrigerated Display Cases", domain: "isaitaly.com", website: "https://www.isaitaly.com" },
+  { name: "Mondial Forni", category: "Professional Ovens", domain: "mondialforni.com", website: "https://www.mondialforni.com" },
+  { name: "SilikoMart Professional", category: "Pastry Molds & Tools", domain: "silikomart.com", website: "https://www.silikomart.com" },
+  { name: "Martellato", category: "Pastry & Chocolate Equipment", domain: "martellato.com", website: "https://www.martellato.com" },
+  { name: "LaCimbali", category: "Espresso Coffee Machines", domain: "lacimbali.com", website: "https://www.lacimbali.com" },
+  { name: "UNOX", category: "Combi Ovens", domain: "unox.com", website: "https://www.unox.com" },
+  { name: "Flamic", category: "Bakery & Pastry Machines", domain: "flamic.it", website: "https://www.flamic.it" },
+  { name: "StarMix", category: "Planetary Mixers", domain: "starmix.it", website: "https://www.starmix.it" },
+  { name: "Robot Coupe", category: "Food Processing Equipment", domain: "robot-coupe.com", website: "https://www.robot-coupe.com" },
+  { name: "Orion", category: "Catering Equipment", domain: "orionidf.com", website: "https://www.orionidf.com" },
+  { name: "Europa", category: "Bread, Pastry & Pizza Ovens", domain: "europa-srl.it", website: "https://www.europa-srl.it" },
+  { name: "Coldline", category: "Refrigeration Solutions", domain: "coldline.it", website: "https://www.coldline.it" },
+  { name: "Waring Commercial", category: "Commercial Blenders & Mixers", domain: "waringcommercialproducts.com", website: "https://www.waringcommercialproducts.com" },
+  { name: "Ice-Tek", category: "Ice Makers", domain: "ice-tek.com", website: "https://www.ice-tek.com" },
+  { name: "Minerva Omega Group", category: "Food Processing & Preservation", domain: "minervaomegagroup.com", website: "https://www.minervaomegagroup.com" },
+  { name: "Bertos", category: "Professional Cooking Equipment", domain: "bertos.it", website: "https://www.bertos.it" },
 ];
 
 const fadeUp = {
@@ -29,9 +37,31 @@ const fadeUp = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, delay: i * 0.06, ease: "easeOut" },
+    transition: { duration: 0.55, delay: Math.min(i * 0.04, 0.6), ease: "easeOut" },
   }),
 };
+
+function BrandLogo({ brand }: { brand: Brand }) {
+  const [imgError, setImgError] = useState(false);
+
+  return (
+    <div className="w-16 h-16 rounded-sm bg-accent/5 group-hover:bg-white flex items-center justify-center transition-colors duration-300 overflow-hidden border border-border/50 group-hover:border-accent/40">
+      {!imgError ? (
+        <img
+          src={`https://www.google.com/s2/favicons?domain=${brand.domain}&sz=128`}
+          alt={`${brand.name} logo`}
+          className="w-10 h-10 object-contain"
+          onError={() => setImgError(true)}
+          loading="lazy"
+        />
+      ) : (
+        <span className="text-accent font-serif font-bold text-2xl group-hover:text-primary transition-colors">
+          {brand.name.charAt(0)}
+        </span>
+      )}
+    </div>
+  );
+}
 
 export default function Partners() {
   const ref = useRef(null);
@@ -99,27 +129,31 @@ export default function Partners() {
         {/* Brands grid — brand names stay in original (international) form */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-px bg-border" dir="ltr">
           {brands.map((brand, i) => (
-            <motion.div
+            <motion.a
               key={brand.name}
+              href={brand.website}
+              target="_blank"
+              rel="noopener noreferrer"
               custom={i}
               variants={fadeUp}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              className="bg-background p-6 flex flex-col items-center text-center group hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              className="bg-background p-6 flex flex-col items-center text-center group hover:bg-primary hover:text-primary-foreground transition-all duration-300 relative"
               data-testid={`card-brand-${i}`}
+              aria-label={`${brand.name} — Visit website`}
             >
-              <div className="w-10 h-10 rounded-sm bg-accent/10 flex items-center justify-center mb-3 group-hover:bg-accent/20 transition-colors">
-                <span className="text-accent font-serif font-bold text-lg">
-                  {brand.name.charAt(0)}
-                </span>
-              </div>
-              <span className="text-sm font-serif font-semibold text-foreground group-hover:text-primary-foreground transition-colors leading-tight">
+              <ExternalLink className="absolute top-3 right-3 w-3.5 h-3.5 text-muted-foreground/40 group-hover:text-accent transition-colors" />
+              <BrandLogo brand={brand} />
+              <span className="mt-3 text-sm font-serif font-semibold text-foreground group-hover:text-primary-foreground transition-colors leading-tight">
                 {brand.name}
               </span>
               <span className="text-xs text-muted-foreground group-hover:text-primary-foreground/60 transition-colors mt-1 leading-snug">
                 {brand.category}
               </span>
-            </motion.div>
+              <span className="text-[10px] tracking-widest uppercase font-medium text-accent/70 group-hover:text-accent mt-2 transition-colors">
+                {brand.domain}
+              </span>
+            </motion.a>
           ))}
         </div>
 
