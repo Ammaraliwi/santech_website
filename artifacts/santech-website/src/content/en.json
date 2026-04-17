@@ -1,0 +1,487 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "partners": "Partners",
+    "contact": "Contact",
+    "cta": "Get a Quote",
+    "menu": {
+      "open": "Open menu",
+      "close": "Close menu"
+    }
+  },
+  "brand": {
+    "name": "SANTECH",
+    "tagline": "TRADING CO."
+  },
+  "hero": {
+    "badge": "Premium HoReCa Equipment",
+    "title": {
+      "1": "Engineering",
+      "2": "Culinary",
+      "3": "Excellence"
+    },
+    "subtitle": "The trusted partner for food service professionals across the Middle East. From bespoke AutoCAD design to premium international supply and expert installation.",
+    "cta": {
+      "primary": "Request Consultation",
+      "secondary": "Discover Santech"
+    },
+    "scroll": "Scroll"
+  },
+  "trust": {
+    "heritage": "Established",
+    "brands": "Premium Brands",
+    "projects": "Kitchens Delivered",
+    "italian": "European Quality"
+  },
+  "why": {
+    "1": {
+      "title": "Italian Excellence, Local Expertise",
+      "desc": "Direct partnerships with Italy's most prestigious manufacturers, paired with deep regional knowledge of Syrian and Middle Eastern food service operations."
+    },
+    "2": {
+      "title": "Single-Source Accountability",
+      "desc": "From design to commissioning, one trusted team owns the project. No finger-pointing between vendors — just clear accountability and seamless delivery."
+    },
+    "3": {
+      "title": "Three Decades of Heritage",
+      "desc": "Backed by Syrian House Group's 30+ years pioneering food service excellence across Africa and the Middle East. Our track record speaks for itself."
+    },
+    "4": {
+      "title": "AutoCAD Precision Design",
+      "desc": "Every project starts with engineered drawings — no guesswork. Our in-house CAD studio optimizes every centimeter for workflow, hygiene, and performance."
+    },
+    "5": {
+      "title": "Long-Term Partnership",
+      "desc": "We don't disappear after delivery. Spare parts, scheduled maintenance, staff training, and 24/7 support keep your operation running flawlessly for years."
+    },
+    "eyebrow": "Why Santech",
+    "title": {
+      "1": "The Santech",
+      "2": "Difference"
+    },
+    "intro": "Five reasons leading hotels, restaurants, and patisseries across Syria and the Middle East trust us with the heart of their business."
+  },
+  "syria": {
+    "eyebrow": "Proudly Syrian",
+    "title": {
+      "1": "Rooted in",
+      "2": "Damascus,",
+      "3": "Built for All of Syria"
+    },
+    "intro": "From the heart of the world's oldest continuously inhabited capital, we serve the entire Syrian Republic. Damascus is more than our address — it is our heritage and our promise. We believe in Syria's hospitality renaissance, and we equip the kitchens powering it.",
+    "hq": {
+      "label": "Headquarters",
+      "city": "Damascus",
+      "address": "Mazzeh Autostrada, Damascus, Syria"
+    },
+    "coverage": {
+      "title": "Nationwide Coverage",
+      "desc": "Delivery, installation, and after-sales support across all 14 Syrian governorates."
+    },
+    "cities": {
+      "aleppo": "Aleppo",
+      "homs": "Homs",
+      "latakia": "Latakia",
+      "tartus": "Tartus",
+      "hama": "Hama",
+      "daraa": "Daraa",
+      "deirezzor": "Deir ez-Zor",
+      "suwayda": "As-Suwayda",
+      "raqqa": "Ar-Raqqa",
+      "idlib": "Idlib",
+      "hasakah": "Al-Hasakah",
+      "qamishli": "Qamishli",
+      "quneitra": "Quneitra"
+    },
+    "heritage": {
+      "label": "Heritage",
+      "title": "8,000 Years of Hospitality",
+      "desc": "Damascus has welcomed travelers and traders since the dawn of civilization. We carry that legacy forward in every modern kitchen we deliver."
+    },
+    "landmarks": {
+      "umayyad": "Umayyad Mosque",
+      "citadel": "Damascus Citadel",
+      "palmyra": "Palmyra",
+      "krak": "Krak des Chevaliers",
+      "aleppo": "Aleppo Citadel",
+      "label": "Inspired by"
+    }
+  },
+  "about": {
+    "eyebrow": "Who We Are",
+    "title": {
+      "1": "Three Decades of",
+      "2": "Food Service",
+      "3": "Excellence"
+    },
+    "p1": "Santech Trading Co. was established in 2017 as the Syrian arm of the Syrian House Group, bringing decades of food service expertise from Sudan — where SHG has been a market leader since 1991 serving pastry shops, restaurants, and gelato studios across Africa.",
+    "p2": "Based in Damascus, our mission is to be the trusted partner for every food service professional in Syria and the wider Middle East. We bring only premium, internationally certified equipment — paired with end-to-end consultancy, AutoCAD kitchen design, installation, and training. From a boutique patisserie to a five-star hotel catering kitchen, we deliver world-class solutions at every scale.",
+    "divider": "Part of Syrian House Group",
+    "stat1": {
+      "value": "30+",
+      "label": "Years of Experience"
+    },
+    "stat2": {
+      "value": "500+",
+      "label": "Projects Completed"
+    },
+    "stat3": {
+      "value": "18+",
+      "label": "Premium Brand Partners"
+    },
+    "stat4": {
+      "value": "100%",
+      "label": "Customer Satisfaction Focus"
+    },
+    "callout": {
+      "eyebrow": "In-House Design Studio",
+      "title": "Professional AutoCAD Kitchen Design",
+      "text": "Our in-house design team uses professional AutoCAD systems to prepare precise kitchen layouts tailored to every client's requirements — from spatial planning to equipment positioning and workflow optimization. Every detail matters when designing the heart of a food operation."
+    }
+  },
+  "services": {
+    "1": {
+      "title": "Consultancy & Planning",
+      "desc": "Expert guidance from concept to completion. We analyze your space, workflow, budget, and operational needs to design the optimal food service solution."
+    },
+    "2": {
+      "title": "AutoCAD Kitchen Design",
+      "desc": "Professional computerized kitchen layouts drawn to precise specifications. Every dimension, equipment placement, and flow pattern is optimized before procurement begins."
+    },
+    "3": {
+      "title": "Equipment Supply",
+      "desc": "Direct access to 18+ premium international brands — Electrolux, Carpigiani, LaCimbali, UNOX, and more. We source only certified, industry-grade equipment."
+    },
+    "4": {
+      "title": "Installation & Commissioning",
+      "desc": "Full professional installation by trained technicians. Every machine is commissioned, tested, and calibrated to manufacturer specifications before handover."
+    },
+    "5": {
+      "title": "Training & Certification",
+      "desc": "Hands-on operational training for your team in partnership with our international suppliers. Your staff learns directly from the experts who built the equipment."
+    },
+    "6": {
+      "title": "After-Sales Support",
+      "desc": "Long-term partnership beyond the sale. Maintenance programs, spare parts availability, and technical support to keep your kitchen at peak performance."
+    },
+    "eyebrow": "What We Do",
+    "title": {
+      "1": "End-to-End",
+      "2": "Food Service",
+      "3": "Solutions"
+    },
+    "intro": "From the first consultation sketch to long-term support, Santech delivers a complete ecosystem of professional services — so you never have to manage multiple vendors."
+  },
+  "partners": {
+    "eyebrow": "Our Partners",
+    "title": {
+      "1": "World-Class Brands,",
+      "2": "One Trusted Partner"
+    },
+    "intro": "We are the authorized distributor for 18+ premium international equipment manufacturers — each selected for their uncompromising quality, innovation, and service standards.",
+    "cta": {
+      "text": "Not sure which brand fits your needs?",
+      "link": "Talk to our specialists."
+    },
+    "cat": {
+      "1": "Gelato & Ice Cream",
+      "2": "Professional Baking",
+      "3": "Coffee Systems",
+      "4": "Refrigeration",
+      "5": "Food Processing",
+      "6": "Kitchen Workflow"
+    }
+  },
+  "contact": {
+    "eyebrow": "Get In Touch",
+    "title": {
+      "1": "Let's Build Your",
+      "2": "Perfect Kitchen"
+    },
+    "intro": "Whether you're opening a new restaurant, expanding your hotel catering, or upgrading your pastry studio — our team is ready to consult, design, and supply.",
+    "label": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email"
+    },
+    "address": "Mazzeh Autostrada, 2/6 Complex\nDamascus, Syria",
+    "gm": {
+      "label": "General Manager",
+      "name": "Dr. Ahmed Wasil Mongid"
+    }
+  },
+  "form": {
+    "name": {
+      "ph": "John Smith"
+    },
+    "company": {
+      "ph": "Restaurant / Hotel Name"
+    },
+    "email": {
+      "ph": "you@company.com"
+    },
+    "phone": {
+      "ph": "+963 ..."
+    },
+    "message": {
+      "ph": "Tell us about your project — type of establishment, scale, specific equipment needs, timeline..."
+    },
+    "submit": {
+      "loading": "Sending..."
+    },
+    "disclaimer": "We typically respond within 24 hours on business days.",
+    "success": {
+      "title": "Message Received",
+      "text": "Thank you for reaching out. A member of our team will respond within one business day."
+    }
+  },
+  "footer": {
+    "tagline": "Premium HoReCa professional equipment distributor across the Middle East. Excellence in design, supply, and support.",
+    "contact": {
+      "title": "Contact Info"
+    },
+    "links": {
+      "title": "Quick Links"
+    },
+    "gm": "General Manager:",
+    "copyright": "© {year} Santech Trading Co. (STC). All rights reserved.",
+    "shg": "Part of Syrian House Group"
+  },
+  "industries": {
+    "1": {
+      "title": "Hotels & Resorts",
+      "desc": "Full kitchen brigades, banquet halls, room service operations, and all-day dining venues for 3 to 5-star properties."
+    },
+    "2": {
+      "title": "Restaurants",
+      "desc": "Fine dining, casual concepts, fast-casual chains, and ghost kitchens — engineered for speed, consistency, and chef performance."
+    },
+    "3": {
+      "title": "Cafés & Coffee Shops",
+      "desc": "Specialty espresso bars, third-wave roasters, and café concepts equipped with world-class brewing systems."
+    },
+    "4": {
+      "title": "Cloud Kitchens",
+      "desc": "High-output delivery-only operations with optimized workflows for multi-brand, high-velocity production."
+    },
+    "5": {
+      "title": "Catering Companies",
+      "desc": "Central production kitchens, banquet equipment, and mobile catering setups for events of any scale."
+    },
+    "6": {
+      "title": "Bakeries & Patisseries",
+      "desc": "Artisan bakeries, pastry studios, gelato labs, and chocolate workshops with precision Italian equipment."
+    },
+    "7": {
+      "title": "Hospitals & Healthcare",
+      "desc": "High-volume institutional kitchens meeting strict hygiene, dietary, and food safety standards."
+    },
+    "8": {
+      "title": "Schools & Universities",
+      "desc": "Cafeterias, dormitory dining, and educational catering operations designed for high-throughput service."
+    },
+    "eyebrow": "Industries We Serve",
+    "title": {
+      "1": "Tailored Solutions for",
+      "2": "Every Food Service Sector"
+    },
+    "intro": "Whatever your operation, we have equipped one like it. From boutique cafés to industrial central kitchens, our solutions scale to your ambition."
+  },
+  "process": {
+    "1": {
+      "title": "Consultation",
+      "desc": "We listen. We assess your concept, menu, volume, space, and budget — then identify the path that maximizes your return."
+    },
+    "2": {
+      "title": "AutoCAD Design",
+      "desc": "Our engineers produce precision drawings — equipment placement, utility lines, ventilation, and workflow optimized to the centimeter."
+    },
+    "3": {
+      "title": "Procurement",
+      "desc": "We source directly from 18+ certified manufacturers in Europe and beyond. Logistics, customs, and delivery handled end-to-end."
+    },
+    "4": {
+      "title": "Installation",
+      "desc": "Our trained technicians install, connect, and integrate every piece — coordinating with contractors, plumbers, and electricians."
+    },
+    "5": {
+      "title": "Training",
+      "desc": "We don't leave until your team is confident. Operational training, manufacturer certifications, and ongoing knowledge transfer."
+    },
+    "6": {
+      "title": "Service & Support",
+      "desc": "Genuine spare parts in stock, scheduled maintenance, 24/7 emergency response — your kitchen runs flawlessly for years."
+    },
+    "eyebrow": "Our Process",
+    "title": {
+      "1": "From Concept to",
+      "2": "Commissioning"
+    },
+    "intro": "A proven six-step methodology that turns your vision into a fully operational, professional kitchen — on time, on budget, on standard."
+  },
+  "projects": {
+    "1": {
+      "type": "Five-Star Hotel",
+      "title": "Banquet & Main Production Kitchen",
+      "location": "Damascus",
+      "year": "2024",
+      "scale": "1,200 m²",
+      "scope": "Full design, supply & installation — 80+ pieces of professional equipment serving 3 outlets and a 600-guest banquet hall."
+    },
+    "2": {
+      "type": "Cloud Kitchen Network",
+      "title": "Multi-Brand Production Hub",
+      "location": "Aleppo",
+      "year": "2024",
+      "scale": "450 m²",
+      "scope": "High-velocity production line for 6 delivery brands, optimized for 800+ orders per day with zero cross-contamination."
+    },
+    "3": {
+      "type": "Patisserie & Gelato",
+      "title": "Premium Pastry & Gelato Studio",
+      "location": "Latakia",
+      "year": "2023",
+      "scale": "180 m²",
+      "scope": "Carpigiani gelato production line, full pastry lab, and retail display — boutique concept built around Italian craftsmanship."
+    },
+    "4": {
+      "type": "Restaurant Chain",
+      "title": "Central Production Kitchen",
+      "location": "Homs",
+      "year": "2023",
+      "scale": "650 m²",
+      "scope": "Centralized prep facility serving 12 outlets — from butchery and cold prep to high-volume cooking and packaging."
+    },
+    "eyebrow": "Selected Projects",
+    "title": {
+      "1": "Kitchens We've",
+      "2": "Brought to Life"
+    },
+    "intro": "A glimpse into the variety of food service operations we have designed, supplied, and commissioned across Syria and the region.",
+    "scale": "Scale",
+    "scope": "Scope",
+    "location": "Location",
+    "year": "Year"
+  },
+  "testimonials": {
+    "1": {
+      "quote": "Santech delivered a turnkey kitchen that exceeded our expectations. From the AutoCAD drawings to the final commissioning, every detail was handled with European-level professionalism.",
+      "name": "Hotel General Manager",
+      "role": "Five-Star Property, Damascus"
+    },
+    "2": {
+      "quote": "We compared four suppliers. Santech was the only one who actually visited our space, understood our menu, and proposed a layout that improved our throughput by 35%. They earned our business.",
+      "name": "Operations Director",
+      "role": "Cloud Kitchen Network"
+    },
+    "3": {
+      "quote": "Their after-sales service is what keeps us coming back. Spare parts arrive fast, technicians know the equipment inside out, and downtime is virtually zero. A true long-term partner.",
+      "name": "Executive Chef",
+      "role": "Restaurant Group, Aleppo"
+    },
+    "eyebrow": "Client Voices",
+    "title": {
+      "1": "What Operators",
+      "2": "Say About Us"
+    },
+    "intro": "Don't take our word for it. Hear from the chefs, owners, and operators who trust Santech with the heart of their business."
+  },
+  "leadership": {
+    "1": {
+      "name": "Dr. Ahmed Wasil Mongid",
+      "role": "General Manager",
+      "bio": "Leading Santech's vision in Syria with three decades of regional food service expertise."
+    },
+    "2": {
+      "role": "Sales & Business Development Director",
+      "bio": "Building lasting partnerships with hotels, restaurants, and catering operators across the Middle East."
+    },
+    "3": {
+      "role": "Technical & Engineering Director",
+      "bio": "Overseeing installation, commissioning, and after-sales operations with manufacturer-certified expertise."
+    },
+    "4": {
+      "role": "Design Studio Lead",
+      "bio": "Heading our in-house AutoCAD team that engineers every kitchen to its optimal flow and performance."
+    },
+    "eyebrow": "Our Leadership",
+    "title": {
+      "1": "The People",
+      "2": "Behind Santech"
+    },
+    "intro": "Decades of food service expertise, engineering rigor, and unwavering commitment to client success — that's the team you partner with."
+  },
+  "certifications": {
+    "1": {
+      "name": "CE Marking",
+      "desc": "European safety & performance"
+    },
+    "2": {
+      "name": "ISO 9001",
+      "desc": "Quality management systems"
+    },
+    "3": {
+      "name": "NSF International",
+      "desc": "Public health & food safety"
+    },
+    "4": {
+      "name": "HACCP Compliant",
+      "desc": "Hazard analysis & critical control"
+    },
+    "5": {
+      "name": "ETL Listed",
+      "desc": "Electrical & mechanical safety"
+    },
+    "6": {
+      "name": "Authorized Distributor",
+      "desc": "Direct manufacturer partnerships"
+    },
+    "eyebrow": "Standards & Authorizations",
+    "title": {
+      "1": "Certified Excellence,",
+      "2": "Verifiable Quality"
+    },
+    "intro": "Every brand we represent meets internationally recognized standards. Every project is executed to the same uncompromising benchmarks."
+  },
+  "catalog": {
+    "eyebrow": "Resources",
+    "title": "Download Our Complete Catalog",
+    "desc": "Browse our full range of premium HoReCa equipment, brand portfolios, and project case studies — all in one comprehensive PDF.",
+    "button": "Download Catalog (PDF)",
+    "note": "Free download · Updated quarterly · 18+ brands"
+  },
+  "showroom": {
+    "eyebrow": "Visit Our Showroom",
+    "title": {
+      "1": "Step Into Our",
+      "2": "Damascus Showroom"
+    },
+    "description": "Experience our curated selection of premium HoReCa equipment first-hand. Our team of specialists is ready to walk you through live demonstrations, kitchen layouts, and tailored solutions for your project.",
+    "location": "Mazzeh, Damascus",
+    "hours": "Sat–Thu · 9:00 AM – 6:00 PM",
+    "cta": {
+      "directions": "Get Directions",
+      "contact": "Schedule a Visit"
+    },
+    "live": "Open Now",
+    "card": {
+      "title": "Modern Showroom & Headquarters",
+      "desc": "Our flagship space features working displays from 18+ international brands across all professional kitchen categories.",
+      "area": "Showroom",
+      "brands": "Brands"
+    },
+    "imageAlt": "Santech Trading Co. storefront in Damascus at night, illuminated signage"
+  },
+  "fab": {
+    "whatsapp": "Chat on WhatsApp",
+    "quote": "Get a Quote",
+    "open": "Open quick actions",
+    "close": "Close quick actions"
+  },
+  "map": {
+    "label": "Find Us",
+    "directions": "Get Directions"
+  }
+}

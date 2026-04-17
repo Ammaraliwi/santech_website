@@ -1,0 +1,3290 @@
+backend:
+  name: github
+  repo: Ammaraliwi/santech_website
+  branch: main
+  base_url: "https://decapbridge.com"
+  auth_endpoint: oauth/github
+publish_mode: simple
+media_folder: "artifacts/santech-website/public/images/uploads"
+public_folder: /images/uploads
+site_url: "https://santech-website.pages.dev"
+display_url: "https://santech-website.pages.dev"
+logo_url: "https://santech-website.pages.dev/brand/santech-logo.svg"
+locale: en
+collections:
+  - name: english_content
+    label: 🇬🇧  English Site Content
+    label_singular: English Section
+    description: Edit all English text shown on the website. Each section is collapsible — click to expand.
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: "artifacts/santech-website/src/content/en.json"
+        label: All English Content
+        name: en
+        format: json
+        fields:
+          - label: Navigation
+            name: nav
+            widget: object
+            collapsed: true
+            fields:
+              - label: Home
+                name: home
+                widget: string
+                required: false
+              - label: About
+                name: about
+                widget: string
+                required: false
+              - label: Services
+                name: services
+                widget: string
+                required: false
+              - label: Partners
+                name: partners
+                widget: string
+                required: false
+              - label: Contact
+                name: contact
+                widget: string
+                required: false
+              - label: Cta
+                name: cta
+                widget: string
+                required: false
+              - label: Menu
+                name: menu
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Open
+                    name: open
+                    widget: string
+                    required: false
+                  - label: Close
+                    name: close
+                    widget: string
+                    required: false
+          - label: Brand Identity
+            name: brand
+            widget: object
+            collapsed: true
+            fields:
+              - label: Name
+                name: name
+                widget: string
+                required: false
+              - label: Tagline
+                name: tagline
+                widget: string
+                required: false
+          - label: Hero Section
+            name: hero
+            widget: object
+            collapsed: true
+            fields:
+              - label: Badge
+                name: badge
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+                  - label: Item 3
+                    name: 3
+                    widget: string
+                    required: false
+              - label: Subtitle
+                name: subtitle
+                widget: text
+                required: false
+              - label: Cta
+                name: cta
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Primary
+                    name: primary
+                    widget: string
+                    required: false
+                  - label: Secondary
+                    name: secondary
+                    widget: string
+                    required: false
+              - label: Scroll
+                name: scroll
+                widget: string
+                required: false
+          - label: Trust Bar (Stats Strip)
+            name: trust
+            widget: object
+            collapsed: true
+            fields:
+              - label: Heritage
+                name: heritage
+                widget: string
+                required: false
+              - label: Brands
+                name: brands
+                widget: string
+                required: false
+              - label: Projects
+                name: projects
+                widget: string
+                required: false
+              - label: Italian
+                name: italian
+                widget: string
+                required: false
+          - label: Why Santech
+            name: why
+            widget: object
+            collapsed: true
+            fields:
+              - label: Item 1
+                name: 1
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 2
+                name: 2
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 3
+                name: 3
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 4
+                name: 4
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 5
+                name: 5
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+          - label: Rooted in Syria
+            name: syria
+            widget: object
+            collapsed: true
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+                  - label: Item 3
+                    name: 3
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+              - label: Hq
+                name: hq
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Label
+                    name: label
+                    widget: string
+                    required: false
+                  - label: City
+                    name: city
+                    widget: string
+                    required: false
+                  - label: Address
+                    name: address
+                    widget: string
+                    required: false
+              - label: Coverage
+                name: coverage
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Cities
+                name: cities
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Aleppo
+                    name: aleppo
+                    widget: string
+                    required: false
+                  - label: Homs
+                    name: homs
+                    widget: string
+                    required: false
+                  - label: Latakia
+                    name: latakia
+                    widget: string
+                    required: false
+                  - label: Tartus
+                    name: tartus
+                    widget: string
+                    required: false
+                  - label: Hama
+                    name: hama
+                    widget: string
+                    required: false
+                  - label: Daraa
+                    name: daraa
+                    widget: string
+                    required: false
+                  - label: Deirezzor
+                    name: deirezzor
+                    widget: string
+                    required: false
+                  - label: Suwayda
+                    name: suwayda
+                    widget: string
+                    required: false
+                  - label: Raqqa
+                    name: raqqa
+                    widget: string
+                    required: false
+                  - label: Idlib
+                    name: idlib
+                    widget: string
+                    required: false
+                  - label: Hasakah
+                    name: hasakah
+                    widget: string
+                    required: false
+                  - label: Qamishli
+                    name: qamishli
+                    widget: string
+                    required: false
+                  - label: Quneitra
+                    name: quneitra
+                    widget: string
+                    required: false
+              - label: Heritage
+                name: heritage
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Label
+                    name: label
+                    widget: string
+                    required: false
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Landmarks
+                name: landmarks
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Umayyad
+                    name: umayyad
+                    widget: string
+                    required: false
+                  - label: Citadel
+                    name: citadel
+                    widget: string
+                    required: false
+                  - label: Palmyra
+                    name: palmyra
+                    widget: string
+                    required: false
+                  - label: Krak
+                    name: krak
+                    widget: string
+                    required: false
+                  - label: Aleppo
+                    name: aleppo
+                    widget: string
+                    required: false
+                  - label: Label
+                    name: label
+                    widget: string
+                    required: false
+          - label: About Us
+            name: about
+            widget: object
+            collapsed: true
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+                  - label: Item 3
+                    name: 3
+                    widget: string
+                    required: false
+              - label: P1
+                name: p1
+                widget: text
+                required: false
+              - label: P2
+                name: p2
+                widget: text
+                required: false
+              - label: Divider
+                name: divider
+                widget: string
+                required: false
+              - label: Stat1
+                name: stat1
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Value
+                    name: value
+                    widget: string
+                    required: false
+                  - label: Label
+                    name: label
+                    widget: string
+                    required: false
+              - label: Stat2
+                name: stat2
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Value
+                    name: value
+                    widget: string
+                    required: false
+                  - label: Label
+                    name: label
+                    widget: string
+                    required: false
+              - label: Stat3
+                name: stat3
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Value
+                    name: value
+                    widget: string
+                    required: false
+                  - label: Label
+                    name: label
+                    widget: string
+                    required: false
+              - label: Stat4
+                name: stat4
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Value
+                    name: value
+                    widget: string
+                    required: false
+                  - label: Label
+                    name: label
+                    widget: string
+                    required: false
+              - label: Callout
+                name: callout
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Eyebrow
+                    name: eyebrow
+                    widget: string
+                    required: false
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Text
+                    name: text
+                    widget: text
+                    required: false
+          - label: Services
+            name: services
+            widget: object
+            collapsed: true
+            fields:
+              - label: Item 1
+                name: 1
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 2
+                name: 2
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 3
+                name: 3
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 4
+                name: 4
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 5
+                name: 5
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 6
+                name: 6
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+                  - label: Item 3
+                    name: 3
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+          - label: Partners
+            name: partners
+            widget: object
+            collapsed: true
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+              - label: Cta
+                name: cta
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Text
+                    name: text
+                    widget: string
+                    required: false
+                  - label: Link
+                    name: link
+                    widget: string
+                    required: false
+              - label: Cat
+                name: cat
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+                  - label: Item 3
+                    name: 3
+                    widget: string
+                    required: false
+                  - label: Item 4
+                    name: 4
+                    widget: string
+                    required: false
+                  - label: Item 5
+                    name: 5
+                    widget: string
+                    required: false
+                  - label: Item 6
+                    name: 6
+                    widget: string
+                    required: false
+          - label: Contact Section
+            name: contact
+            widget: object
+            collapsed: true
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+              - label: Label
+                name: label
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Address
+                    name: address
+                    widget: string
+                    required: false
+                  - label: Phone
+                    name: phone
+                    widget: string
+                    required: false
+                  - label: Email
+                    name: email
+                    widget: string
+                    required: false
+              - label: Address
+                name: address
+                widget: text
+                required: false
+              - label: Gm
+                name: gm
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Label
+                    name: label
+                    widget: string
+                    required: false
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+          - label: Contact Form
+            name: form
+            widget: object
+            collapsed: true
+            fields:
+              - label: Name
+                name: name
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Ph
+                    name: ph
+                    widget: string
+                    required: false
+              - label: Company
+                name: company
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Ph
+                    name: ph
+                    widget: string
+                    required: false
+              - label: Email
+                name: email
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Ph
+                    name: ph
+                    widget: string
+                    required: false
+              - label: Phone
+                name: phone
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Ph
+                    name: ph
+                    widget: string
+                    required: false
+              - label: Message
+                name: message
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Ph
+                    name: ph
+                    widget: text
+                    required: false
+              - label: Submit
+                name: submit
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Loading
+                    name: loading
+                    widget: string
+                    required: false
+              - label: Disclaimer
+                name: disclaimer
+                widget: string
+                required: false
+              - label: Success
+                name: success
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Text
+                    name: text
+                    widget: text
+                    required: false
+          - label: Footer
+            name: footer
+            widget: object
+            collapsed: true
+            fields:
+              - label: Tagline
+                name: tagline
+                widget: text
+                required: false
+              - label: Contact
+                name: contact
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+              - label: Links
+                name: links
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+              - label: Gm
+                name: gm
+                widget: string
+                required: false
+              - label: Copyright
+                name: copyright
+                widget: string
+                required: false
+              - label: Shg
+                name: shg
+                widget: string
+                required: false
+          - label: Industries Served
+            name: industries
+            widget: object
+            collapsed: true
+            fields:
+              - label: Item 1
+                name: 1
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 2
+                name: 2
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 3
+                name: 3
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 4
+                name: 4
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 5
+                name: 5
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 6
+                name: 6
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 7
+                name: 7
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 8
+                name: 8
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+          - label: Our Process
+            name: process
+            widget: object
+            collapsed: true
+            fields:
+              - label: Item 1
+                name: 1
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 2
+                name: 2
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 3
+                name: 3
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 4
+                name: 4
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 5
+                name: 5
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 6
+                name: 6
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+          - label: Selected Projects
+            name: projects
+            widget: object
+            collapsed: true
+            fields:
+              - label: Item 1
+                name: 1
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Type
+                    name: type
+                    widget: string
+                    required: false
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Location
+                    name: location
+                    widget: string
+                    required: false
+                  - label: Year
+                    name: year
+                    widget: string
+                    required: false
+                  - label: Scale
+                    name: scale
+                    widget: string
+                    required: false
+                  - label: Scope
+                    name: scope
+                    widget: text
+                    required: false
+              - label: Item 2
+                name: 2
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Type
+                    name: type
+                    widget: string
+                    required: false
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Location
+                    name: location
+                    widget: string
+                    required: false
+                  - label: Year
+                    name: year
+                    widget: string
+                    required: false
+                  - label: Scale
+                    name: scale
+                    widget: string
+                    required: false
+                  - label: Scope
+                    name: scope
+                    widget: text
+                    required: false
+              - label: Item 3
+                name: 3
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Type
+                    name: type
+                    widget: string
+                    required: false
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Location
+                    name: location
+                    widget: string
+                    required: false
+                  - label: Year
+                    name: year
+                    widget: string
+                    required: false
+                  - label: Scale
+                    name: scale
+                    widget: string
+                    required: false
+                  - label: Scope
+                    name: scope
+                    widget: text
+                    required: false
+              - label: Item 4
+                name: 4
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Type
+                    name: type
+                    widget: string
+                    required: false
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Location
+                    name: location
+                    widget: string
+                    required: false
+                  - label: Year
+                    name: year
+                    widget: string
+                    required: false
+                  - label: Scale
+                    name: scale
+                    widget: string
+                    required: false
+                  - label: Scope
+                    name: scope
+                    widget: text
+                    required: false
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+              - label: Scale
+                name: scale
+                widget: string
+                required: false
+              - label: Scope
+                name: scope
+                widget: string
+                required: false
+              - label: Location
+                name: location
+                widget: string
+                required: false
+              - label: Year
+                name: year
+                widget: string
+                required: false
+          - label: Client Testimonials
+            name: testimonials
+            widget: object
+            collapsed: true
+            fields:
+              - label: Item 1
+                name: 1
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Quote
+                    name: quote
+                    widget: text
+                    required: false
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Role
+                    name: role
+                    widget: string
+                    required: false
+              - label: Item 2
+                name: 2
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Quote
+                    name: quote
+                    widget: text
+                    required: false
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Role
+                    name: role
+                    widget: string
+                    required: false
+              - label: Item 3
+                name: 3
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Quote
+                    name: quote
+                    widget: text
+                    required: false
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Role
+                    name: role
+                    widget: string
+                    required: false
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+          - label: Leadership Team
+            name: leadership
+            widget: object
+            collapsed: true
+            fields:
+              - label: Item 1
+                name: 1
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Role
+                    name: role
+                    widget: string
+                    required: false
+                  - label: Bio
+                    name: bio
+                    widget: text
+                    required: false
+              - label: Item 2
+                name: 2
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Role
+                    name: role
+                    widget: string
+                    required: false
+                  - label: Bio
+                    name: bio
+                    widget: text
+                    required: false
+              - label: Item 3
+                name: 3
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Role
+                    name: role
+                    widget: string
+                    required: false
+                  - label: Bio
+                    name: bio
+                    widget: text
+                    required: false
+              - label: Item 4
+                name: 4
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Role
+                    name: role
+                    widget: string
+                    required: false
+                  - label: Bio
+                    name: bio
+                    widget: text
+                    required: false
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+          - label: Certifications
+            name: certifications
+            widget: object
+            collapsed: true
+            fields:
+              - label: Item 1
+                name: 1
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: string
+                    required: false
+              - label: Item 2
+                name: 2
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: string
+                    required: false
+              - label: Item 3
+                name: 3
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: string
+                    required: false
+              - label: Item 4
+                name: 4
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: string
+                    required: false
+              - label: Item 5
+                name: 5
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: string
+                    required: false
+              - label: Item 6
+                name: 6
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: string
+                    required: false
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+          - label: Catalog CTA
+            name: catalog
+            widget: object
+            collapsed: true
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: string
+                required: false
+              - label: Desc
+                name: desc
+                widget: text
+                required: false
+              - label: Button
+                name: button
+                widget: string
+                required: false
+              - label: Note
+                name: note
+                widget: string
+                required: false
+          - label: Showroom
+            name: showroom
+            widget: object
+            collapsed: true
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Description
+                name: description
+                widget: text
+                required: false
+              - label: Location
+                name: location
+                widget: string
+                required: false
+              - label: Hours
+                name: hours
+                widget: string
+                required: false
+              - label: Cta
+                name: cta
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Directions
+                    name: directions
+                    widget: string
+                    required: false
+                  - label: Contact
+                    name: contact
+                    widget: string
+                    required: false
+              - label: Live
+                name: live
+                widget: string
+                required: false
+              - label: Card
+                name: card
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+                  - label: Area
+                    name: area
+                    widget: string
+                    required: false
+                  - label: Brands
+                    name: brands
+                    widget: string
+                    required: false
+              - label: ImageAlt
+                name: imageAlt
+                widget: string
+                required: false
+          - label: Floating Action Buttons
+            name: fab
+            widget: object
+            collapsed: true
+            fields:
+              - label: Whatsapp
+                name: whatsapp
+                widget: string
+                required: false
+              - label: Quote
+                name: quote
+                widget: string
+                required: false
+              - label: Open
+                name: open
+                widget: string
+                required: false
+              - label: Close
+                name: close
+                widget: string
+                required: false
+          - label: Map
+            name: map
+            widget: object
+            collapsed: true
+            fields:
+              - label: Label
+                name: label
+                widget: string
+                required: false
+              - label: Directions
+                name: directions
+                widget: string
+                required: false
+  - name: arabic_content
+    label: 🇸🇾  المحتوى العربي
+    label_singular: قسم عربي
+    description: تعديل جميع النصوص العربية الظاهرة في الموقع. كل قسم قابل للطي — اضغط لتوسيعه.
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: "artifacts/santech-website/src/content/ar.json"
+        label: جميع النصوص العربية
+        name: ar
+        format: json
+        fields:
+          - label: Navigation
+            name: nav
+            widget: object
+            collapsed: true
+            fields:
+              - label: Home
+                name: home
+                widget: string
+                required: false
+              - label: About
+                name: about
+                widget: string
+                required: false
+              - label: Services
+                name: services
+                widget: string
+                required: false
+              - label: Partners
+                name: partners
+                widget: string
+                required: false
+              - label: Contact
+                name: contact
+                widget: string
+                required: false
+              - label: Cta
+                name: cta
+                widget: string
+                required: false
+              - label: Menu
+                name: menu
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Open
+                    name: open
+                    widget: string
+                    required: false
+                  - label: Close
+                    name: close
+                    widget: string
+                    required: false
+          - label: Brand Identity
+            name: brand
+            widget: object
+            collapsed: true
+            fields:
+              - label: Name
+                name: name
+                widget: string
+                required: false
+              - label: Tagline
+                name: tagline
+                widget: string
+                required: false
+          - label: Hero Section
+            name: hero
+            widget: object
+            collapsed: true
+            fields:
+              - label: Badge
+                name: badge
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+                  - label: Item 3
+                    name: 3
+                    widget: string
+                    required: false
+              - label: Subtitle
+                name: subtitle
+                widget: text
+                required: false
+              - label: Cta
+                name: cta
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Primary
+                    name: primary
+                    widget: string
+                    required: false
+                  - label: Secondary
+                    name: secondary
+                    widget: string
+                    required: false
+              - label: Scroll
+                name: scroll
+                widget: string
+                required: false
+          - label: Trust Bar (Stats Strip)
+            name: trust
+            widget: object
+            collapsed: true
+            fields:
+              - label: Heritage
+                name: heritage
+                widget: string
+                required: false
+              - label: Brands
+                name: brands
+                widget: string
+                required: false
+              - label: Projects
+                name: projects
+                widget: string
+                required: false
+              - label: Italian
+                name: italian
+                widget: string
+                required: false
+          - label: Why Santech
+            name: why
+            widget: object
+            collapsed: true
+            fields:
+              - label: Item 1
+                name: 1
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 2
+                name: 2
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 3
+                name: 3
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 4
+                name: 4
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 5
+                name: 5
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+          - label: Rooted in Syria
+            name: syria
+            widget: object
+            collapsed: true
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+                  - label: Item 3
+                    name: 3
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+              - label: Hq
+                name: hq
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Label
+                    name: label
+                    widget: string
+                    required: false
+                  - label: City
+                    name: city
+                    widget: string
+                    required: false
+                  - label: Address
+                    name: address
+                    widget: string
+                    required: false
+              - label: Coverage
+                name: coverage
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Cities
+                name: cities
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Aleppo
+                    name: aleppo
+                    widget: string
+                    required: false
+                  - label: Homs
+                    name: homs
+                    widget: string
+                    required: false
+                  - label: Latakia
+                    name: latakia
+                    widget: string
+                    required: false
+                  - label: Tartus
+                    name: tartus
+                    widget: string
+                    required: false
+                  - label: Hama
+                    name: hama
+                    widget: string
+                    required: false
+                  - label: Daraa
+                    name: daraa
+                    widget: string
+                    required: false
+                  - label: Deirezzor
+                    name: deirezzor
+                    widget: string
+                    required: false
+                  - label: Suwayda
+                    name: suwayda
+                    widget: string
+                    required: false
+                  - label: Raqqa
+                    name: raqqa
+                    widget: string
+                    required: false
+                  - label: Idlib
+                    name: idlib
+                    widget: string
+                    required: false
+                  - label: Hasakah
+                    name: hasakah
+                    widget: string
+                    required: false
+                  - label: Qamishli
+                    name: qamishli
+                    widget: string
+                    required: false
+                  - label: Quneitra
+                    name: quneitra
+                    widget: string
+                    required: false
+              - label: Heritage
+                name: heritage
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Label
+                    name: label
+                    widget: string
+                    required: false
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Landmarks
+                name: landmarks
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Umayyad
+                    name: umayyad
+                    widget: string
+                    required: false
+                  - label: Citadel
+                    name: citadel
+                    widget: string
+                    required: false
+                  - label: Palmyra
+                    name: palmyra
+                    widget: string
+                    required: false
+                  - label: Krak
+                    name: krak
+                    widget: string
+                    required: false
+                  - label: Aleppo
+                    name: aleppo
+                    widget: string
+                    required: false
+                  - label: Label
+                    name: label
+                    widget: string
+                    required: false
+          - label: About Us
+            name: about
+            widget: object
+            collapsed: true
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+                  - label: Item 3
+                    name: 3
+                    widget: string
+                    required: false
+              - label: P1
+                name: p1
+                widget: text
+                required: false
+              - label: P2
+                name: p2
+                widget: text
+                required: false
+              - label: Divider
+                name: divider
+                widget: string
+                required: false
+              - label: Stat1
+                name: stat1
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Value
+                    name: value
+                    widget: string
+                    required: false
+                  - label: Label
+                    name: label
+                    widget: string
+                    required: false
+              - label: Stat2
+                name: stat2
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Value
+                    name: value
+                    widget: string
+                    required: false
+                  - label: Label
+                    name: label
+                    widget: string
+                    required: false
+              - label: Stat3
+                name: stat3
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Value
+                    name: value
+                    widget: string
+                    required: false
+                  - label: Label
+                    name: label
+                    widget: string
+                    required: false
+              - label: Stat4
+                name: stat4
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Value
+                    name: value
+                    widget: string
+                    required: false
+                  - label: Label
+                    name: label
+                    widget: string
+                    required: false
+              - label: Callout
+                name: callout
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Eyebrow
+                    name: eyebrow
+                    widget: string
+                    required: false
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Text
+                    name: text
+                    widget: text
+                    required: false
+          - label: Services
+            name: services
+            widget: object
+            collapsed: true
+            fields:
+              - label: Item 1
+                name: 1
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 2
+                name: 2
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 3
+                name: 3
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 4
+                name: 4
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 5
+                name: 5
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 6
+                name: 6
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+                  - label: Item 3
+                    name: 3
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+          - label: Partners
+            name: partners
+            widget: object
+            collapsed: true
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+              - label: Cta
+                name: cta
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Text
+                    name: text
+                    widget: string
+                    required: false
+                  - label: Link
+                    name: link
+                    widget: string
+                    required: false
+              - label: Cat
+                name: cat
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+                  - label: Item 3
+                    name: 3
+                    widget: string
+                    required: false
+                  - label: Item 4
+                    name: 4
+                    widget: string
+                    required: false
+                  - label: Item 5
+                    name: 5
+                    widget: string
+                    required: false
+                  - label: Item 6
+                    name: 6
+                    widget: string
+                    required: false
+          - label: Contact Section
+            name: contact
+            widget: object
+            collapsed: true
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+              - label: Label
+                name: label
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Address
+                    name: address
+                    widget: string
+                    required: false
+                  - label: Phone
+                    name: phone
+                    widget: string
+                    required: false
+                  - label: Email
+                    name: email
+                    widget: string
+                    required: false
+              - label: Address
+                name: address
+                widget: text
+                required: false
+              - label: Gm
+                name: gm
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Label
+                    name: label
+                    widget: string
+                    required: false
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+          - label: Contact Form
+            name: form
+            widget: object
+            collapsed: true
+            fields:
+              - label: Name
+                name: name
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Ph
+                    name: ph
+                    widget: string
+                    required: false
+              - label: Company
+                name: company
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Ph
+                    name: ph
+                    widget: string
+                    required: false
+              - label: Email
+                name: email
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Ph
+                    name: ph
+                    widget: string
+                    required: false
+              - label: Phone
+                name: phone
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Ph
+                    name: ph
+                    widget: string
+                    required: false
+              - label: Message
+                name: message
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Ph
+                    name: ph
+                    widget: text
+                    required: false
+              - label: Submit
+                name: submit
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Loading
+                    name: loading
+                    widget: string
+                    required: false
+              - label: Disclaimer
+                name: disclaimer
+                widget: string
+                required: false
+              - label: Success
+                name: success
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Text
+                    name: text
+                    widget: text
+                    required: false
+          - label: Footer
+            name: footer
+            widget: object
+            collapsed: true
+            fields:
+              - label: Tagline
+                name: tagline
+                widget: text
+                required: false
+              - label: Contact
+                name: contact
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+              - label: Links
+                name: links
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+              - label: Gm
+                name: gm
+                widget: string
+                required: false
+              - label: Copyright
+                name: copyright
+                widget: string
+                required: false
+              - label: Shg
+                name: shg
+                widget: string
+                required: false
+          - label: Industries Served
+            name: industries
+            widget: object
+            collapsed: true
+            fields:
+              - label: Item 1
+                name: 1
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 2
+                name: 2
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 3
+                name: 3
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 4
+                name: 4
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 5
+                name: 5
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 6
+                name: 6
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 7
+                name: 7
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 8
+                name: 8
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+          - label: Our Process
+            name: process
+            widget: object
+            collapsed: true
+            fields:
+              - label: Item 1
+                name: 1
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 2
+                name: 2
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 3
+                name: 3
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 4
+                name: 4
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 5
+                name: 5
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Item 6
+                name: 6
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+          - label: Selected Projects
+            name: projects
+            widget: object
+            collapsed: true
+            fields:
+              - label: Item 1
+                name: 1
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Type
+                    name: type
+                    widget: string
+                    required: false
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Location
+                    name: location
+                    widget: string
+                    required: false
+                  - label: Year
+                    name: year
+                    widget: string
+                    required: false
+                  - label: Scale
+                    name: scale
+                    widget: string
+                    required: false
+                  - label: Scope
+                    name: scope
+                    widget: text
+                    required: false
+              - label: Item 2
+                name: 2
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Type
+                    name: type
+                    widget: string
+                    required: false
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Location
+                    name: location
+                    widget: string
+                    required: false
+                  - label: Year
+                    name: year
+                    widget: string
+                    required: false
+                  - label: Scale
+                    name: scale
+                    widget: string
+                    required: false
+                  - label: Scope
+                    name: scope
+                    widget: text
+                    required: false
+              - label: Item 3
+                name: 3
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Type
+                    name: type
+                    widget: string
+                    required: false
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Location
+                    name: location
+                    widget: string
+                    required: false
+                  - label: Year
+                    name: year
+                    widget: string
+                    required: false
+                  - label: Scale
+                    name: scale
+                    widget: string
+                    required: false
+                  - label: Scope
+                    name: scope
+                    widget: text
+                    required: false
+              - label: Item 4
+                name: 4
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Type
+                    name: type
+                    widget: string
+                    required: false
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Location
+                    name: location
+                    widget: string
+                    required: false
+                  - label: Year
+                    name: year
+                    widget: string
+                    required: false
+                  - label: Scale
+                    name: scale
+                    widget: string
+                    required: false
+                  - label: Scope
+                    name: scope
+                    widget: text
+                    required: false
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+              - label: Scale
+                name: scale
+                widget: string
+                required: false
+              - label: Scope
+                name: scope
+                widget: string
+                required: false
+              - label: Location
+                name: location
+                widget: string
+                required: false
+              - label: Year
+                name: year
+                widget: string
+                required: false
+          - label: Client Testimonials
+            name: testimonials
+            widget: object
+            collapsed: true
+            fields:
+              - label: Item 1
+                name: 1
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Quote
+                    name: quote
+                    widget: text
+                    required: false
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Role
+                    name: role
+                    widget: string
+                    required: false
+              - label: Item 2
+                name: 2
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Quote
+                    name: quote
+                    widget: text
+                    required: false
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Role
+                    name: role
+                    widget: string
+                    required: false
+              - label: Item 3
+                name: 3
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Quote
+                    name: quote
+                    widget: text
+                    required: false
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Role
+                    name: role
+                    widget: string
+                    required: false
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+          - label: Leadership Team
+            name: leadership
+            widget: object
+            collapsed: true
+            fields:
+              - label: Item 1
+                name: 1
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Role
+                    name: role
+                    widget: string
+                    required: false
+                  - label: Bio
+                    name: bio
+                    widget: text
+                    required: false
+              - label: Item 2
+                name: 2
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Role
+                    name: role
+                    widget: string
+                    required: false
+                  - label: Bio
+                    name: bio
+                    widget: text
+                    required: false
+              - label: Item 3
+                name: 3
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Role
+                    name: role
+                    widget: string
+                    required: false
+                  - label: Bio
+                    name: bio
+                    widget: text
+                    required: false
+              - label: Item 4
+                name: 4
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Role
+                    name: role
+                    widget: string
+                    required: false
+                  - label: Bio
+                    name: bio
+                    widget: text
+                    required: false
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+          - label: Certifications
+            name: certifications
+            widget: object
+            collapsed: true
+            fields:
+              - label: Item 1
+                name: 1
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: string
+                    required: false
+              - label: Item 2
+                name: 2
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: string
+                    required: false
+              - label: Item 3
+                name: 3
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: string
+                    required: false
+              - label: Item 4
+                name: 4
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: string
+                    required: false
+              - label: Item 5
+                name: 5
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: string
+                    required: false
+              - label: Item 6
+                name: 6
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Name
+                    name: name
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: string
+                    required: false
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Intro
+                name: intro
+                widget: text
+                required: false
+          - label: Catalog CTA
+            name: catalog
+            widget: object
+            collapsed: true
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: string
+                required: false
+              - label: Desc
+                name: desc
+                widget: text
+                required: false
+              - label: Button
+                name: button
+                widget: string
+                required: false
+              - label: Note
+                name: note
+                widget: string
+                required: false
+          - label: Showroom
+            name: showroom
+            widget: object
+            collapsed: true
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                required: false
+              - label: Title
+                name: title
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Item 1
+                    name: 1
+                    widget: string
+                    required: false
+                  - label: Item 2
+                    name: 2
+                    widget: string
+                    required: false
+              - label: Description
+                name: description
+                widget: text
+                required: false
+              - label: Location
+                name: location
+                widget: string
+                required: false
+              - label: Hours
+                name: hours
+                widget: string
+                required: false
+              - label: Cta
+                name: cta
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Directions
+                    name: directions
+                    widget: string
+                    required: false
+                  - label: Contact
+                    name: contact
+                    widget: string
+                    required: false
+              - label: Live
+                name: live
+                widget: string
+                required: false
+              - label: Card
+                name: card
+                widget: object
+                collapsed: true
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                    required: false
+                  - label: Desc
+                    name: desc
+                    widget: text
+                    required: false
+                  - label: Area
+                    name: area
+                    widget: string
+                    required: false
+                  - label: Brands
+                    name: brands
+                    widget: string
+                    required: false
+              - label: ImageAlt
+                name: imageAlt
+                widget: string
+                required: false
+          - label: Floating Action Buttons
+            name: fab
+            widget: object
+            collapsed: true
+            fields:
+              - label: Whatsapp
+                name: whatsapp
+                widget: string
+                required: false
+              - label: Quote
+                name: quote
+                widget: string
+                required: false
+              - label: Open
+                name: open
+                widget: string
+                required: false
+              - label: Close
+                name: close
+                widget: string
+                required: false
+          - label: Map
+            name: map
+            widget: object
+            collapsed: true
+            fields:
+              - label: Label
+                name: label
+                widget: string
+                required: false
+              - label: Directions
+                name: directions
+                widget: string
+                required: false
