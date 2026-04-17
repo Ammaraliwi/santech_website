@@ -1,9 +1,7 @@
 backend:
-  name: github
-  repo: Ammaraliwi/santech_website
+  name: git-gateway
   branch: main
-  base_url: "https://decapbridge.com"
-  auth_endpoint: oauth/github
+  squash_merges: true
 publish_mode: simple
 media_folder: "artifacts/santech-website/public/images/uploads"
 public_folder: /images/uploads
