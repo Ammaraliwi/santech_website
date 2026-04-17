@@ -176,6 +176,42 @@ export default function Contact() {
                 dr.a.wasil@santech-srl.com
               </a>
             </motion.div>
+
+            {/* Embedded Map */}
+            <motion.div
+              custom={2.5}
+              variants={fadeUp}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              className="relative border border-border rounded-sm overflow-hidden bg-card"
+              data-testid="card-map"
+            >
+              <div className="flex items-center justify-between px-5 py-3 bg-secondary/50 border-b border-border">
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-accent" />
+                  <span className="text-xs font-semibold tracking-[0.15em] uppercase text-foreground">
+                    {t("map.label")}
+                  </span>
+                </div>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Mazzeh+Autostrada+Damascus+Syria"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-medium text-accent hover:underline underline-offset-4"
+                  data-testid="link-directions"
+                >
+                  {t("map.directions")} {dir === "rtl" ? "←" : "→"}
+                </a>
+              </div>
+              <iframe
+                src="https://maps.google.com/maps?q=Mazzeh%20Autostrada%20Damascus%20Syria&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                className="w-full h-64 border-0 grayscale-[30%] hover:grayscale-0 transition-all duration-500"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Santech Trading Co. Location"
+                data-testid="iframe-map"
+              />
+            </motion.div>
           </div>
 
           {/* Right: Form */}

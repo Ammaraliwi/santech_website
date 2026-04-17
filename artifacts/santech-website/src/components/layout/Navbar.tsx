@@ -7,7 +7,9 @@ import LangToggle from "@/components/LangToggle";
 const navItems = [
   { key: "nav.home", href: "#hero" },
   { key: "nav.about", href: "#about" },
+  { key: "industries.eyebrow", href: "#industries" },
   { key: "nav.services", href: "#services" },
+  { key: "projects.eyebrow", href: "#projects" },
   { key: "nav.partners", href: "#partners" },
   { key: "nav.contact", href: "#contact" },
 ];
@@ -18,10 +20,17 @@ export default function Navbar() {
   const { t } = useI18n();
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > 50);
+        ticking = false;
+      });
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -63,7 +72,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
           {navItems.map((item) => (
             <a
               key={item.key}
@@ -92,17 +101,21 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden flex items-center gap-2 relative z-10">
+        <div className="lg:hidden flex items-center gap-2 relative z-10">
           <LangToggle inverted={!isScrolled && !mobileMenuOpen} testId="button-lang-toggle-mobile" />
           <button
+            type="button"
             className="p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             data-testid="button-mobile-menu"
+            aria-label={mobileMenuOpen ? t("nav.menu.close") : t("nav.menu.open")}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav-menu"
           >
             {mobileMenuOpen ? (
-              <X className={isScrolled ? "text-foreground" : "text-white"} />
+              <X className={isScrolled ? "text-foreground" : "text-white"} aria-hidden="true" />
             ) : (
-              <Menu className={isScrolled ? "text-foreground" : "text-white"} />
+              <Menu className={isScrolled ? "text-foreground" : "text-white"} aria-hidden="true" />
             )}
           </button>
         </div>
@@ -110,9 +123,11 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       <div
-        className={`md:hidden fixed inset-0 bg-background z-0 flex flex-col pt-24 px-6 transition-transform duration-300 ease-in-out ${
+        id="mobile-nav-menu"
+        className={`lg:hidden fixed inset-0 bg-background z-0 flex flex-col pt-24 px-6 transition-transform duration-300 ease-in-out overflow-y-auto ${
           mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
         }`}
+        aria-hidden={!mobileMenuOpen}
       >
         <div className="flex flex-col gap-6 items-center text-center">
           {navItems.map((item) => (

@@ -6,6 +6,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import FloatingActions from "@/components/FloatingActions";
 import { I18nProvider } from "@/lib/i18n";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ function Router() {
         </Switch>
       </main>
       <Footer />
+      <FloatingActions />
     </div>
   );
 }
