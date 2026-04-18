@@ -41,7 +41,7 @@ export default function TrustBar() {
   const stats: Stat[] = [
     { target: 1991, label: t("trust.heritage") },
     { target: 18, suffix: "+", label: t("trust.brands") },
-    { target: 500, suffix: "+", label: t("trust.projects") },
+    { target: 100, suffix: "+", label: t("trust.projects") },
     { target: 100, suffix: "%", label: t("trust.italian") },
   ];
 
