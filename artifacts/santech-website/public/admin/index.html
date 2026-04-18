@@ -34,6 +34,9 @@
         if (loader) setTimeout(() => loader.remove(), 800);
       });
       if (window.netlifyIdentity) {
+        window.netlifyIdentity.init({
+          APIUrl: 'https://sensational-halva-03159a.netlify.app/.netlify/identity'
+        });
         window.netlifyIdentity.on('init', (user) => {
           if (!user) {
             window.netlifyIdentity.on('login', () => {
