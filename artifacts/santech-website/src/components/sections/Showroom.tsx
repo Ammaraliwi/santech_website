@@ -1,13 +1,15 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { MapPin, Clock, ArrowRight, Sparkles } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { settings } from "@/lib/settings";
+import { BookingModal } from "@/components/BookingModal";
 
 export default function Showroom() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { t, dir } = useI18n();
+  const [bookingOpen, setBookingOpen] = useState(false);
 
   return (
     <section
@@ -95,17 +97,14 @@ export default function Showroom() {
                   aria-hidden="true"
                 />
               </a>
-              <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
-                }}
+              <button
+                type="button"
+                onClick={() => setBookingOpen(true)}
                 className="inline-flex items-center justify-center gap-2 bg-white/10 text-white px-7 py-3.5 rounded-sm font-semibold text-sm tracking-wide hover:bg-white hover:text-primary border border-white/30 backdrop-blur-sm transition-all"
                 data-testid="button-showroom-contact"
               >
                 {t("showroom.cta.contact")}
-              </a>
+              </button>
             </div>
           </motion.div>
 
@@ -161,6 +160,13 @@ export default function Showroom() {
 
       {/* Bottom accent line */}
       <div className="absolute bottom-0 inset-x-0 h-[3px] bg-gradient-to-r from-transparent via-accent to-transparent z-10" />
+
+      <BookingModal
+        open={bookingOpen}
+        onClose={() => setBookingOpen(false)}
+        url={settings.contact.booking_url}
+        title={t("showroom.cta.contact")}
+      />
     </section>
   );
 }

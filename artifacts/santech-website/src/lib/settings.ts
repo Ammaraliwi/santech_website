@@ -21,6 +21,7 @@ export interface SiteSettings {
     whatsapp_number: string;
     maps_share_url: string;
     maps_embed_url: string;
+    booking_url: string;
   };
   images: {
     hero_background: string;

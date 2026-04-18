@@ -85,6 +85,11 @@ collections:
                 name: "maps_embed_url"
                 widget: "text"
                 hint: "Get from Google Maps → Share → Embed a map → Copy the URL inside src=\"…\""
+              - label: "Booking / Schedule a Visit URL"
+                name: "booking_url"
+                widget: "string"
+                required: false
+                hint: "Zoho Bookings or Calendly URL. Opens in a popup when 'Schedule a Visit' is clicked."
           - label: "🖼️  Site Images"
             name: "images"
             widget: "object"

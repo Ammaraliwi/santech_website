@@ -15,7 +15,8 @@
     "gm_email": "dr.a.wasil@santech-srl.com",
     "whatsapp_number": "963988820109",
     "maps_share_url": "https://maps.app.goo.gl/9f9zRa1xhveyFPBj7",
-    "maps_embed_url": "https://maps.google.com/maps?q=Santech+Trading+Co+Damascus&ll=33.4907514,36.2379939&t=&z=16&ie=UTF8&iwloc=&output=embed"
+    "maps_embed_url": "https://maps.google.com/maps?q=Santech+Trading+Co+Damascus&ll=33.4907514,36.2379939&t=&z=16&ie=UTF8&iwloc=&output=embed",
+    "booking_url": "https://santech.zohobookings.com/portal-embed#/4761680000000040049"
   },
   "images": {
     "hero_background": "/images/hero-bg.png",
