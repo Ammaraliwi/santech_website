@@ -90,6 +90,37 @@ collections:
                 widget: "string"
                 required: false
                 hint: "Zoho Bookings or Calendly URL. Opens in a popup when 'Schedule a Visit' is clicked."
+          - label: "🌐  Social Media Links"
+            name: "social"
+            widget: "object"
+            collapsed: false
+            hint: "Leave empty to hide an icon. Filled icons appear in the website footer."
+            fields:
+              - label: "Facebook URL"
+                name: "facebook"
+                widget: "string"
+                required: false
+                hint: "Example: https://www.facebook.com/SHG.SANTECH/"
+              - label: "Instagram URL"
+                name: "instagram"
+                widget: "string"
+                required: false
+              - label: "LinkedIn URL"
+                name: "linkedin"
+                widget: "string"
+                required: false
+              - label: "YouTube URL"
+                name: "youtube"
+                widget: "string"
+                required: false
+              - label: "TikTok URL"
+                name: "tiktok"
+                widget: "string"
+                required: false
+              - label: "X (Twitter) URL"
+                name: "x"
+                widget: "string"
+                required: false
           - label: "🖼️  Site Images"
             name: "images"
             widget: "object"

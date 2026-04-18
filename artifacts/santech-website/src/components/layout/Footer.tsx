@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Youtube, Music2, Twitter } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { settings } from "@/lib/settings";
 
@@ -12,6 +12,15 @@ export default function Footer() {
     { key: "nav.partners", href: "#partners" },
     { key: "nav.contact", href: "#contact" },
   ];
+
+  const socialLinks = [
+    { url: settings.social?.facebook, Icon: Facebook, label: "Facebook" },
+    { url: settings.social?.instagram, Icon: Instagram, label: "Instagram" },
+    { url: settings.social?.linkedin, Icon: Linkedin, label: "LinkedIn" },
+    { url: settings.social?.youtube, Icon: Youtube, label: "YouTube" },
+    { url: settings.social?.tiktok, Icon: Music2, label: "TikTok" },
+    { url: settings.social?.x, Icon: Twitter, label: "X (Twitter)" },
+  ].filter((s) => s.url && s.url.trim() !== "");
 
   return (
     <footer className="bg-primary text-primary-foreground pt-16 pb-8 border-t border-primary/20">
@@ -33,6 +42,22 @@ export default function Footer() {
             <p className="text-primary-foreground/70 max-w-xs text-sm leading-relaxed">
               {t("footer.tagline")}
             </p>
+            {socialLinks.length > 0 && (
+              <div className="flex items-center gap-3 pt-2">
+                {socialLinks.map(({ url, Icon, label }) => (
+                  <a
+                    key={label}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-accent hover:text-primary transition-all duration-300 text-primary-foreground/80 hover:scale-110"
+                  >
+                    <Icon className="w-4 h-4" />
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="space-y-6">

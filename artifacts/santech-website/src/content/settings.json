@@ -18,6 +18,14 @@
     "maps_embed_url": "https://maps.google.com/maps?q=Santech+Trading+Co+Damascus&ll=33.4907514,36.2379939&t=&z=16&ie=UTF8&iwloc=&output=embed",
     "booking_url": "https://santech.zohobookings.com/portal-embed#/4761680000000040049"
   },
+  "social": {
+    "facebook": "https://www.facebook.com/SHG.SANTECH/",
+    "instagram": "",
+    "linkedin": "",
+    "youtube": "",
+    "tiktok": "",
+    "x": ""
+  },
   "images": {
     "hero_background": "/images/hero-bg.png",
     "about_background": "/images/about-bg.png",

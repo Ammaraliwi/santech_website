@@ -23,6 +23,14 @@ export interface SiteSettings {
     maps_embed_url: string;
     booking_url: string;
   };
+  social: {
+    facebook: string;
+    instagram: string;
+    linkedin: string;
+    youtube: string;
+    tiktok: string;
+    x: string;
+  };
   images: {
     hero_background: string;
     about_background: string;
