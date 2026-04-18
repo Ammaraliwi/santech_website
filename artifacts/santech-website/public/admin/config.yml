@@ -5,9 +5,9 @@ backend:
 publish_mode: "simple"
 media_folder: "artifacts/santech-website/public/images/uploads"
 public_folder: "/images/uploads"
-site_url: "https://santech-website.pages.dev"
-display_url: "https://santech-website.pages.dev"
-logo_url: "https://santech-website.pages.dev/brand/santech-logo.png"
+site_url: "https://santech-srl.com"
+display_url: "https://santech-srl.com"
+logo_url: "https://santech-srl.com/brand/santech-logo.png"
 locale: "en"
 collections:
   - name: "site_settings"
