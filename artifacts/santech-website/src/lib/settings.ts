@@ -25,6 +25,7 @@ export interface SiteSettings {
   };
   social: {
     facebook: string;
+    facebook_carpigiani?: string;
     instagram: string;
     linkedin: string;
     youtube: string;

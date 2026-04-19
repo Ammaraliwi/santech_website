@@ -14,7 +14,8 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { url: settings.social?.facebook, Icon: Facebook, label: "Facebook" },
+    { url: settings.social?.facebook, Icon: Facebook, label: "Facebook — Santech" },
+    { url: settings.social?.facebook_carpigiani, Icon: Facebook, label: "Facebook — Carpigiani Syria" },
     { url: settings.social?.instagram, Icon: Instagram, label: "Instagram" },
     { url: settings.social?.linkedin, Icon: Linkedin, label: "LinkedIn" },
     { url: settings.social?.youtube, Icon: Youtube, label: "YouTube" },

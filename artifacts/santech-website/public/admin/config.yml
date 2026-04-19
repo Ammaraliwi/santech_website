@@ -96,11 +96,16 @@ collections:
             collapsed: false
             hint: "Leave empty to hide an icon. Filled icons appear in the website footer."
             fields:
-              - label: "Facebook URL"
+              - label: "Facebook URL (Santech)"
                 name: "facebook"
                 widget: "string"
                 required: false
                 hint: "Example: https://www.facebook.com/SHG.SANTECH/"
+              - label: "Facebook URL (Carpigiani Syria)"
+                name: "facebook_carpigiani"
+                widget: "string"
+                required: false
+                hint: "Optional second Facebook page (Carpigiani Syria local page)."
               - label: "Instagram URL"
                 name: "instagram"
                 widget: "string"

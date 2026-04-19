@@ -15,7 +15,7 @@ interface Brand {
 
 const brands: Brand[] = [
   { name: "Electrolux Professional", category: "Commercial Kitchen & Laundry", domain: "electroluxprofessional.com", website: "https://www.electroluxprofessional.com/", logo: "/brand-logos/electrolux.png", logoBg: "#041E42" },
-  { name: "Carpigiani", category: "Gelato & Ice Cream Machines", domain: "facebook.com/people/Carpigiani-Syria", website: "https://www.facebook.com/people/Carpigiani-Syria/61572858176208/", logo: "/brand-logos/carpigiani.png" },
+  { name: "Carpigiani", category: "Gelato & Ice Cream Machines", domain: "carpigiani.com", website: "https://carpigiani.com", logo: "/brand-logos/carpigiani.png" },
   { name: "Teknaline", category: "Professional Cooking Lines", domain: "teknaline.com", website: "https://www.teknaline.com/en/", logo: "/brand-logos/teknaline.png" },
   { name: "ISA", category: "Refrigerated Display Cases", domain: "isaitaly.com", website: "https://www.isaitaly.com/", logo: "/brand-logos/isa.png", logoBg: "#ffffff" },
   { name: "Mondial Forni", category: "Professional Ovens", domain: "mondialforni.com", website: "https://www.mondialforni.com" },
