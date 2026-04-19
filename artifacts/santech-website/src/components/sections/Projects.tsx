@@ -17,7 +17,7 @@ type Project = {
 
 const projects: Project[] = [
   {
-    id: "syrian-house-alabd",
+    id: "syrian-house-complex",
     images: [
       "/portfolio/syrian-house-3d-overview.jpg",
       "/portfolio/syrian-house-floor-plan.jpg",
@@ -29,8 +29,8 @@ const projects: Project[] = [
       "/portfolio/syrian-house-bakery-modern.jpg",
     ],
     category: "renders",
-    title: { en: "Syrian House — Al-Abd Sweet Complex", ar: "البيت السوري — مجمع حلويات العبد" },
-    client: { en: "Syrian House Group — Al-Abd Sweet", ar: "مجموعة البيت السوري — حلويات العبد" },
+    title: { en: "Syrian House — Sweet & Bakery Complex", ar: "البيت السوري — مجمع الحلويات والمخابز" },
+    client: { en: "Syrian House Group", ar: "مجموعة البيت السوري" },
     location: { en: "Damascus, Syria", ar: "دمشق، سوريا" },
     type: { en: "Full Sweet & Bakery Complex (Layouts + 3D)", ar: "مجمع حلويات ومخابز متكامل (مخططات + 3D)" },
   },
