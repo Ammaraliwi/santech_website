@@ -3,7 +3,7 @@ import { useRef, useState, useEffect, useMemo } from "react";
 import { MapPin, X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
-type Category = "all" | "layouts" | "renders" | "production";
+type Category = "all" | "layouts" | "renders" | "retail" | "production";
 
 type Project = {
   id: string;
@@ -142,12 +142,85 @@ const projects: Project[] = [
     location: { en: "—", ar: "—" },
     type: { en: "Equipment Configuration", ar: "تكوين معدات" },
   },
+  {
+    id: "foodcourt-mainhall",
+    src: "/portfolio/foodcourt-mainhall.jpg",
+    category: "renders",
+    title: { en: "Mall Food Court — Main Dining Hall", ar: "فود كورت المول — قاعة الطعام الرئيسية" },
+    client: { en: "Mall Food Court", ar: "فود كورت مول" },
+    location: { en: "Regional", ar: "إقليمي" },
+    type: { en: "Hospitality Interior", ar: "تصميم ضيافة داخلي" },
+  },
+  {
+    id: "foodcourt-shops",
+    src: "/portfolio/foodcourt-shops.jpg",
+    category: "renders",
+    title: { en: "Food Court — Shops & Counter Concept", ar: "فود كورت — تصميم المحلات والكاونترات" },
+    client: { en: "Mall Food Court", ar: "فود كورت مول" },
+    location: { en: "Regional", ar: "إقليمي" },
+    type: { en: "F&B Concept Design", ar: "تصميم مفهوم أغذية ومشروبات" },
+  },
+  {
+    id: "foodcourt-seating-upper",
+    src: "/portfolio/foodcourt-seating-upper.jpg",
+    category: "renders",
+    title: { en: "Food Court — Upper Mezzanine Seating", ar: "فود كورت — جلسات الميزانين العلوي" },
+    client: { en: "Mall Food Court", ar: "فود كورت مول" },
+    location: { en: "Regional", ar: "إقليمي" },
+    type: { en: "Interior Visualization", ar: "تصور داخلي" },
+  },
+  {
+    id: "foodcourt-entrance",
+    src: "/portfolio/foodcourt-entrance.jpg",
+    category: "renders",
+    title: { en: "Food Court — Grand Entrance Walkway", ar: "فود كورت — ممر المدخل الرئيسي" },
+    client: { en: "Mall Food Court", ar: "فود كورت مول" },
+    location: { en: "Regional", ar: "إقليمي" },
+    type: { en: "Hospitality Interior", ar: "تصميم ضيافة داخلي" },
+  },
+  {
+    id: "supermarket-topview",
+    src: "/portfolio/supermarket-topview.jpg",
+    category: "retail",
+    title: { en: "Supermarket — Full Layout & Refrigeration Plan", ar: "سوبرماركت — مخطط كامل وأنظمة التبريد" },
+    client: { en: "Retail Hypermarket", ar: "سوبرماركت تجزئة" },
+    location: { en: "Regional", ar: "إقليمي" },
+    type: { en: "Retail Layout Engineering", ar: "هندسة تخطيط تجزئة" },
+  },
+  {
+    id: "supermarket-fresh",
+    src: "/portfolio/supermarket-fresh.jpg",
+    category: "retail",
+    title: { en: "Supermarket — Fresh & Frozen Zone", ar: "سوبرماركت — قسم الطازج والمجمّد" },
+    client: { en: "Retail Hypermarket", ar: "سوبرماركت تجزئة" },
+    location: { en: "Regional", ar: "إقليمي" },
+    type: { en: "Refrigeration & Display", ar: "تبريد وعرض" },
+  },
+  {
+    id: "supermarket-bakery",
+    src: "/portfolio/supermarket-bakery.jpg",
+    category: "retail",
+    title: { en: "In-Store Bakery — Display & Counter", ar: "مخبز داخل المتجر — عرض وكاونتر" },
+    client: { en: "Retail Hypermarket", ar: "سوبرماركت تجزئة" },
+    location: { en: "Regional", ar: "إقليمي" },
+    type: { en: "In-Store Bakery Concept", ar: "مفهوم مخبز داخل المتجر" },
+  },
+  {
+    id: "supermarket-aisle",
+    src: "/portfolio/supermarket-aisle.jpg",
+    category: "retail",
+    title: { en: "Supermarket — Aisle & Shelving Design", ar: "سوبرماركت — تصميم الممرات والرفوف" },
+    client: { en: "Retail Hypermarket", ar: "سوبرماركت تجزئة" },
+    location: { en: "Regional", ar: "إقليمي" },
+    type: { en: "Shelving & Merchandising", ar: "رفوف وعرض البضائع" },
+  },
 ];
 
 const categoryLabels: Record<Category, { en: string; ar: string }> = {
   all: { en: "All Work", ar: "كل الأعمال" },
   layouts: { en: "Engineering Layouts", ar: "مخططات هندسية" },
   renders: { en: "3D Visualizations", ar: "تصاميم ثلاثية الأبعاد" },
+  retail: { en: "Retail & Supermarkets", ar: "تجزئة وسوبرماركت" },
   production: { en: "Production Lines", ar: "خطوط إنتاج" },
 };
 
@@ -185,74 +258,76 @@ export default function Projects() {
     <section
       id="projects"
       ref={ref}
-      className="relative py-28 bg-background overflow-hidden"
+      className="relative py-20 bg-background overflow-hidden"
       data-testid="section-projects"
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mb-12">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5 }}
-            className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-4 border-b border-accent pb-1"
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8">
+          <div className="max-w-2xl">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.5 }}
+              className="inline-block text-[10px] font-semibold tracking-[0.2em] uppercase text-accent mb-3 border-b border-accent pb-1"
+            >
+              {t("projects.eyebrow")}
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground leading-[1.1] mb-3"
+            >
+              {t("projects.title.1")}{" "}
+              <span className="text-primary italic">{t("projects.title.2")}</span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-muted-foreground text-sm md:text-base leading-relaxed"
+            >
+              {t("projects.intro")}
+            </motion.p>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex flex-wrap gap-1.5 lg:justify-end"
+            data-testid="projects-filter"
           >
-            {t("projects.eyebrow")}
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-[1.05] mb-6"
-          >
-            {t("projects.title.1")}{" "}
-            <span className="text-primary italic">{t("projects.title.2")}</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-muted-foreground text-base md:text-lg leading-relaxed"
-          >
-            {t("projects.intro")}
-          </motion.p>
+            {(Object.keys(categoryLabels) as Category[]).map((cat) => {
+              const isActive = active === cat;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setActive(cat)}
+                  className={`px-3 py-1.5 text-[10px] font-semibold tracking-[0.12em] uppercase border transition-all duration-300 ${
+                    isActive
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "bg-background text-foreground border-border hover:border-primary hover:text-primary"
+                  }`}
+                  data-testid={`filter-${cat}`}
+                >
+                  {categoryLabels[cat][lang]}
+                </button>
+              );
+            })}
+          </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-wrap gap-2 mb-10"
-          data-testid="projects-filter"
-        >
-          {(Object.keys(categoryLabels) as Category[]).map((cat) => {
-            const isActive = active === cat;
-            return (
-              <button
-                key={cat}
-                onClick={() => setActive(cat)}
-                className={`px-4 py-2 text-xs font-semibold tracking-[0.15em] uppercase border transition-all duration-300 ${
-                  isActive
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "bg-background text-foreground border-border hover:border-primary hover:text-primary"
-                }`}
-                data-testid={`filter-${cat}`}
-              >
-                {categoryLabels[cat][lang]}
-              </button>
-            );
-          })}
-        </motion.div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5">
           <AnimatePresence mode="popLayout">
             {filtered.map((p, i) => (
               <motion.button
                 layout
                 key={p.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4, delay: (i % 6) * 0.05 }}
+                transition={{ duration: 0.35, delay: (i % 8) * 0.04 }}
                 onClick={() => setOpenIndex(i)}
                 className="group relative overflow-hidden bg-secondary/30 aspect-[4/3] cursor-zoom-in text-start"
                 data-testid={`portfolio-${p.id}`}
@@ -263,33 +338,31 @@ export default function Projects() {
                   loading="lazy"
                   draggable={false}
                   onContextMenu={(e) => e.preventDefault()}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05] select-none pointer-events-none"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.06] select-none pointer-events-none"
                   style={{ WebkitUserSelect: "none", userSelect: "none" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent opacity-70 group-hover:opacity-95 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-60 group-hover:opacity-95 transition-opacity duration-500" />
 
-                <div className="absolute top-3 start-3 z-10">
-                  <span className="inline-block px-2.5 py-1 text-[10px] font-semibold tracking-[0.15em] uppercase bg-accent text-accent-foreground">
+                <div className="absolute top-2 start-2 z-10">
+                  <span className="inline-block px-2 py-0.5 text-[9px] font-semibold tracking-[0.12em] uppercase bg-accent text-accent-foreground">
                     {categoryLabels[p.category][lang]}
                   </span>
                 </div>
 
-                <div className="absolute top-3 end-3 z-10 w-9 h-9 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
-                  <Maximize2 className="w-4 h-4 text-white" />
+                <div className="absolute top-2 end-2 z-10 w-7 h-7 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
+                  <Maximize2 className="w-3.5 h-3.5 text-white" />
                 </div>
 
-                <div className="absolute inset-x-0 bottom-0 p-5 z-10 text-primary-foreground transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="text-[10px] font-semibold tracking-[0.2em] uppercase text-accent mb-1.5 opacity-90">
+                <div className="absolute inset-x-0 bottom-0 p-3 z-10 text-primary-foreground transform translate-y-1 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="text-[9px] font-semibold tracking-[0.18em] uppercase text-accent mb-1 opacity-90 line-clamp-1">
                     {p.type[lang]}
                   </div>
-                  <h3 className="font-serif font-bold text-lg leading-tight mb-2">
+                  <h3 className="font-serif font-bold text-sm leading-tight mb-1 line-clamp-2">
                     {p.title[lang]}
                   </h3>
-                  <div className="flex items-center gap-1.5 text-[11px] opacity-80">
-                    <MapPin className="w-3 h-3" />
-                    <span>{p.client[lang]}</span>
-                    <span className="opacity-50">•</span>
-                    <span>{p.location[lang]}</span>
+                  <div className="flex items-center gap-1 text-[10px] opacity-80 line-clamp-1">
+                    <MapPin className="w-2.5 h-2.5 shrink-0" />
+                    <span className="truncate">{p.client[lang]}</span>
                   </div>
                 </div>
               </motion.button>
