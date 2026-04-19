@@ -1,13 +1,13 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect, useMemo } from "react";
-import { MapPin, X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
+import { MapPin, X, ChevronLeft, ChevronRight, Maximize2, Images } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
 type Category = "all" | "layouts" | "renders" | "retail" | "production";
 
 type Project = {
   id: string;
-  src: string;
+  images: string[];
   category: Exclude<Category, "all">;
   title: { en: string; ar: string };
   client: { en: string; ar: string };
@@ -17,8 +17,42 @@ type Project = {
 
 const projects: Project[] = [
   {
+    id: "syrian-house-alabd",
+    images: [
+      "/portfolio/syrian-house-3d-overview.jpg",
+      "/portfolio/syrian-house-floor-plan.jpg",
+      "/portfolio/syrian-house-equipment-plan-1.jpg",
+      "/portfolio/syrian-house-alabd-layout-1.jpg",
+      "/portfolio/syrian-house-interior.jpg",
+      "/portfolio/syrian-house-display-cases.jpg",
+      "/portfolio/syrian-house-pastry-modern.jpg",
+      "/portfolio/syrian-house-bakery-modern.jpg",
+    ],
+    category: "renders",
+    title: { en: "Syrian House — Al-Abd Sweet Complex", ar: "البيت السوري — مجمع حلويات العبد" },
+    client: { en: "Syrian House Group — Al-Abd Sweet", ar: "مجموعة البيت السوري — حلويات العبد" },
+    location: { en: "Damascus, Syria", ar: "دمشق، سوريا" },
+    type: { en: "Full Sweet & Bakery Complex (Layouts + 3D)", ar: "مجمع حلويات ومخابز متكامل (مخططات + 3D)" },
+  },
+  {
+    id: "syrian-house-factory",
+    images: [
+      "/portfolio/syrian-house-ground-floor.jpg",
+      "/portfolio/syrian-house-first-floor.jpg",
+      "/portfolio/central-bakery-line.jpg",
+      "/portfolio/catering-cold-storage.jpg",
+      "/portfolio/syrian-house-kitchen-3d.jpg",
+      "/portfolio/bakery-3d-line.jpg",
+    ],
+    category: "layouts",
+    title: { en: "Syrian House Factory — Central Production Facility", ar: "مصنع البيت السوري — منشأة الإنتاج المركزية" },
+    client: { en: "Syrian House Group", ar: "مجموعة البيت السوري" },
+    location: { en: "Khartoum", ar: "الخرطوم" },
+    type: { en: "Multi-Floor Production, Bakery & Cold-Chain", ar: "إنتاج متعدد الطوابق ومخابز وسلسلة تبريد" },
+  },
+  {
     id: "nakeel",
-    src: "/portfolio/nakeel-tahini-factory.jpg",
+    images: ["/portfolio/nakeel-tahini-factory.jpg"],
     category: "layouts",
     title: { en: "Al-Nakeel Tahini Factory — Production Layout", ar: "مصنع النخيل للطحينة — مخطط الإنتاج" },
     client: { en: "Al-Nakeel Factory", ar: "مصنع النخيل" },
@@ -26,53 +60,33 @@ const projects: Project[] = [
     type: { en: "Food Factory", ar: "مصنع غذائي" },
   },
   {
-    id: "syrian-house-ground",
-    src: "/portfolio/syrian-house-ground-floor.jpg",
-    category: "layouts",
-    title: { en: "Syrian House Factory — Ground Floor Plan", ar: "مصنع البيت السوري — مخطط الطابق الأرضي" },
-    client: { en: "Syrian House Group", ar: "مجموعة البيت السوري" },
-    location: { en: "Khartoum", ar: "الخرطوم" },
-    type: { en: "Central Production Facility", ar: "منشأة إنتاج مركزية" },
-  },
-  {
-    id: "syrian-house-first",
-    src: "/portfolio/syrian-house-first-floor.jpg",
-    category: "layouts",
-    title: { en: "Syrian House Factory — First Floor (Packaging)", ar: "مصنع البيت السوري — الطابق الأول (التعبئة)" },
-    client: { en: "Syrian House Group", ar: "مجموعة البيت السوري" },
-    location: { en: "Khartoum", ar: "الخرطوم" },
-    type: { en: "Packaging Plant", ar: "خط تعبئة" },
-  },
-  {
-    id: "central-bakery-line",
-    src: "/portfolio/central-bakery-line.jpg",
-    category: "layouts",
-    title: { en: "Automatic Arabic Bread & Bakery Line — Layout", ar: "خط الخبز العربي الآلي والمخبوزات — مخطط" },
-    client: { en: "Syrian House Group", ar: "مجموعة البيت السوري" },
-    location: { en: "Khartoum", ar: "الخرطوم" },
-    type: { en: "Industrial Bakery", ar: "مخبز صناعي" },
-  },
-  {
-    id: "catering-cold",
-    src: "/portfolio/catering-cold-storage.jpg",
-    category: "layouts",
-    title: { en: "Catering Complex — Cold Rooms & Prep Areas", ar: "مجمع تقديم طعام — غرف تبريد وأقسام تحضير" },
-    client: { en: "Syrian House Group", ar: "مجموعة البيت السوري" },
-    location: { en: "Khartoum", ar: "الخرطوم" },
-    type: { en: "Catering / Cloud Kitchen", ar: "كاترينغ / مطبخ مركزي" },
-  },
-  {
-    id: "mojo-layout",
-    src: "/portfolio/mojo-kitchen-layout.jpg",
-    category: "layouts",
-    title: { en: "MOJO Fast Food — Kitchen Equipment Layout", ar: "مطعم MOJO للوجبات السريعة — مخطط معدات المطبخ" },
+    id: "mojo",
+    images: [
+      "/portfolio/mojo-fastfood-render.jpg",
+      "/portfolio/mojo-kitchen-layout.jpg",
+    ],
+    category: "renders",
+    title: { en: "MOJO Fast Food — Restaurant Concept", ar: "MOJO Fast Food — مفهوم المطعم" },
     client: { en: "MOJO Fast Food", ar: "MOJO Fast Food" },
     location: { en: "Damascus", ar: "دمشق" },
-    type: { en: "Quick Service Restaurant", ar: "مطعم خدمة سريعة" },
+    type: { en: "QSR Layout & 3D Visualization", ar: "مخطط ومنظور ثلاثي لمطعم وجبات سريعة" },
+  },
+  {
+    id: "donafello",
+    images: [
+      "/portfolio/donafello-storefront.jpg",
+      "/portfolio/donafello-interior.jpg",
+      "/portfolio/donafello-furniture-layout.jpg",
+    ],
+    category: "renders",
+    title: { en: "Donafello — Donut Boutique Concept", ar: "Donafello — مفهوم محل الدوناتس" },
+    client: { en: "Donafello", ar: "Donafello" },
+    location: { en: "Mall Concept", ar: "مفهوم مول تجاري" },
+    type: { en: "Storefront, Interior & Furniture Layout", ar: "واجهة وتصميم داخلي وتوزيع أثاث" },
   },
   {
     id: "restaurant-furniture",
-    src: "/portfolio/restaurant-furniture-layout.jpg",
+    images: ["/portfolio/restaurant-furniture-layout.jpg"],
     category: "layouts",
     title: { en: "Restaurant — Furniture & Equipment Arrangement", ar: "مطعم — توزيع الأثاث والمعدات" },
     client: { en: "Confidential", ar: "سري" },
@@ -80,125 +94,8 @@ const projects: Project[] = [
     type: { en: "Full-Service Restaurant", ar: "مطعم كامل الخدمات" },
   },
   {
-    id: "mojo-render",
-    src: "/portfolio/mojo-fastfood-render.jpg",
-    category: "renders",
-    title: { en: "MOJO Fast Food — Front Counter Visualization", ar: "مطعم MOJO — تصميم الكاونتر الأمامي" },
-    client: { en: "MOJO Fast Food", ar: "MOJO Fast Food" },
-    location: { en: "Damascus", ar: "دمشق" },
-    type: { en: "3D Visualization", ar: "تصميم ثلاثي الأبعاد" },
-  },
-  {
-    id: "donafello-storefront",
-    src: "/portfolio/donafello-storefront.jpg",
-    category: "renders",
-    title: { en: "Donafello — Donut Boutique Storefront", ar: "Donafello — واجهة محل الدوناتس" },
-    client: { en: "Donafello", ar: "Donafello" },
-    location: { en: "Mall Concept", ar: "مفهوم مول تجاري" },
-    type: { en: "Concept Visualization", ar: "تصميم مفاهيمي" },
-  },
-  {
-    id: "donafello-interior",
-    src: "/portfolio/donafello-interior.jpg",
-    category: "renders",
-    title: { en: "Donafello — Interior Seating & Feature Wall", ar: "Donafello — التصميم الداخلي والجدار المميز" },
-    client: { en: "Donafello", ar: "Donafello" },
-    location: { en: "Mall Concept", ar: "مفهوم مول تجاري" },
-    type: { en: "Interior Design", ar: "تصميم داخلي" },
-  },
-  {
-    id: "syrian-house-3d",
-    src: "/portfolio/syrian-house-kitchen-3d.jpg",
-    category: "renders",
-    title: { en: "Syrian House — Kitchen Project 3D Layout", ar: "البيت السوري — مخطط مشروع المطبخ ثلاثي الأبعاد" },
-    client: { en: "Syrian House Group", ar: "مجموعة البيت السوري" },
-    location: { en: "Khartoum", ar: "الخرطوم" },
-    type: { en: "3D Kitchen Layout", ar: "مخطط مطبخ ثلاثي الأبعاد" },
-  },
-  {
-    id: "bakery-3d-line",
-    src: "/portfolio/bakery-3d-line.jpg",
-    category: "production",
-    title: { en: "Automated Bakery Production Line — 3D View", ar: "خط إنتاج مخبز آلي — عرض ثلاثي الأبعاد" },
-    client: { en: "Syrian House Group", ar: "مجموعة البيت السوري" },
-    location: { en: "Khartoum", ar: "الخرطوم" },
-    type: { en: "Production Line Engineering", ar: "هندسة خط إنتاج" },
-  },
-  {
-    id: "sh-alabd-floor-plan",
-    src: "/portfolio/syrian-house-floor-plan.jpg",
-    category: "layouts",
-    title: { en: "Syrian House — Al-Abd Sweet · Master Floor Plan", ar: "البيت السوري — حلويات العبد · المخطط العام" },
-    client: { en: "Syrian House Group — Al-Abd Sweet", ar: "مجموعة البيت السوري — حلويات العبد" },
-    location: { en: "Damascus, Syria", ar: "دمشق، سوريا" },
-    type: { en: "Multi-Zone Sweet Complex Layout (KRONOS / POP)", ar: "مخطط مجمع حلويات متعدد الأقسام (KRONOS / POP)" },
-  },
-  {
-    id: "sh-alabd-equipment",
-    src: "/portfolio/syrian-house-equipment-plan-1.jpg",
-    category: "layouts",
-    title: { en: "Syrian House — Al-Abd Sweet · Bocchini Equipment Plan", ar: "البيت السوري — حلويات العبد · مخطط معدات بوكيني" },
-    client: { en: "Syrian House Group — Al-Abd Sweet", ar: "مجموعة البيت السوري — حلويات العبد" },
-    location: { en: "Damascus, Syria", ar: "دمشق، سوريا" },
-    type: { en: "Refrigerated Display & Counter Engineering", ar: "هندسة فاترينات تبريد وكاونترات" },
-  },
-  {
-    id: "sh-alabd-layout-detail",
-    src: "/portfolio/syrian-house-alabd-layout-1.jpg",
-    category: "layouts",
-    title: { en: "Syrian House — Al-Abd Sweet · Detailed Layout", ar: "البيت السوري — حلويات العبد · المخطط التفصيلي" },
-    client: { en: "Syrian House Group — Al-Abd Sweet", ar: "مجموعة البيت السوري — حلويات العبد" },
-    location: { en: "Damascus, Syria", ar: "دمشق، سوريا" },
-    type: { en: "Sweet Shop Detailed Engineering", ar: "هندسة تفصيلية لمحل حلويات" },
-  },
-  {
-    id: "sh-alabd-3d-overview",
-    src: "/portfolio/syrian-house-3d-overview.jpg",
-    category: "renders",
-    title: { en: "Syrian House — Al-Abd Sweet · 3D Aerial Overview", ar: "البيت السوري — حلويات العبد · منظور علوي ثلاثي الأبعاد" },
-    client: { en: "Syrian House Group — Al-Abd Sweet", ar: "مجموعة البيت السوري — حلويات العبد" },
-    location: { en: "Damascus, Syria", ar: "دمشق، سوريا" },
-    type: { en: "Full Showroom 3D Visualization", ar: "تصور ثلاثي الأبعاد للصالة الكاملة" },
-  },
-  {
-    id: "sh-alabd-interior",
-    src: "/portfolio/syrian-house-interior.jpg",
-    category: "renders",
-    title: { en: "Syrian House — Al-Abd Sweet · Interior View", ar: "البيت السوري — حلويات العبد · منظور داخلي" },
-    client: { en: "Syrian House Group — Al-Abd Sweet", ar: "مجموعة البيت السوري — حلويات العبد" },
-    location: { en: "Damascus, Syria", ar: "دمشق، سوريا" },
-    type: { en: "Showroom Interior Render", ar: "رندر داخلي للصالة" },
-  },
-  {
-    id: "sh-alabd-display-cases",
-    src: "/portfolio/syrian-house-display-cases.jpg",
-    category: "renders",
-    title: { en: "Syrian House — Al-Abd Sweet · Gelato & Pastry Display", ar: "البيت السوري — حلويات العبد · فاترينات الجيلاتو والحلويات" },
-    client: { en: "Syrian House Group — Al-Abd Sweet", ar: "مجموعة البيت السوري — حلويات العبد" },
-    location: { en: "Damascus, Syria", ar: "دمشق، سوريا" },
-    type: { en: "Refrigerated Display Cabinets Render", ar: "رندر فاترينات تبريد" },
-  },
-  {
-    id: "sh-alabd-pastry-modern",
-    src: "/portfolio/syrian-house-pastry-modern.jpg",
-    category: "renders",
-    title: { en: "Syrian House — Al-Abd Sweet · Modern Pastry Concept", ar: "البيت السوري — حلويات العبد · مفهوم الحلويات الحديث" },
-    client: { en: "Syrian House Group — Al-Abd Sweet", ar: "مجموعة البيت السوري — حلويات العبد" },
-    location: { en: "Damascus, Syria", ar: "دمشق، سوريا" },
-    type: { en: "Pastry Counter Concept Render", ar: "رندر مفهوم كاونتر الحلويات" },
-  },
-  {
-    id: "sh-alabd-bakery-modern",
-    src: "/portfolio/syrian-house-bakery-modern.jpg",
-    category: "renders",
-    title: { en: "Syrian House — Al-Abd Sweet · Modern Bakery Concept", ar: "البيت السوري — حلويات العبد · مفهوم المخبز الحديث" },
-    client: { en: "Syrian House Group — Al-Abd Sweet", ar: "مجموعة البيت السوري — حلويات العبد" },
-    location: { en: "Damascus, Syria", ar: "دمشق، سوريا" },
-    type: { en: "Bakery Interior Concept Render", ar: "رندر مفهوم داخلي لمخبز" },
-  },
-  {
     id: "ozone-flour",
-    src: "/portfolio/ozone-flour-line.jpg",
+    images: ["/portfolio/ozone-flour-line.jpg"],
     category: "production",
     title: { en: "Ozone PCF — Flour Cleaning & Grading Line", ar: "Ozone PCF — خط تنظيف وتدريج الطحين" },
     client: { en: "Ozone Industries", ar: "صناعات Ozone" },
@@ -207,7 +104,7 @@ const projects: Project[] = [
   },
   {
     id: "s900-suite",
-    src: "/portfolio/s900-cooking-suite.jpg",
+    images: ["/portfolio/s900-cooking-suite.jpg"],
     category: "production",
     title: { en: "S900 Series — Modular Cooking Suite", ar: "سلسلة S900 — تشكيلة طهي معيارية" },
     client: { en: "Multi-Project Equipment", ar: "تجهيزات متعددة المشاريع" },
@@ -215,98 +112,48 @@ const projects: Project[] = [
     type: { en: "Equipment Configuration", ar: "تكوين معدات" },
   },
   {
-    id: "foodcourt-mainhall",
-    src: "/portfolio/foodcourt-mainhall.jpg",
+    id: "foodcourt",
+    images: [
+      "/portfolio/foodcourt-mainhall.jpg",
+      "/portfolio/foodcourt-shops.jpg",
+      "/portfolio/foodcourt-seating-upper.jpg",
+      "/portfolio/foodcourt-entrance.jpg",
+    ],
     category: "renders",
-    title: { en: "Mall Food Court — Main Dining Hall", ar: "فود كورت المول — قاعة الطعام الرئيسية" },
+    title: { en: "Mall Food Court — Hospitality Complex", ar: "فود كورت المول — مجمع ضيافة" },
     client: { en: "Mall Food Court", ar: "فود كورت مول" },
     location: { en: "Regional", ar: "إقليمي" },
-    type: { en: "Hospitality Interior", ar: "تصميم ضيافة داخلي" },
+    type: { en: "Dining Hall, Shops & Entrance Concept", ar: "قاعة طعام، محلات ومدخل" },
   },
   {
-    id: "foodcourt-shops",
-    src: "/portfolio/foodcourt-shops.jpg",
-    category: "renders",
-    title: { en: "Food Court — Shops & Counter Concept", ar: "فود كورت — تصميم المحلات والكاونترات" },
-    client: { en: "Mall Food Court", ar: "فود كورت مول" },
-    location: { en: "Regional", ar: "إقليمي" },
-    type: { en: "F&B Concept Design", ar: "تصميم مفهوم أغذية ومشروبات" },
-  },
-  {
-    id: "foodcourt-seating-upper",
-    src: "/portfolio/foodcourt-seating-upper.jpg",
-    category: "renders",
-    title: { en: "Food Court — Upper Mezzanine Seating", ar: "فود كورت — جلسات الميزانين العلوي" },
-    client: { en: "Mall Food Court", ar: "فود كورت مول" },
-    location: { en: "Regional", ar: "إقليمي" },
-    type: { en: "Interior Visualization", ar: "تصور داخلي" },
-  },
-  {
-    id: "foodcourt-entrance",
-    src: "/portfolio/foodcourt-entrance.jpg",
-    category: "renders",
-    title: { en: "Food Court — Grand Entrance Walkway", ar: "فود كورت — ممر المدخل الرئيسي" },
-    client: { en: "Mall Food Court", ar: "فود كورت مول" },
-    location: { en: "Regional", ar: "إقليمي" },
-    type: { en: "Hospitality Interior", ar: "تصميم ضيافة داخلي" },
-  },
-  {
-    id: "supermarket-topview",
-    src: "/portfolio/supermarket-topview.jpg",
+    id: "supermarket",
+    images: [
+      "/portfolio/supermarket-topview.jpg",
+      "/portfolio/supermarket-fresh.jpg",
+      "/portfolio/supermarket-bakery.jpg",
+      "/portfolio/supermarket-aisle.jpg",
+    ],
     category: "retail",
-    title: { en: "Supermarket — Full Layout & Refrigeration Plan", ar: "سوبرماركت — مخطط كامل وأنظمة التبريد" },
+    title: { en: "Hypermarket — Full Retail Concept", ar: "سوبرماركت — مفهوم تجزئة متكامل" },
     client: { en: "Retail Hypermarket", ar: "سوبرماركت تجزئة" },
     location: { en: "Regional", ar: "إقليمي" },
-    type: { en: "Retail Layout Engineering", ar: "هندسة تخطيط تجزئة" },
+    type: { en: "Layout, Refrigeration, Bakery & Shelving", ar: "مخطط وتبريد ومخبز ورفوف" },
   },
   {
-    id: "supermarket-fresh",
-    src: "/portfolio/supermarket-fresh.jpg",
-    category: "retail",
-    title: { en: "Supermarket — Fresh & Frozen Zone", ar: "سوبرماركت — قسم الطازج والمجمّد" },
-    client: { en: "Retail Hypermarket", ar: "سوبرماركت تجزئة" },
-    location: { en: "Regional", ar: "إقليمي" },
-    type: { en: "Refrigeration & Display", ar: "تبريد وعرض" },
-  },
-  {
-    id: "supermarket-bakery",
-    src: "/portfolio/supermarket-bakery.jpg",
-    category: "retail",
-    title: { en: "In-Store Bakery — Display & Counter", ar: "مخبز داخل المتجر — عرض وكاونتر" },
-    client: { en: "Retail Hypermarket", ar: "سوبرماركت تجزئة" },
-    location: { en: "Regional", ar: "إقليمي" },
-    type: { en: "In-Store Bakery Concept", ar: "مفهوم مخبز داخل المتجر" },
-  },
-  {
-    id: "supermarket-aisle",
-    src: "/portfolio/supermarket-aisle.jpg",
-    category: "retail",
-    title: { en: "Supermarket — Aisle & Shelving Design", ar: "سوبرماركت — تصميم الممرات والرفوف" },
-    client: { en: "Retail Hypermarket", ar: "سوبرماركت تجزئة" },
-    location: { en: "Regional", ar: "إقليمي" },
-    type: { en: "Shelving & Merchandising", ar: "رفوف وعرض البضائع" },
-  },
-  {
-    id: "kics-ground",
-    src: "/portfolio/kics-ground-floor.jpg",
+    id: "kics",
+    images: [
+      "/portfolio/kics-ground-floor.jpg",
+      "/portfolio/kics-first-floor.jpg",
+    ],
     category: "layouts",
-    title: { en: "KiCS Central Kitchen — Ground Floor Plan", ar: "مطبخ KiCS المركزي — مخطط الطابق الأرضي" },
-    client: { en: "KiCS Central Kitchen", ar: "KiCS مطبخ مركزي" },
-    location: { en: "Regional", ar: "إقليمي" },
-    type: { en: "Central Kitchen Layout", ar: "مخطط مطبخ مركزي" },
-  },
-  {
-    id: "kics-first",
-    src: "/portfolio/kics-first-floor.jpg",
-    category: "layouts",
-    title: { en: "KiCS Central Kitchen — First Floor Plan", ar: "مطبخ KiCS المركزي — مخطط الطابق الأول" },
+    title: { en: "KiCS Central Kitchen — Multi-Floor Layout", ar: "مطبخ KiCS المركزي — مخطط متعدد الطوابق" },
     client: { en: "KiCS Central Kitchen", ar: "KiCS مطبخ مركزي" },
     location: { en: "Regional", ar: "إقليمي" },
     type: { en: "Central Kitchen Layout", ar: "مخطط مطبخ مركزي" },
   },
   {
     id: "boost-juice",
-    src: "/portfolio/boost-juice-bar.jpg",
+    images: ["/portfolio/boost-juice-bar.jpg"],
     category: "layouts",
     title: { en: "Boost Plus Juice Bar — Ground Floor Layout", ar: "عصائر Boost Plus — مخطط الطابق الأرضي" },
     client: { en: "Boost Plus Juice Bar", ar: "Boost Plus Juice Bar" },
@@ -314,44 +161,35 @@ const projects: Project[] = [
     type: { en: "Juice Bar Concept", ar: "تصميم بار عصائر" },
   },
   {
-    id: "waffly-layout-c",
-    src: "/portfolio/waffly-layout-c.jpg",
-    category: "layouts",
-    title: { en: "Waffly Café — Layout Solution C", ar: "كافيه Waffly — حل التخطيط C" },
+    id: "waffly",
+    images: [
+      "/portfolio/waffly-counter-concept.jpg",
+      "/portfolio/waffly-shelves-concept.jpg",
+      "/portfolio/waffly-mood-cover.jpg",
+      "/portfolio/waffly-layout-c.jpg",
+      "/portfolio/waffly-layout-d.jpg",
+    ],
+    category: "renders",
+    title: { en: "Waffly Café — Concept & Layouts", ar: "كافيه Waffly — المفهوم والمخططات" },
     client: { en: "Waffly", ar: "Waffly" },
     location: { en: "Concept Project", ar: "مشروع مفهوم" },
-    type: { en: "Café Layout Option", ar: "خيار تخطيط كافيه" },
+    type: { en: "Mood Book, Counter Design & Layout Options", ar: "كتاب مزاج وتصميم كاونتر وخيارات تخطيط" },
   },
   {
-    id: "waffly-layout-d",
-    src: "/portfolio/waffly-layout-d.jpg",
+    id: "sh-shop",
+    images: [
+      "/portfolio/sh-shop-ground.jpg",
+      "/portfolio/sh-shop-first.jpg",
+    ],
     category: "layouts",
-    title: { en: "Waffly Café — Layout Solution D", ar: "كافيه Waffly — حل التخطيط D" },
-    client: { en: "Waffly", ar: "Waffly" },
-    location: { en: "Concept Project", ar: "مشروع مفهوم" },
-    type: { en: "Café Layout Option", ar: "خيار تخطيط كافيه" },
-  },
-  {
-    id: "sh-ground",
-    src: "/portfolio/sh-shop-ground.jpg",
-    category: "layouts",
-    title: { en: "SH Shop — Ground Floor Layout", ar: "متجر SH — مخطط الطابق الأرضي" },
+    title: { en: "SH Shop — Multi-Floor Retail Layout", ar: "متجر SH — مخطط تجزئة متعدد الطوابق" },
     client: { en: "Confidential Client", ar: "عميل سري" },
     location: { en: "Regional", ar: "إقليمي" },
     type: { en: "Retail Layout Engineering", ar: "هندسة تخطيط تجزئة" },
   },
   {
-    id: "sh-first",
-    src: "/portfolio/sh-shop-first.jpg",
-    category: "layouts",
-    title: { en: "SH Shop — First Floor Layout", ar: "متجر SH — مخطط الطابق الأول" },
-    client: { en: "Confidential Client", ar: "عميل سري" },
-    location: { en: "Regional", ar: "إقليمي" },
-    type: { en: "Retail Layout Engineering", ar: "هندسة تخطيط تجزئة" },
-  },
-  {
-    id: "shg-bakery-plan",
-    src: "/portfolio/shg-bakery-plan.jpg",
+    id: "shg-bakery",
+    images: ["/portfolio/shg-bakery-plan.jpg"],
     category: "layouts",
     title: { en: "SHG Bakery — Equipment & Floor Plan", ar: "مخبز SHG — مخطط المعدات والأرضية" },
     client: { en: "SHG Bakery", ar: "مخبز SHG" },
@@ -360,7 +198,7 @@ const projects: Project[] = [
   },
   {
     id: "zaitawi-sesame-line",
-    src: "/portfolio/zaitawi-sesame-line-1.jpg",
+    images: ["/portfolio/zaitawi-sesame-line-1.jpg"],
     category: "production",
     title: { en: "Zaitawi — Sesame Sieving Line (CAD Model)", ar: "الزيتاوي — خط نخل السمسم (مخطط CAD)" },
     client: { en: "Zaitawi", ar: "الزيتاوي" },
@@ -369,48 +207,12 @@ const projects: Project[] = [
   },
   {
     id: "gelato-brochure",
-    src: "/portfolio/gelato-lab-brochure.jpg",
+    images: ["/portfolio/gelato-lab-brochure.jpg"],
     category: "production",
     title: { en: "Gelato Lab by Santech — Carpigiani Equipment Line", ar: "مختبر الجيلاتو من Santech — خط معدات Carpigiani" },
     client: { en: "Santech Gelato Solutions", ar: "حلول جيلاتو Santech" },
     location: { en: "Turnkey Solution", ar: "حل تسليم مفتاح" },
     type: { en: "Gelato Production Line", ar: "خط إنتاج جيلاتو" },
-  },
-  {
-    id: "donafello-layout",
-    src: "/portfolio/donafello-furniture-layout.jpg",
-    category: "renders",
-    title: { en: "Donafello — Furniture Layout & Equipment List", ar: "Donafello — توزيع الأثاث وقائمة المعدات" },
-    client: { en: "Donafello", ar: "Donafello" },
-    location: { en: "Mall Concept", ar: "مفهوم مول تجاري" },
-    type: { en: "F&B Concept Design", ar: "تصميم مفهوم أغذية ومشروبات" },
-  },
-  {
-    id: "waffly-mood",
-    src: "/portfolio/waffly-mood-cover.jpg",
-    category: "renders",
-    title: { en: "Waffly — Project Mood Book Cover", ar: "Waffly — غلاف كتاب المزاج للمشروع" },
-    client: { en: "Waffly", ar: "Waffly" },
-    location: { en: "Concept Project", ar: "مشروع مفهوم" },
-    type: { en: "Concept Mood Book", ar: "كتاب مزاج مفاهيمي" },
-  },
-  {
-    id: "waffly-counter",
-    src: "/portfolio/waffly-counter-concept.jpg",
-    category: "renders",
-    title: { en: "Waffly — Counter Design Concept (Turquoise & Dektón)", ar: "Waffly — تصميم الكاونتر (تركواز ودكتون)" },
-    client: { en: "Waffly", ar: "Waffly" },
-    location: { en: "Concept Project", ar: "مشروع مفهوم" },
-    type: { en: "Material & Counter Concept", ar: "مفهوم مواد وكاونتر" },
-  },
-  {
-    id: "waffly-shelves",
-    src: "/portfolio/waffly-shelves-concept.jpg",
-    category: "renders",
-    title: { en: "Waffly — Back Counter Shelving Concept", ar: "Waffly — مفهوم رفوف الكاونتر الخلفي" },
-    client: { en: "Waffly", ar: "Waffly" },
-    location: { en: "Concept Project", ar: "مشروع مفهوم" },
-    type: { en: "Interior Detail Concept", ar: "تفصيل داخلي مفاهيمي" },
   },
 ];
 
@@ -428,19 +230,23 @@ export default function Projects() {
   const { t, lang } = useI18n();
 
   const [active, setActive] = useState<Category>("all");
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openProject, setOpenProject] = useState<number | null>(null);
+  const [imgIndex, setImgIndex] = useState(0);
 
   const filtered = useMemo(
     () => (active === "all" ? projects : projects.filter((p) => p.category === active)),
     [active]
   );
 
+  const current = openProject !== null ? filtered[openProject] : null;
+  const totalImgs = current ? current.images.length : 0;
+
   useEffect(() => {
-    if (openIndex === null) return;
+    if (current === null) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpenIndex(null);
-      if (e.key === "ArrowRight") setOpenIndex((i) => (i === null ? null : (i + 1) % filtered.length));
-      if (e.key === "ArrowLeft") setOpenIndex((i) => (i === null ? null : (i - 1 + filtered.length) % filtered.length));
+      if (e.key === "Escape") setOpenProject(null);
+      if (e.key === "ArrowRight") setImgIndex((i) => (i + 1) % totalImgs);
+      if (e.key === "ArrowLeft") setImgIndex((i) => (i - 1 + totalImgs) % totalImgs);
     };
     window.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
@@ -448,9 +254,12 @@ export default function Projects() {
       window.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
     };
-  }, [openIndex, filtered.length]);
+  }, [current, totalImgs]);
 
-  const current = openIndex !== null ? filtered[openIndex] : null;
+  const openAt = (i: number) => {
+    setOpenProject(i);
+    setImgIndex(0);
+  };
 
   return (
     <section
@@ -516,7 +325,7 @@ export default function Projects() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <AnimatePresence mode="popLayout">
             {filtered.map((p, i) => (
               <motion.button
@@ -525,13 +334,13 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.35, delay: (i % 8) * 0.04 }}
-                onClick={() => setOpenIndex(i)}
+                transition={{ duration: 0.35, delay: (i % 6) * 0.05 }}
+                onClick={() => openAt(i)}
                 className="group relative overflow-hidden bg-secondary/30 aspect-[4/3] cursor-zoom-in text-start"
                 data-testid={`portfolio-${p.id}`}
               >
                 <img
-                  src={p.src}
+                  src={p.images[0]}
                   alt={p.title[lang]}
                   loading="lazy"
                   draggable={false}
@@ -539,28 +348,37 @@ export default function Projects() {
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.06] select-none pointer-events-none"
                   style={{ WebkitUserSelect: "none", userSelect: "none" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-60 group-hover:opacity-95 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/30 to-transparent opacity-70 group-hover:opacity-95 transition-opacity duration-500" />
 
-                <div className="absolute top-2 start-2 z-10">
-                  <span className="inline-block px-2 py-0.5 text-[9px] font-semibold tracking-[0.12em] uppercase bg-accent text-accent-foreground">
+                <div className="absolute top-3 start-3 z-10">
+                  <span className="inline-block px-2.5 py-1 text-[10px] font-semibold tracking-[0.14em] uppercase bg-accent text-accent-foreground">
                     {categoryLabels[p.category][lang]}
                   </span>
                 </div>
 
-                <div className="absolute top-2 end-2 z-10 w-7 h-7 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
-                  <Maximize2 className="w-3.5 h-3.5 text-white" />
+                {p.images.length > 1 && (
+                  <div className="absolute top-3 end-3 z-10">
+                    <span className="inline-flex items-center gap-1 px-2 py-1 text-[10px] font-semibold bg-black/55 text-white backdrop-blur-sm rounded-sm">
+                      <Images className="w-3 h-3" />
+                      {p.images.length}
+                    </span>
+                  </div>
+                )}
+
+                <div className="absolute bottom-3 end-3 z-10 w-9 h-9 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
+                  <Maximize2 className="w-4 h-4 text-white" />
                 </div>
 
-                <div className="absolute inset-x-0 bottom-0 p-3 z-10 text-primary-foreground transform translate-y-1 group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="text-[9px] font-semibold tracking-[0.18em] uppercase text-accent mb-1 opacity-90 line-clamp-1">
+                <div className="absolute inset-x-0 bottom-0 p-4 z-10 text-primary-foreground transform translate-y-1 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="text-[10px] font-semibold tracking-[0.18em] uppercase text-accent mb-1.5 opacity-95 line-clamp-1">
                     {p.type[lang]}
                   </div>
-                  <h3 className="font-serif font-bold text-sm leading-tight mb-1 line-clamp-2">
+                  <h3 className="font-serif font-bold text-base md:text-lg leading-tight mb-1.5 line-clamp-2 pe-10">
                     {p.title[lang]}
                   </h3>
-                  <div className="flex items-center gap-1 text-[10px] opacity-80 line-clamp-1">
-                    <MapPin className="w-2.5 h-2.5 shrink-0" />
-                    <span className="truncate">{p.client[lang]}</span>
+                  <div className="flex items-center gap-1.5 text-[11px] opacity-85 line-clamp-1">
+                    <MapPin className="w-3 h-3 shrink-0" />
+                    <span className="truncate">{p.client[lang]} · {p.location[lang]}</span>
                   </div>
                 </div>
               </motion.button>
@@ -570,21 +388,21 @@ export default function Projects() {
       </div>
 
       <AnimatePresence>
-        {current && openIndex !== null && (
+        {current && openProject !== null && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
             className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 md:p-8"
-            onClick={() => setOpenIndex(null)}
+            onClick={() => setOpenProject(null)}
             onContextMenu={(e) => e.preventDefault()}
             data-testid="lightbox"
           >
             <button
               onClick={(e) => {
                 e.stopPropagation();
-                setOpenIndex(null);
+                setOpenProject(null);
               }}
               className="absolute top-4 end-4 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10"
               aria-label="Close"
@@ -593,27 +411,31 @@ export default function Projects() {
               <X className="w-5 h-5" />
             </button>
 
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setOpenIndex((i) => (i === null ? null : (i - 1 + filtered.length) % filtered.length));
-              }}
-              className="absolute start-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10"
-              aria-label="Previous"
-            >
-              <ChevronLeft className="w-5 h-5 rtl:rotate-180" />
-            </button>
+            {totalImgs > 1 && (
+              <>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setImgIndex((i) => (i - 1 + totalImgs) % totalImgs);
+                  }}
+                  className="absolute start-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10"
+                  aria-label="Previous"
+                >
+                  <ChevronLeft className="w-5 h-5 rtl:rotate-180" />
+                </button>
 
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setOpenIndex((i) => (i === null ? null : (i + 1) % filtered.length));
-              }}
-              className="absolute end-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10"
-              aria-label="Next"
-            >
-              <ChevronRight className="w-5 h-5 rtl:rotate-180" />
-            </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setImgIndex((i) => (i + 1) % totalImgs);
+                  }}
+                  className="absolute end-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10"
+                  aria-label="Next"
+                >
+                  <ChevronRight className="w-5 h-5 rtl:rotate-180" />
+                </button>
+              </>
+            )}
 
             <motion.div
               key={current.id}
@@ -625,16 +447,20 @@ export default function Projects() {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="relative w-full flex-1 min-h-0 flex items-center justify-center">
-                <img
-                  src={current.src}
+                <motion.img
+                  key={current.images[imgIndex]}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.25 }}
+                  src={current.images[imgIndex]}
                   alt={current.title[lang]}
                   draggable={false}
                   onContextMenu={(e) => e.preventDefault()}
-                  className="max-w-full max-h-[75vh] object-contain select-none pointer-events-none"
+                  className="max-w-full max-h-[70vh] object-contain select-none pointer-events-none"
                   style={{ WebkitUserSelect: "none", userSelect: "none", WebkitTouchCallout: "none" }}
                 />
               </div>
-              <div className="w-full max-w-3xl mt-5 text-center text-white">
+              <div className="w-full max-w-3xl mt-4 text-center text-white">
                 <div className="text-[10px] font-semibold tracking-[0.25em] uppercase text-accent mb-2">
                   {categoryLabels[current.category][lang]} • {current.type[lang]}
                 </div>
@@ -647,9 +473,28 @@ export default function Projects() {
                   <MapPin className="w-3.5 h-3.5" />
                   <span>{current.location[lang]}</span>
                 </div>
-                <div className="text-[10px] text-white/40 mt-3 tracking-wider">
-                  {openIndex + 1} / {filtered.length}
-                </div>
+                {totalImgs > 1 && (
+                  <>
+                    <div className="flex items-center justify-center gap-1.5 mt-4">
+                      {current.images.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setImgIndex(idx);
+                          }}
+                          className={`h-1.5 rounded-full transition-all ${
+                            idx === imgIndex ? "w-6 bg-accent" : "w-1.5 bg-white/30 hover:bg-white/60"
+                          }`}
+                          aria-label={`Image ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+                    <div className="text-[10px] text-white/40 mt-2 tracking-wider">
+                      {imgIndex + 1} / {totalImgs}
+                    </div>
+                  </>
+                )}
               </div>
             </motion.div>
           </motion.div>
