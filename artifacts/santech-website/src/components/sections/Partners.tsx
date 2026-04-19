@@ -48,17 +48,16 @@ function BrandLogo({ brand }: { brand: Brand }) {
   const hasCustomLogo = Boolean(brand.logo);
   const logoSrc = brand.logo ?? `https://www.google.com/s2/favicons?domain=${brand.domain}&sz=128`;
 
-  const bgClass = brand.logoBg ? "" : "bg-accent/5 group-hover:bg-white";
   return (
     <div
-      className={`w-16 h-16 rounded-sm flex items-center justify-center transition-colors duration-300 overflow-hidden border border-border/50 group-hover:border-accent/40 ${bgClass}`}
-      style={brand.logoBg ? { backgroundColor: brand.logoBg } : undefined}
+      className="w-20 h-20 rounded-md flex items-center justify-center overflow-hidden border border-border/40 transition-all duration-500"
+      style={brand.logoBg ? { backgroundColor: brand.logoBg } : { backgroundColor: "#ffffff" }}
     >
       {!imgError ? (
         <img
           src={logoSrc}
           alt={`${brand.name} logo`}
-          className={hasCustomLogo ? "w-full h-full object-contain p-1.5" : "w-10 h-10 object-contain"}
+          className={`${hasCustomLogo ? "w-full h-full object-contain p-2" : "w-10 h-10 object-contain"} grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out`}
           onError={() => setImgError(true)}
           loading="lazy"
         />
@@ -152,7 +151,7 @@ export default function Partners() {
                 boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.25)",
               }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="bg-background p-6 flex flex-col items-center text-center group hover:bg-primary hover:text-primary-foreground relative cursor-pointer"
+              className="bg-background p-6 flex flex-col items-center text-center group hover:bg-secondary/30 relative cursor-pointer transition-colors duration-300"
               data-testid={`card-brand-${i}`}
               aria-label={`${brand.name} — Visit website`}
             >
@@ -160,10 +159,10 @@ export default function Partners() {
               <span className="absolute top-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-500 ease-out" />
               <ExternalLink className="absolute top-3 right-3 w-3.5 h-3.5 text-muted-foreground/40 group-hover:text-accent group-hover:rotate-12 transition-all duration-300" />
               <BrandLogo brand={brand} />
-              <span className="mt-3 text-sm font-serif font-semibold text-foreground group-hover:text-primary-foreground transition-colors leading-tight">
+              <span className="mt-4 text-sm font-serif font-semibold text-foreground transition-colors leading-tight">
                 {brand.name}
               </span>
-              <span className="text-xs text-muted-foreground group-hover:text-primary-foreground/60 transition-colors mt-1 leading-snug">
+              <span className="text-xs text-muted-foreground transition-colors mt-1 leading-snug">
                 {brand.category}
               </span>
               <span className="text-[10px] tracking-widest uppercase font-medium text-accent/70 group-hover:text-accent mt-2 transition-colors">
