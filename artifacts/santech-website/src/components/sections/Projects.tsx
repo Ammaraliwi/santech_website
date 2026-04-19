@@ -446,7 +446,20 @@ export default function Projects() {
               className="relative max-w-6xl w-full max-h-[90vh] flex flex-col items-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative w-full flex-1 min-h-0 flex items-center justify-center">
+              <motion.div
+                className="relative w-full flex-1 min-h-0 flex items-center justify-center touch-pan-y"
+                drag={totalImgs > 1 ? "x" : false}
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.2}
+                onDragEnd={(_, info) => {
+                  const threshold = 50;
+                  if (info.offset.x < -threshold || info.velocity.x < -300) {
+                    setImgIndex((i) => (i + 1) % totalImgs);
+                  } else if (info.offset.x > threshold || info.velocity.x > 300) {
+                    setImgIndex((i) => (i - 1 + totalImgs) % totalImgs);
+                  }
+                }}
+              >
                 <motion.img
                   key={current.images[imgIndex]}
                   initial={{ opacity: 0 }}
@@ -459,7 +472,7 @@ export default function Projects() {
                   className="max-w-full max-h-[70vh] object-contain select-none pointer-events-none"
                   style={{ WebkitUserSelect: "none", userSelect: "none", WebkitTouchCallout: "none" }}
                 />
-              </div>
+              </motion.div>
               <div className="w-full max-w-3xl mt-4 text-center text-white">
                 <div className="text-[10px] font-semibold tracking-[0.25em] uppercase text-accent mb-2">
                   {categoryLabels[current.category][lang]} • {current.type[lang]}
