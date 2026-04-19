@@ -14,7 +14,7 @@ interface Brand {
 }
 
 const brands: Brand[] = [
-  { name: "Electrolux Professional", category: "Commercial Kitchen & Laundry", domain: "electroluxprofessional.com", website: "https://www.electroluxprofessional.com" },
+  { name: "Electrolux Professional", category: "Commercial Kitchen & Laundry", domain: "electroluxprofessional.com", website: "https://www.electroluxprofessional.com/", logo: "/brand-logos/electrolux.png", logoBg: "#041E42" },
   { name: "Carpigiani", category: "Gelato & Ice Cream Machines", domain: "carpigiani.com", website: "https://carpigiani.com", logo: "/brand-logos/carpigiani.png" },
   { name: "Teknaline", category: "Professional Cooking Lines", domain: "teknaline.com", website: "https://www.teknaline.com/en/", logo: "/brand-logos/teknaline.png" },
   { name: "ISA", category: "Refrigerated Display Cases", domain: "isaitaly.com", website: "https://www.isaitaly.com/", logo: "/brand-logos/isa.png", logoBg: "#ffffff" },
@@ -27,12 +27,11 @@ const brands: Brand[] = [
   { name: "StarMix", category: "Planetary Mixers", domain: "starmix.it", website: "https://www.starmix.it", logo: "/brand-logos/starmix.png", logoBg: "#1a1a1a" },
   { name: "Robot Coupe", category: "Food Processing Equipment", domain: "robot-coupe.com", website: "https://www.robot-coupe.com/", logo: "/brand-logos/robot-coupe.png", logoBg: "#ffffff" },
   { name: "Orion", category: "Catering Equipment", domain: "orionstyle.com", website: "https://www.orionstyle.com/", logo: "/brand-logos/orion.png", logoBg: "#ffffff" },
-  { name: "Europa", category: "Bread, Pastry & Pizza Ovens", domain: "europa-srl.it", website: "https://www.europa-srl.it" },
+  { name: "Europa", category: "Bread, Pastry & Pizza Ovens", domain: "europaovens.com", website: "https://europaovens.com/", logo: "/brand-logos/europa.png", logoBg: "#000000" },
   { name: "Coldline", category: "Refrigeration Solutions", domain: "coldline.it", website: "https://www.coldline.it" },
   { name: "Waring Commercial", category: "Commercial Blenders & Mixers", domain: "waring.com", website: "https://www.waring.com/", logo: "/brand-logos/waring.png", logoBg: "#ffffff" },
   { name: "Ice-Tek", category: "Ice Makers", domain: "minervaomegagroup.com", website: "https://www.minervaomegagroup.com/en/products/ice-tek-division", logo: "/brand-logos/ice-tek.png", logoBg: "#ffffff" },
   { name: "Minerva Omega Group", category: "Food Processing & Preservation", domain: "minervaomegagroup.com", website: "https://www.minervaomegagroup.com" },
-  { name: "Bertos", category: "Professional Cooking Equipment", domain: "bertos.it", website: "https://www.bertos.it" },
 ];
 
 const fadeUp = {
