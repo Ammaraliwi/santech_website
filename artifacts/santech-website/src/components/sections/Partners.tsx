@@ -31,7 +31,7 @@ const brands: Brand[] = [
   { name: "Coldline", category: "Refrigeration Solutions", domain: "coldline.it", website: "https://www.coldline.it" },
   { name: "Waring Commercial", category: "Commercial Blenders & Mixers", domain: "waring.com", website: "https://www.waring.com/", logo: "/brand-logos/waring.png", logoBg: "#ffffff" },
   { name: "Ice-Tek", category: "Ice Makers", domain: "minervaomegagroup.com", website: "https://www.minervaomegagroup.com/en/products/ice-tek-division", logo: "/brand-logos/ice-tek.png", logoBg: "#ffffff" },
-  { name: "Minerva Omega Group", category: "Food Processing & Preservation", domain: "minervaomegagroup.com", website: "https://www.minervaomegagroup.com" },
+  { name: "Minerva Omega Group", category: "Food Processing & Preservation", domain: "minervaomegagroup.com", website: "https://www.minervaomegagroup.com/en/", logo: "/brand-logos/minerva.png", logoBg: "#000000" },
 ];
 
 const fadeUp = {
