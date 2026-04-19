@@ -16,20 +16,21 @@ interface Brand {
 const brands: Brand[] = [
   { name: "Electrolux Professional", category: "Commercial Kitchen & Laundry", domain: "electroluxprofessional.com", website: "https://www.electroluxprofessional.com" },
   { name: "Carpigiani", category: "Gelato & Ice Cream Machines", domain: "carpigiani.com", website: "https://carpigiani.com", logo: "/brand-logos/carpigiani.png" },
+  { name: "Teknaline", category: "Professional Cooking Lines", domain: "teknaline.com", website: "https://www.teknaline.com/en/", logo: "/brand-logos/teknaline.png" },
   { name: "ISA", category: "Refrigerated Display Cases", domain: "isaitaly.com", website: "https://www.isaitaly.com" },
   { name: "Mondial Forni", category: "Professional Ovens", domain: "mondialforni.com", website: "https://www.mondialforni.com" },
   { name: "SilikoMart Professional", category: "Pastry Molds & Tools", domain: "silikomart.com", website: "https://www.silikomart.com" },
   { name: "Martellato", category: "Pastry & Chocolate Equipment", domain: "martellato.com", website: "https://www.martellato.com" },
-  { name: "LaCimbali", category: "Espresso Coffee Machines", domain: "lacimbali.com", website: "https://www.lacimbali.com" },
+  { name: "LaCimbali", category: "Espresso Coffee Machines", domain: "cimbali.com", website: "https://www.cimbali.com/", logo: "/brand-logos/lacimbali.png", logoBg: "#1a1a1a" },
   { name: "UNOX", category: "Combi Ovens", domain: "unox.com", website: "https://www.unox.com" },
-  { name: "Flamic", category: "Bakery & Pastry Machines", domain: "flamic.it", website: "https://www.flamic.it" },
+  { name: "Flamic", category: "Bakery & Pastry Machines", domain: "flamic.it", website: "https://www.flamic.it/", logo: "/brand-logos/flamic.png", logoBg: "#1a1a1a" },
   { name: "StarMix", category: "Planetary Mixers", domain: "starmix.it", website: "https://www.starmix.it", logo: "/brand-logos/starmix.png", logoBg: "#1a1a1a" },
-  { name: "Robot Coupe", category: "Food Processing Equipment", domain: "robot-coupe.com", website: "https://www.robot-coupe.com" },
-  { name: "Orion", category: "Catering Equipment", domain: "orionidf.com", website: "https://www.orionidf.com" },
+  { name: "Robot Coupe", category: "Food Processing Equipment", domain: "robot-coupe.com", website: "https://www.robot-coupe.com/", logo: "/brand-logos/robot-coupe.png", logoBg: "#ffffff" },
+  { name: "Orion", category: "Catering Equipment", domain: "orionstyle.com", website: "https://www.orionstyle.com/", logo: "/brand-logos/orion.png", logoBg: "#ffffff" },
   { name: "Europa", category: "Bread, Pastry & Pizza Ovens", domain: "europa-srl.it", website: "https://www.europa-srl.it" },
   { name: "Coldline", category: "Refrigeration Solutions", domain: "coldline.it", website: "https://www.coldline.it" },
   { name: "Waring Commercial", category: "Commercial Blenders & Mixers", domain: "waringcommercialproducts.com", website: "https://www.waringcommercialproducts.com" },
-  { name: "Ice-Tek", category: "Ice Makers", domain: "ice-tek.com", website: "https://www.ice-tek.com" },
+  { name: "Ice-Tek", category: "Ice Makers", domain: "minervaomegagroup.com", website: "https://www.minervaomegagroup.com/en/products/ice-tek-division", logo: "/brand-logos/ice-tek.png", logoBg: "#ffffff" },
   { name: "Minerva Omega Group", category: "Food Processing & Preservation", domain: "minervaomegagroup.com", website: "https://www.minervaomegagroup.com" },
   { name: "Bertos", category: "Professional Cooking Equipment", domain: "bertos.it", website: "https://www.bertos.it" },
 ];
@@ -146,11 +147,19 @@ export default function Partners() {
               variants={fadeUp}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              className="bg-background p-6 flex flex-col items-center text-center group hover:bg-primary hover:text-primary-foreground transition-all duration-300 relative"
+              whileHover={{
+                scale: 1.06,
+                zIndex: 20,
+                boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.25)",
+              }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="bg-background p-6 flex flex-col items-center text-center group hover:bg-primary hover:text-primary-foreground relative cursor-pointer"
               data-testid={`card-brand-${i}`}
               aria-label={`${brand.name} — Visit website`}
             >
-              <ExternalLink className="absolute top-3 right-3 w-3.5 h-3.5 text-muted-foreground/40 group-hover:text-accent transition-colors" />
+              {/* Accent corner indicator */}
+              <span className="absolute top-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-500 ease-out" />
+              <ExternalLink className="absolute top-3 right-3 w-3.5 h-3.5 text-muted-foreground/40 group-hover:text-accent group-hover:rotate-12 transition-all duration-300" />
               <BrandLogo brand={brand} />
               <span className="mt-3 text-sm font-serif font-semibold text-foreground group-hover:text-primary-foreground transition-colors leading-tight">
                 {brand.name}
