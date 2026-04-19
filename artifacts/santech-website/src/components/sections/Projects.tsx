@@ -287,6 +287,15 @@ const projects: Project[] = [
     type: { en: "Bakery Layout", ar: "مخطط مخبز" },
   },
   {
+    id: "zaitawi-sesame-line",
+    src: "/portfolio/zaitawi-sesame-line-1.jpg",
+    category: "production",
+    title: { en: "Zaitawi — Sesame Sieving Line (CAD Model)", ar: "الزيتاوي — خط نخل السمسم (مخطط CAD)" },
+    client: { en: "Zaitawi", ar: "الزيتاوي" },
+    location: { en: "Syria", ar: "سوريا" },
+    type: { en: "Production Line Engineering", ar: "هندسة خط إنتاج" },
+  },
+  {
     id: "gelato-brochure",
     src: "/portfolio/gelato-lab-brochure.jpg",
     category: "production",
