@@ -9,11 +9,13 @@ interface Brand {
   category: string;
   domain: string;
   website: string;
+  logo?: string;
+  logoBg?: string;
 }
 
 const brands: Brand[] = [
   { name: "Electrolux Professional", category: "Commercial Kitchen & Laundry", domain: "electroluxprofessional.com", website: "https://www.electroluxprofessional.com" },
-  { name: "Carpigiani", category: "Gelato & Ice Cream Machines", domain: "carpigiani.com", website: "https://www.carpigiani.com" },
+  { name: "Carpigiani", category: "Gelato & Ice Cream Machines", domain: "carpigiani.com", website: "https://carpigiani.com", logo: "/brand-logos/carpigiani.png" },
   { name: "ISA", category: "Refrigerated Display Cases", domain: "isaitaly.com", website: "https://www.isaitaly.com" },
   { name: "Mondial Forni", category: "Professional Ovens", domain: "mondialforni.com", website: "https://www.mondialforni.com" },
   { name: "SilikoMart Professional", category: "Pastry Molds & Tools", domain: "silikomart.com", website: "https://www.silikomart.com" },
@@ -21,7 +23,7 @@ const brands: Brand[] = [
   { name: "LaCimbali", category: "Espresso Coffee Machines", domain: "lacimbali.com", website: "https://www.lacimbali.com" },
   { name: "UNOX", category: "Combi Ovens", domain: "unox.com", website: "https://www.unox.com" },
   { name: "Flamic", category: "Bakery & Pastry Machines", domain: "flamic.it", website: "https://www.flamic.it" },
-  { name: "StarMix", category: "Planetary Mixers", domain: "starmix.it", website: "https://www.starmix.it" },
+  { name: "StarMix", category: "Planetary Mixers", domain: "starmix.it", website: "https://www.starmix.it", logo: "/brand-logos/starmix.png", logoBg: "#1a1a1a" },
   { name: "Robot Coupe", category: "Food Processing Equipment", domain: "robot-coupe.com", website: "https://www.robot-coupe.com" },
   { name: "Orion", category: "Catering Equipment", domain: "orionidf.com", website: "https://www.orionidf.com" },
   { name: "Europa", category: "Bread, Pastry & Pizza Ovens", domain: "europa-srl.it", website: "https://www.europa-srl.it" },
@@ -43,14 +45,20 @@ const fadeUp = {
 
 function BrandLogo({ brand }: { brand: Brand }) {
   const [imgError, setImgError] = useState(false);
+  const hasCustomLogo = Boolean(brand.logo);
+  const logoSrc = brand.logo ?? `https://www.google.com/s2/favicons?domain=${brand.domain}&sz=128`;
 
+  const bgClass = brand.logoBg ? "" : "bg-accent/5 group-hover:bg-white";
   return (
-    <div className="w-16 h-16 rounded-sm bg-accent/5 group-hover:bg-white flex items-center justify-center transition-colors duration-300 overflow-hidden border border-border/50 group-hover:border-accent/40">
+    <div
+      className={`w-16 h-16 rounded-sm flex items-center justify-center transition-colors duration-300 overflow-hidden border border-border/50 group-hover:border-accent/40 ${bgClass}`}
+      style={brand.logoBg ? { backgroundColor: brand.logoBg } : undefined}
+    >
       {!imgError ? (
         <img
-          src={`https://www.google.com/s2/favicons?domain=${brand.domain}&sz=128`}
+          src={logoSrc}
           alt={`${brand.name} logo`}
-          className="w-10 h-10 object-contain"
+          className={hasCustomLogo ? "w-full h-full object-contain p-1.5" : "w-10 h-10 object-contain"}
           onError={() => setImgError(true)}
           loading="lazy"
         />
