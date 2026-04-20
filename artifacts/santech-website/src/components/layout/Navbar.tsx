@@ -157,7 +157,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden fixed inset-0 z-[60] overflow-y-auto overscroll-contain"
+            className="lg:hidden fixed inset-0 z-[60] overflow-y-auto overflow-x-hidden overscroll-contain"
             aria-hidden={!mobileMenuOpen}
           >
             {/* Layered background — primary gradient + accent grid + radial glow */}
