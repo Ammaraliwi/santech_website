@@ -168,7 +168,7 @@ export default function Navbar() {
               type="button"
               onClick={() => setMobileMenuOpen(false)}
               aria-label={t("nav.menu.close")}
-              className="absolute top-5 end-5 w-11 h-11 rounded-full flex items-center justify-center text-foreground/70 hover:text-accent hover:bg-foreground/5 transition-colors"
+              className="absolute top-5 end-5 z-10 w-11 h-11 rounded-full flex items-center justify-center text-foreground/70 hover:text-accent hover:bg-foreground/5 transition-colors"
               data-testid="button-mobile-menu-close"
             >
               <X className="w-6 h-6" />
