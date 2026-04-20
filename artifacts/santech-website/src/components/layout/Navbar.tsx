@@ -163,6 +163,17 @@ export default function Navbar() {
             {/* Subtle accent decoration at top */}
             <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-accent to-transparent" />
 
+            {/* Close button */}
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-label={t("nav.menu.close")}
+              className="absolute top-5 end-5 w-11 h-11 rounded-full flex items-center justify-center text-foreground/70 hover:text-accent hover:bg-foreground/5 transition-colors"
+              data-testid="button-mobile-menu-close"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
             {/* Content */}
             <div className="relative min-h-full flex flex-col pt-24 pb-10 px-6">
               <div className="flex flex-col gap-7 items-center text-center mt-4">
