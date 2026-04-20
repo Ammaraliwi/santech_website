@@ -160,6 +160,21 @@ export default function Navbar() {
             className="lg:hidden fixed inset-0 z-[60] bg-background overflow-y-auto overflow-x-hidden overscroll-contain"
             aria-hidden={!mobileMenuOpen}
           >
+            {/* Soft warm background tint */}
+            <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-accent/5" />
+
+            {/* Faint logo watermark */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 flex items-center justify-center pointer-events-none"
+            >
+              <img
+                src={settings.brand.logo}
+                alt=""
+                className="w-[80%] max-w-md opacity-[0.04]"
+              />
+            </div>
+
             {/* Subtle accent decoration at top */}
             <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-accent to-transparent" />
 
@@ -208,6 +223,50 @@ export default function Navbar() {
                   >
                     {t("nav.cta")}
                   </Button>
+                </motion.div>
+
+                {/* Quick contact buttons */}
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.05 + navItems.length * 0.04 + 0.12, duration: 0.3 }}
+                  className="w-full max-w-xs mt-3 grid grid-cols-3 gap-2"
+                >
+                  {settings.contact.whatsapp_number && (
+                    <a
+                      href={`https://wa.me/${settings.contact.whatsapp_number}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-col items-center justify-center gap-1 py-3 rounded-lg border border-border bg-foreground/[0.02] hover:bg-[#25D366]/10 hover:border-[#25D366]/40 hover:text-[#25D366] transition-all"
+                      aria-label="WhatsApp"
+                      data-testid="link-mobile-whatsapp"
+                    >
+                      <MessageCircle className="w-5 h-5" />
+                      <span className="text-[10px] font-semibold tracking-wider uppercase">WhatsApp</span>
+                    </a>
+                  )}
+                  {settings.contact.phones?.[0]?.link && (
+                    <a
+                      href={`tel:${settings.contact.phones[0].link}`}
+                      className="flex flex-col items-center justify-center gap-1 py-3 rounded-lg border border-border bg-foreground/[0.02] hover:bg-accent/10 hover:border-accent/40 hover:text-accent transition-all"
+                      aria-label="Call"
+                      data-testid="link-mobile-call"
+                    >
+                      <Phone className="w-5 h-5" />
+                      <span className="text-[10px] font-semibold tracking-wider uppercase">{t("nav.menu.call") || "Call"}</span>
+                    </a>
+                  )}
+                  {settings.contact.emails?.[0]?.address && (
+                    <a
+                      href={`mailto:${settings.contact.emails[0].address}`}
+                      className="flex flex-col items-center justify-center gap-1 py-3 rounded-lg border border-border bg-foreground/[0.02] hover:bg-primary/10 hover:border-primary/40 hover:text-primary transition-all"
+                      aria-label="Email"
+                      data-testid="link-mobile-email"
+                    >
+                      <Mail className="w-5 h-5" />
+                      <span className="text-[10px] font-semibold tracking-wider uppercase">Email</span>
+                    </a>
+                  )}
                 </motion.div>
               </div>
             </div>
