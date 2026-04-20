@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { Menu, X, ArrowUpRight, Phone, Mail, MessageCircle, Facebook, MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -36,26 +37,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
+  // Lock body scroll when mobile menu is open (simple overflow approach)
   useEffect(() => {
     if (!mobileMenuOpen) return;
-    const scrollY = window.scrollY;
-    const originalBodyStyle = {
-      position: document.body.style.position,
-      top: document.body.style.top,
-      width: document.body.style.width,
-      overflow: document.body.style.overflow,
-    };
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.width = "100%";
+    const prevHtmlOverflow = document.documentElement.style.overflow;
+    const prevBodyOverflow = document.body.style.overflow;
+    document.documentElement.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
     return () => {
-      document.body.style.position = originalBodyStyle.position;
-      document.body.style.top = originalBodyStyle.top;
-      document.body.style.width = originalBodyStyle.width;
-      document.body.style.overflow = originalBodyStyle.overflow;
-      window.scrollTo(0, scrollY);
+      document.documentElement.style.overflow = prevHtmlOverflow;
+      document.body.style.overflow = prevBodyOverflow;
     };
   }, [mobileMenuOpen]);
 
@@ -156,7 +147,8 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Nav — Creative Edition */}
+      {/* Mobile Nav — Creative Edition (portaled to body to escape header stacking context) */}
+      <MobileMenuPortal>
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -165,7 +157,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden fixed inset-0 z-0 overflow-y-auto"
+            className="lg:hidden fixed inset-0 z-[60] overflow-y-auto overscroll-contain"
             aria-hidden={!mobileMenuOpen}
           >
             {/* Layered background — primary gradient + accent grid + radial glow */}
@@ -320,6 +312,12 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+      </MobileMenuPortal>
     </header>
   );
+}
+
+function MobileMenuPortal({ children }: { children: React.ReactNode }) {
+  if (typeof document === "undefined") return null;
+  return createPortal(children, document.body);
 }
