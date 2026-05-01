@@ -214,6 +214,20 @@ const projects: Project[] = [
     location: { en: "Turnkey Solution", ar: "حل تسليم مفتاح" },
     type: { en: "Gelato Production Line", ar: "خط إنتاج جيلاتو" },
   },
+  {
+    id: "alrajab",
+    images: [
+      "/portfolio/alrajab-store-overview.jpg",
+      "/portfolio/alrajab-pastry-display.jpg",
+      "/portfolio/alrajab-vertical-display.jpg",
+      "/portfolio/alrajab-layout-plan.jpg",
+    ],
+    category: "retail",
+    title: { en: "Al-Rajab Patisserie — Full Store Fit-Out", ar: "حلوى الرجب — تجهيز المحل الكامل" },
+    client: { en: "Al-Rajab", ar: "الرجب" },
+    location: { en: "Syria", ar: "سوريا" },
+    type: { en: "Patisserie & Sweet Shop — ISA Display Systems", ar: "محل حلويات — أنظمة عرض ISA" },
+  },
 ];
 
 const categoryLabels: Record<Category, { en: string; ar: string }> = {
